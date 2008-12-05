@@ -1,0 +1,13 @@
+Ruby Pivotal Tracker
+http://www.evalcode.com
+
+=========================
+Notes
+=========================
+There are a few areas that need to be modified in order for this code to work correctly.
+You must set the Token key in the initialize method as well as project_id.
+  
+=========================
+Contributers
+=========================
+Justin Smestad
