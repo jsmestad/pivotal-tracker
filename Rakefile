@@ -5,10 +5,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "ruby-pivotal-tracker"
-    gem.summary = %Q{TODO}
-    gem.email = "josh@technicalpickles.com"
+    gem.summary = %Q{Ruby wrapper for the Pivotal Tracker API}
+    gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/technicalpickles/ruby-pivotal-tracker"
-    gem.authors = ["Josh Nichols"]
+    gem.authors = ["Justin Smestad"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 

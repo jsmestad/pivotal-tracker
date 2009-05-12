@@ -1,5 +1,4 @@
-require 'pivotal_tracker'
-require 'test/unit'
+require 'test_helper'
 
 class PivotalTrackerTest < Test::Unit::TestCase
   
