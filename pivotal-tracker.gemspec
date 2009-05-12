@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ruby-pivotal-tracker}
+  s.name = %q{pivotal-tracker}
   s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -10,18 +10,17 @@ Gem::Specification.new do |s|
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README",
-     "README.rdoc"
+     "README"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
      "README",
-     "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/ruby-pivotal-tracker.rb",
+     "lib/pivotal-tracker.rb",
+     "ruby-pivotal-tracker.gemspec",
      "test/pivotal_tracker_test.rb",
      "test/test_helper.rb"
   ]

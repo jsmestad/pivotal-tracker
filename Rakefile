@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "ruby-pivotal-tracker"
+    gem.name = "pivotal-tracker"
     gem.summary = %Q{Ruby wrapper for the Pivotal Tracker API}
     gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/technicalpickles/ruby-pivotal-tracker"
