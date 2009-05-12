@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/pivotal-tracker.rb",
-     "ruby-pivotal-tracker.gemspec",
+     "pivotal-tracker.gemspec",
      "test/pivotal_tracker_test.rb",
      "test/test_helper.rb"
   ]
