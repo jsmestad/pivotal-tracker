@@ -3,20 +3,25 @@ require 'happymapper'
 require 'builder'
 
 
-require 'pivotal-tracker/extensions'
-
 # initial definition, to avoid circular dependencies when declaring happymappings
 class Story; end
 class Iteration; end
 class Project; end
 
+require 'pivotal-tracker/extensions'
 require 'pivotal-tracker/project'
 require 'pivotal-tracker/story'
 require 'pivotal-tracker/iteration'
 
 class PivotalTracker
-  def initialize(project_id, token)
+  def initialize(project_id, token, options = {})
     @project_id, @token = project_id, token
+
+    @base_url = if options[:use_ssl]
+                  "https://www.pivotaltracker.com/services/v2"
+                else
+                  "http://www.pivotaltracker.com/services/v2"
+                end
   end
   
   def project
@@ -74,9 +79,9 @@ class PivotalTracker
   protected
 
   def projects_resource
-    RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects",
+    RestClient::Resource.new "#{@base_url}/projects",
                              :headers => {
-                               'Token' => @token,
+                               'X-TrackerToken' => @token,
                                'Content-Type' => 'application/xml'
                              }
   end
