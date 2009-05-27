@@ -2,8 +2,10 @@ require 'rubygems'
 require 'hpricot'
 require 'net/http'
 require 'restclient'
+require 'happymapper'
 require 'uri'
 require 'cgi'
+require 'builder'
 
 ##
 # Pivotal Tracker API Ruby Wrapper
@@ -12,123 +14,112 @@ require 'cgi'
 # http://www.evalcode.com
 ##
 
+class Project
+  include HappyMapper
+  element :name, String
+  element :iteration_length, String
+  element :week_start_day, String
+  element :point_scale, String
+end
+
+class Story
+  include HappyMapper
+  element :id, Integer
+  element :type, String
+  element :name, String
+
+  def initialize(attributes = {})
+    attributes.each do |key, value|
+      send("#{key}=", value)
+    end
+  end
+
+  def to_xml(options = {})
+    builder = Builder::XmlMarkup.new(options)
+    builder.story do |story|
+      story.id   id.to_s   if id
+      story.type type.to_s if type
+      story.name name.to_s if name
+    end
+  end
+
+  def to_param
+    id.to_s
+  end
+end
+
+class String
+  def to_param
+    self
+  end
+end
+
+class Integer
+  def to_param
+    to_s
+  end
+end
+
 class Tracker
   def initialize(project_id = '2893', token = '25a6a078f67d9210d2fba91f8c484e7b')
     @project_id, @token = project_id, token
   end
-
-  def project_resource
-    @project_resource ||= begin
-                            RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects/#{@project_id}"
-                          end
-  end
   
   def project
     response = project_resource.get 'Token' => @token
-
-    doc = Hpricot(response.body).at('project')
-
-    @project = {
-      :name             => doc.at('name').innerHTML,
-      :iteration_length => doc.at('iteration_length').innerHTML,
-      :week_start_day   => doc.at('week_start_day').innerHTML,
-      :point_scale      => doc.at('point_scale').innerHTML
-    }
+    Project.parse(response).first
   end
   
   def stories
     response = project_resource['stories'].get 'Token' => @token
-
-    doc = Hpricot(response.body)
-    
-    @stories = []
-    
-    doc.search('stories > story').each do |story|
-      @stories << {
-        :id => story.at('id').innerHTML.to_i,
-        :type => story.at('story_type').innerHTML,
-        :name => story.at('name').innerHTML
-      }
-    end
-    return @stories
+    Story.parse(response)
   end
   
   # would ideally like to pass a size, aka :all to limit search
   def find(filters = {})
-    uri = "http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories"
     unless filters.empty?
-      uri << "?filter=" 
+      filter_string = "?filter=" 
       filters.each do |key, value|
-        uri << CGI::escape("#{key}:\"#{value}\"")
+        filter_string << CGI::escape("#{key}:\"#{value}\"")
       end
-    end
-    
-    resource_uri = URI.parse(uri)
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.get(resource_uri.path, {'Token' => @token})
+    else
+      filter_string = ""
     end
 
-    doc = Hpricot(response.body)
+    response = stories_resource[filter_string].get
     
-    @stories = []
-    
-    doc.search('stories > story').each do |story|
-      @stories << {
-        :id => story.at('id').innerHTML.to_i,
-        :type => story.at('story_type').innerHTML,
-        :name => story.at('name').innerHTML
-      }
-    end
-    return @stories
+    Story.parse(response)
   end
   
   def find_story(id)
-    project_resource["/stories/#{id}"].get 'Token' => @token, 'Content-Type' => 'application/xml'
+    story_resource(id).get 'Token' => @token, 'Content-Type' => 'application/xml'
 
-    resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories/#{id}")
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.get(resource_uri.path, {})
-    end
-    
-    doc = Hpricot(response.body).at('story')
-    
-    @story = {
-      :id => doc.at('id').innerHTML.to_i,
-      :type => doc.at('story_type').innerHTML,
-      :name => doc.at('name').innerHTML
-    }
+    Story.parse(response).first
   end
   
   def create_story(story)
-    story_xml = build_story_xml(story)
-    resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories")
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.post(resource_uri.path, story_xml, {'Token' => @token, 'Content-Type' => 'application/xml'})
-    end
+    stories_resource.post story.to_xml, 'Token' => @token, 'Content-Type' => 'application/xml'
   end
   
   def update_story(story)
-    story_xml = build_story_xml(story)
-    resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories/#{story[:id]}")
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.put(resource_uri.path, story_xml, {'Token' => @token, 'Content-Type' => 'application/xml'})
-    end
+    story_resource(story).put story.to_xml, 'Token' => @token, 'Content-Type' => 'application/xml'
   end
   
-  def delete_story(story_id)
-    resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories/#{story_id}")
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.delete(resource_uri.path, {'Token' => @token})
-    end
+  def delete_story(story)
+    story_resource(story).delete 'Token' => @token
   end
-  
-  private
-    
-    def build_story_xml(story)
-      story_xml = "<story>"
-      story.each do |key, value|
-        story_xml << "<#{key}>#{value.to_s}</#{key}>"
-      end
-      story_xml << "</story>"
-    end
+
+  protected
+
+  def project_resource
+    RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects/#{@project_id}"
+  end
+
+  def stories_resource
+    project_resource['stories']
+  end
+
+  def story_resource(story)
+    stories_resource["/#{story.to_param}"]
+  end
 end
