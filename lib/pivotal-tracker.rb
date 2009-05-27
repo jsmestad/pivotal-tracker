@@ -1,67 +1,14 @@
-require 'rubygems'
-require 'hpricot'
-require 'net/http'
 require 'restclient'
 require 'happymapper'
-require 'uri'
-require 'cgi'
 require 'builder'
 
-##
-# Pivotal Tracker API Ruby Wrapper
-# November 11, 2008
-# Justin Smestad
-# http://www.evalcode.com
-##
 
-class Project
-  include HappyMapper
-  element :name, String
-  element :iteration_length, String
-  element :week_start_day, String
-  element :point_scale, String
-end
+require 'pivotal-tracker/extensions'
+require 'pivotal-tracker/project'
+require 'pivotal-tracker/story'
 
-class Story
-  include HappyMapper
-  element :id, Integer
-  element :type, String
-  element :name, String
-
-  def initialize(attributes = {})
-    attributes.each do |key, value|
-      send("#{key}=", value)
-    end
-  end
-
-  def to_xml(options = {})
-    builder = Builder::XmlMarkup.new(options)
-    builder.story do |story|
-      story.id   id.to_s   if id
-      story.type type.to_s if type
-      story.name name.to_s if name
-    end
-  end
-
-  def to_param
-    id.to_s
-  end
-end
-
-class String
-  def to_param
-    self
-  end
-end
-
-class Integer
-  def to_param
-    to_s
-  end
-end
-
-class Tracker
-  def initialize(project_id = '2893', token = '25a6a078f67d9210d2fba91f8c484e7b')
+class PivotalTracker
+  def initialize(project_id, token)
     @project_id, @token = project_id, token
   end
   
@@ -111,12 +58,16 @@ class Tracker
 
   protected
 
-  def project_resource
-    RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects/#{@project_id}"
+  def projects_resource
+    RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects"
+  end
+
+  def project_resource(project = @project_id)
+    projects_resource["/#{@project_id}"]
   end
 
   def stories_resource
-    project_resource['stories']
+    project_resource['/stories']
   end
 
   def story_resource(story)
