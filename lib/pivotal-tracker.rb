@@ -20,17 +20,17 @@ class PivotalTracker
   end
   
   def project
-    response = project_resource.get 'Token' => @token
+    response = project_resource.get
     Project.parse(response).first
   end
   
   def stories
-    response = stories_resource.get 'Token' => @token
+    response = stories_resource.get
     Story.parse(response)
   end
 
   def iterations
-    response = iterations_resource.get 'Token' => @token
+    response = iterations_resource.get
     Iteration.parse(response)
   end
   
@@ -46,32 +46,39 @@ class PivotalTracker
     end
 
     response = stories_resource[filter_string].get
-    
     Story.parse(response)
   end
   
   def find_story(id)
-    story_resource(id).get 'Token' => @token, 'Content-Type' => 'application/xml'
-
+    response = story_resource(id).get
     Story.parse(response).first
   end
   
   def create_story(story)
-    stories_resource.post story.to_xml, 'Token' => @token, 'Content-Type' => 'application/xml'
+    stories_resource.post story.to_xml
   end
   
   def update_story(story)
-    story_resource(story).put story.to_xml, 'Token' => @token, 'Content-Type' => 'application/xml'
+    story_resource(story).put story.to_xml
   end
   
   def delete_story(story)
-    story_resource(story).delete 'Token' => @token
+    story_resource(story).delete
+  end
+
+  def deliver_all_finished_stories
+    response = stories_resource['/deliver_all_finished'].put ''
+    Story.parse(response)
   end
 
   protected
 
   def projects_resource
-    RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects"
+    RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects",
+                             :headers => {
+                               'Token' => @token,
+                               'Content-Type' => 'application/xml'
+                             }
   end
 
   def project_resource(project = @project_id)
