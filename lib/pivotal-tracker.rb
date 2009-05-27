@@ -4,8 +4,15 @@ require 'builder'
 
 
 require 'pivotal-tracker/extensions'
+
+# initial definition, to avoid circular dependencies when declaring happymappings
+class Story; end
+class Iteration; end
+class Project; end
+
 require 'pivotal-tracker/project'
 require 'pivotal-tracker/story'
+require 'pivotal-tracker/iteration'
 
 class PivotalTracker
   def initialize(project_id, token)
@@ -18,8 +25,13 @@ class PivotalTracker
   end
   
   def stories
-    response = project_resource['stories'].get 'Token' => @token
+    response = stories_resource.get 'Token' => @token
     Story.parse(response)
+  end
+
+  def iterations
+    response = iterations_resource.get 'Token' => @token
+    Iteration.parse(response)
   end
   
   # would ideally like to pass a size, aka :all to limit search
@@ -64,6 +76,10 @@ class PivotalTracker
 
   def project_resource(project = @project_id)
     projects_resource["/#{@project_id}"]
+  end
+
+  def iterations_resource
+    project_resource["/iterations"]
   end
 
   def stories_resource

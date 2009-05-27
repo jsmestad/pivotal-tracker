@@ -11,7 +11,7 @@ class Story
   element :created_at, DateTime
   element :accepted_at, DateTime
   element :labels, String
-  
+  has_one :iteration, Iteration
 
   def initialize(attributes = {})
     attributes.each do |key, value|
