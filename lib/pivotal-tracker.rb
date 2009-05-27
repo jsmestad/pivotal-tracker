@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'hpricot'
 require 'net/http'
+require 'restclient'
 require 'uri'
 require 'cgi'
 
@@ -15,12 +16,15 @@ class Tracker
   def initialize(project_id = '2893', token = '25a6a078f67d9210d2fba91f8c484e7b')
     @project_id, @token = project_id, token
   end
+
+  def project_resource
+    @project_resource ||= begin
+                            RestClient::Resource.new "http://www.pivotaltracker.com/services/v1/projects/#{@project_id}"
+                          end
+  end
   
   def project
-    resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}")
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.get(resource_uri.path, {'Token' => @token})
-    end
+    response = project_resource.get 'Token' => @token
 
     doc = Hpricot(response.body).at('project')
 
@@ -33,10 +37,7 @@ class Tracker
   end
   
   def stories
-    resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories")
-    response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.get(resource_uri.path, {'Token' => @token})
-    end
+    response = project_resource['stories'].get 'Token' => @token
 
     doc = Hpricot(response.body)
     
@@ -82,9 +83,11 @@ class Tracker
   end
   
   def find_story(id)
+    project_resource["/stories/#{id}"].get 'Token' => @token, 'Content-Type' => 'application/xml'
+
     resource_uri = URI.parse("http://www.pivotaltracker.com/services/v1/projects/#{@project_id}/stories/#{id}")
     response = Net::HTTP.start(resource_uri.host, resource_uri.port) do |http|
-      http.get(resource_uri.path, {'Token' => @token, 'Content-Type' => 'application/xml'})
+      http.get(resource_uri.path, {})
     end
     
     doc = Hpricot(response.body).at('story')
