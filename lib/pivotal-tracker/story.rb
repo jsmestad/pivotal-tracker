@@ -1,8 +1,17 @@
 class Story
   include HappyMapper
   element :id, Integer
-  element :type, String
+  element :story_type, String
+  element :url, String
+  element :estimate, Integer
+  element :current_state, String
   element :name, String
+  element :requested_by, String
+  element :owned_by, String
+  element :created_at, DateTime
+  element :accepted_at, DateTime
+  element :labels, String
+  
 
   def initialize(attributes = {})
     attributes.each do |key, value|
