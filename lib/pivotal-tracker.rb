@@ -38,7 +38,7 @@ class PivotalTracker
   end
   
   def find(*filters)
-    filter_query = CGI::escape filters.to_pivotal_filter
+    filter_query = CGI::escape coerce_to_filter(filters)
     response = stories_resource["?filter=#{filter_query}"].get
     Story.parse(response)
   end
@@ -89,5 +89,20 @@ class PivotalTracker
 
   def story_resource(story)
     stories_resource["/#{story.to_param}"]
+  end
+
+  def coerce_to_filter(object)
+    case object
+    when String, Integer,NilClass
+      object.to_s.inspect
+    when Hash
+      object.collect do |key, value|
+        "#{key}:#{coerce_to_filter(value)}"
+      end.join(' ')
+    when Array
+      object.collect do |each|
+        coerce_to_filter(each)
+      end.join(' ')
+    end
   end
 end
