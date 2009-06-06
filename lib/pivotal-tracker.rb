@@ -1,6 +1,7 @@
 require 'restclient'
 require 'happymapper'
 require 'builder'
+require 'cgi'
 
 
 # initial definition, to avoid circular dependencies when declaring happymappings
@@ -17,11 +18,8 @@ class PivotalTracker
   def initialize(project_id, token, options = {})
     @project_id, @token = project_id, token
 
-    @base_url = if options[:use_ssl]
-                  "https://www.pivotaltracker.com/services/v2"
-                else
-                  "http://www.pivotaltracker.com/services/v2"
-                end
+    @base_url = "http://www.pivotaltracker.com/services/v2" 
+    @base_url.gsub! 'http', 'https'  if options[:use_ssl]
   end
   
   def project
@@ -39,18 +37,9 @@ class PivotalTracker
     Iteration.parse(response)
   end
   
-  # would ideally like to pass a size, aka :all to limit search
-  def find(filters = {})
-    unless filters.empty?
-      filter_string = "?filter=" 
-      filters.each do |key, value|
-        filter_string << CGI::escape("#{key}:\"#{value}\"")
-      end
-    else
-      filter_string = ""
-    end
-
-    response = stories_resource[filter_string].get
+  def find(*filters)
+    filter_query = CGI::escape filters.to_pivotal_filter
+    response = stories_resource["?filter=#{filter_query}"].get
     Story.parse(response)
   end
   
