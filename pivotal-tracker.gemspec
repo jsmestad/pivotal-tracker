@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal-tracker}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols"]
-  s.date = %q{2009-05-27}
+  s.date = %q{2009-06-07}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -21,9 +21,11 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/pivotal-tracker.rb",
      "lib/pivotal-tracker/extensions.rb",
+     "lib/pivotal-tracker/iteration.rb",
      "lib/pivotal-tracker/project.rb",
      "lib/pivotal-tracker/story.rb",
      "pivotal-tracker.gemspec",
+     "test/extensions_test.rb",
      "test/pivotal_tracker_test.rb",
      "test/test_helper.rb"
   ]
@@ -34,7 +36,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{Ruby wrapper for the Pivotal Tracker API}
   s.test_files = [
-    "test/pivotal_tracker_test.rb",
+    "test/extensions_test.rb",
+     "test/pivotal_tracker_test.rb",
      "test/test_helper.rb"
   ]
 
