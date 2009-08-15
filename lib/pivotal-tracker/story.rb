@@ -4,6 +4,7 @@ class Story
   element :story_type, String
   element :url, String
   element :estimate, Integer
+  # possible states: unscheduled, unstarted, started, finished, accepted, rejected
   element :current_state, String
   element :name, String
   element :requested_by, String
@@ -22,9 +23,10 @@ class Story
   def to_xml(options = {})
     builder = Builder::XmlMarkup.new(options)
     builder.story do |story|
-      story.id   id.to_s   if id
-      story.type type.to_s if type
-      story.name name.to_s if name
+      Story.elements.each do |element_type|
+        element = send(element_type.name)
+        eval("story.#{element_type.name}('#{element.to_s}')") if element
+      end
     end
   end
 
