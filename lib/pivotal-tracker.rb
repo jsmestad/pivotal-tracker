@@ -32,6 +32,11 @@ class PivotalTracker
     Story.parse(response)
   end
 
+  def current_iteration
+    response = iterations_resource("/current").get
+    Iteration.parse(response).first
+  end
+
   def iterations
     response = iterations_resource.get
     Iteration.parse(response)
@@ -79,8 +84,8 @@ class PivotalTracker
     projects_resource["/#{@project_id}"]
   end
 
-  def iterations_resource
-    project_resource["/iterations"]
+  def iterations_resource(specific_iteration = "")
+    project_resource["/iterations#{specific_iteration}"]
   end
 
   def stories_resource
