@@ -24,7 +24,7 @@ class PivotalTracker
   
   def project
     response = project_resource.get
-    Project.parse(response).first
+    Project.parse(response)
   end
   
   def stories
