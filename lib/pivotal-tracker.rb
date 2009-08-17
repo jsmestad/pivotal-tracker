@@ -50,7 +50,7 @@ class PivotalTracker
   
   def find_story(id)
     response = story_resource(id).get
-    Story.parse(response).first
+    Story.parse(response)
   end
   
   def create_story(story)
