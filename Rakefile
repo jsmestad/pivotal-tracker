@@ -8,7 +8,7 @@ begin
     gem.summary = %Q{Ruby wrapper for the Pivotal Tracker API}
     gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/jsmestad/pivotal-tracker"
-    gem.authors = ["Justin Smestad", "Josh Nichols"]
+    gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
     gem.add_dependency "rest-client"
     gem.add_dependency "happymapper", ">= 0.2.4"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
