@@ -25,7 +25,7 @@ class Story
     builder.story do |story|
       Story.elements.each do |element_type|
         element = send(element_type.name)
-        eval("story.#{element_type.name}('#{element.to_s.gsub("'", "\'")}')") if element
+        eval("story.#{element_type.name}(\"#{element.to_s.gsub("\"", "\\\"")}\")") if element
       end
     end
   end
