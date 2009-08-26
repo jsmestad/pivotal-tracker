@@ -98,7 +98,9 @@ class PivotalTracker
 
   def coerce_to_filter(object)
     case object
-    when String, Integer,NilClass
+    when String
+      object
+    when Integer,NilClass
       object.to_s.inspect
     when Hash
       object.collect do |key, value|
