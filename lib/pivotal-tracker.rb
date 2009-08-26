@@ -13,6 +13,7 @@ require 'pivotal-tracker/extensions'
 require 'pivotal-tracker/project'
 require 'pivotal-tracker/story'
 require 'pivotal-tracker/iteration'
+require 'pivotal-tracker/note'
 
 class PivotalTracker
   def initialize(project_id, token, options = {})
@@ -20,8 +21,8 @@ class PivotalTracker
 
     @base_url = "http://www.pivotaltracker.com/services/v2" 
     @base_url.gsub! 'http', 'https'  if options[:use_ssl]
-  end
-  
+  end 
+
   def project
     response = project_resource.get
     Project.parse(response)
@@ -30,6 +31,11 @@ class PivotalTracker
   def stories
     response = stories_resource.get
     Story.parse(response)
+  end
+
+  def notes(id)
+    response = story_resource(id)["/notes"].get
+    Note.parse(response)
   end
 
   def current_iteration
