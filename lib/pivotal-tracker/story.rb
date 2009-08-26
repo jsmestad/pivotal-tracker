@@ -12,6 +12,7 @@ class Story
   element :created_at, DateTime
   element :accepted_at, DateTime
   element :labels, String
+  element :description, String
   has_one :iteration, Iteration
 
   def initialize(attributes = {})
