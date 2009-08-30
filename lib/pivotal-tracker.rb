@@ -38,6 +38,10 @@ class PivotalTracker
     Note.parse(response)
   end
 
+  def create_note(id, note)
+    story_resource(id)["/notes"].post note.to_xml
+  end
+
   def current_iteration
     response = iterations_resource("/current").get
     Iteration.parse(response).first
