@@ -8,6 +8,7 @@ require 'cgi'
 class Story; end
 class Iteration; end
 class Project; end
+class Note; end
 
 require 'pivotal-tracker/extensions'
 require 'pivotal-tracker/project'
