@@ -15,6 +15,7 @@ require 'pivotal-tracker/project'
 require 'pivotal-tracker/story'
 require 'pivotal-tracker/iteration'
 require 'pivotal-tracker/note'
+require 'pivotal-tracker/task'
 
 class PivotalTracker
   def initialize(project_id, token, options = {})
@@ -39,8 +40,21 @@ class PivotalTracker
     Note.parse(response)
   end
 
+  def tasks(id)
+    response = story_resource(id)["/tasks"].get
+    Task.parse(response)
+  end
+
   def create_note(id, note)
     story_resource(id)["/notes"].post note.to_xml
+  end
+
+  def create_task(id, task)
+    story_resource(id)["/tasks"].post task.to_xml
+  end
+  
+  def update_task(story_id, task_id, task)
+    story_resource(id)["/tasks/#{task_id}"].put task.to_xml
   end
 
   def current_iteration
