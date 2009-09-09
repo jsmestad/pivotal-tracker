@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal-tracker}
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = %q{2009-08-30}
+  s.date = %q{2009-09-09}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
      "lib/pivotal-tracker/note.rb",
      "lib/pivotal-tracker/project.rb",
      "lib/pivotal-tracker/story.rb",
+     "lib/pivotal-tracker/task.rb",
      "pivotal-tracker.gemspec",
      "test/extensions_test.rb",
      "test/pivotal_tracker_test.rb",
