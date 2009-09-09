@@ -14,10 +14,10 @@ class Note
 
   def to_xml(options = {})
     builder = Builder::XmlMarkup.new(options)
-    builder.note do |story|
+    builder.note do |note|
       Note.elements.each do |element_type|
         element = send(element_type.name)
-        eval("story.#{element_type.name}(\"#{element.to_s.gsub("\"", "\\\"")}\")") if element
+        eval("note.#{element_type.name}(\"#{element.to_s.gsub("\"", "\\\"")}\")") if element
       end
     end
   end

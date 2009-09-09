@@ -24,10 +24,10 @@ class Task
 
   def to_xml(options = {})
     builder = Builder::XmlMarkup.new(options)
-    builder.task do |story|
+    builder.task do |task|
       Task.elements.each do |element_type|
         element = send(element_type.name)
-        eval("story.#{element_type.name}(\"#{element.to_s.gsub("\"", "\\\"")}\")") if element
+        eval("task.#{element_type.name}(\"#{element.to_s.gsub("\"", "\\\"")}\")") if element
       end
     end
   end
