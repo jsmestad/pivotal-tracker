@@ -52,8 +52,14 @@ class PivotalTracker
   def create_task(id, task)
     story_resource(id)["/tasks"].post task.to_xml
   end
+
+  def find_task(story_id, task_id)
+    response = story_resource(story_id)["/tasks/#{task_id}"].get
+    Task.parse(response)
+  end
   
-  def update_task(story_id, task_id, task)
+  def update_task(story_id, task)
+    task_id = task.id
     story_resource(id)["/tasks/#{task_id}"].put task.to_xml
   end
 
