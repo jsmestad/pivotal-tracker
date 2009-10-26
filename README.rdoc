@@ -1,13 +1,13 @@
-Ruby Pivotal Tracker
-http://www.evalcode.com
+== Ruby Pivotal Tracker
+Ruby wrapper for Pivotal Tracker API, no frameworks required. Its pure Ruby.
 
-=========================
-Notes
-=========================
+== Notes
+
 There are a few areas that need to be modified in order for this code to work correctly.
 You must set the Token key in the initialize method as well as project_id.
-  
-=========================
-Contributers
-=========================
-Justin Smestad
+
+== Contributers
+
+* Terence Lee (http://github.com/hone)
+* Josh Nichols (http://github.com/technicalpickles)
+* Justin Smestad (http://github.com/jsmestad)
