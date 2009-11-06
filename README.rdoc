@@ -6,15 +6,14 @@ Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
 
 * Installing:
 
-  $ gem install pivotal-tracker
-
+    $ gem install pivotal-tracker
 
 * Contributing:
 
-  $ git clone git://github.com/jsmestad/pivotal-tracker
-  $ cd pivotal-tracker
-  $ gem bundle
-  $ ./gbin/rake
+    $ git clone git://github.com/jsmestad/pivotal-tracker
+    $ cd pivotal-tracker
+    $ gem bundle
+    $ ./gbin/rake
 
 == Notes
 
@@ -23,6 +22,6 @@ You must set the Token key in the initialize method as well as project_id.
 
 == Contributers
 
-* Terence Lee (http://github.com/hone)
-* Josh Nichols (http://github.com/technicalpickles)
 * Justin Smestad (http://github.com/jsmestad)
+* Josh Nichols (http://github.com/technicalpickles)
+* Terence Lee (http://github.com/hone)
