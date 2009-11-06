@@ -1,5 +1,20 @@
-== Ruby Pivotal Tracker
-Ruby wrapper for Pivotal Tracker API, no frameworks required. Its pure Ruby.
+= pivotal-tracker.rb
+
+Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
+
+== Getting Started
+
+* Installing:
+
+  $ gem install pivotal-tracker
+
+
+* Contributing:
+
+  $ git clone git://github.com/jsmestad/pivotal-tracker
+  $ cd pivotal-tracker
+  $ gem bundle
+  $ ./gbin/rake
 
 == Notes
 
