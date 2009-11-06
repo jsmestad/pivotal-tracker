@@ -1,5 +1,7 @@
-require 'rubygems'
+require File.join(File.dirname(__FILE__), 'vendor', 'gems', 'environment')
+Bundler.require_env
 require 'rake'
+require 'bundler'
 
 begin
   require 'jeweler'
@@ -9,50 +11,39 @@ begin
     gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/jsmestad/pivotal-tracker"
     gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-    gem.add_dependency "rest-client"
-    gem.add_dependency "happymapper", ">= 0.2.4"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    
+    manifest = Bundler::Environment.load(File.dirname(__FILE__) + '/Gemfile')
+    manifest.dependencies.each do |d|
+      next if d.only
+      gem.add_dependency(d.name, d.version)
+    end
+    
   end
 
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/*_test.rb'
-  test.verbose = true
+require 'spec/rake/spectask'
+Spec::Rake::SpecTask.new(:spec) do |spec|
+  spec.libs << 'lib' << 'spec'
+  spec.spec_files = FileList['spec/**/*_spec.rb']
 end
+
+Spec::Rake::SpecTask.new(:rcov) do |spec|
+  spec.libs << 'lib' << 'spec'
+  spec.pattern = 'spec/**/*_spec.rb'
+  spec.rcov = true
+end
+
+task :default => :spec
 
 begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/*_test.rb'
-    test.verbose = true
-  end
+  require 'yard'
+  YARD::Rake::YardocTask.new
 rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
+  task :yardoc do
+    abort "YARD is not available. In order to run yardoc, you must: sudo gem install yard"
   end
-end
-
-
-task :default => :test
-
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  if File.exist?('VERSION.yml')
-    config = YAML.load(File.read('VERSION.yml'))
-    version = "#{config[:major]}.#{config[:minor]}.#{config[:patch]}"
-  else
-    version = ""
-  end
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "ruby-pivotal-tracker #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
