@@ -84,7 +84,7 @@ class PivotalTracker
   end
   
   def create_story(story)
-    stories_resource.post story.to_xml
+    Story.parse stories_resource.post(story.to_xml)
   end
   
   def update_story(story)
