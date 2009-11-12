@@ -8,6 +8,8 @@ class Story; end
 class Iteration; end
 class Project; end
 class Note; end
+class Person; end
+class Membership; end
 
 require 'pivotal-tracker/extensions'
 require 'pivotal-tracker/project'
@@ -15,6 +17,8 @@ require 'pivotal-tracker/story'
 require 'pivotal-tracker/iteration'
 require 'pivotal-tracker/note'
 require 'pivotal-tracker/task'
+require 'pivotal-tracker/person'
+require 'pivotal-tracker/membership'
 
 class PivotalTracker
   def initialize(project_id, token, options = {})
@@ -76,6 +80,11 @@ class PivotalTracker
     filter_query = CGI::escape coerce_to_filter(filters)
     response = stories_resource["?filter=#{filter_query}"].get
     Story.parse(response)
+  end
+
+  def memberships(project)
+    response = project_resource(project.id)["/memberships"].get
+    Membership.parse(response)
   end
   
   def find_story(id)
