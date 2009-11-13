@@ -33,6 +33,11 @@ class PivotalTracker
     Project.parse(response)
   end
   
+  def projects
+    response = projects_resource.get
+    Project.parse(response)
+  end
+  
   def stories
     response = stories_resource.get
     Story.parse(response)
