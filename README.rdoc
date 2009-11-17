@@ -2,6 +2,8 @@
 
 Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
 
+* Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
+
 == Getting Started
 
 * Installing:
