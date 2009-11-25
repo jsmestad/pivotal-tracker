@@ -111,7 +111,7 @@ class PivotalTracker
   end
 
   def project_resource(project = @project_id)
-    projects_resource["/#{@project_id}"]
+    projects_resource["/#{project}"]
   end
 
   def iterations_resource(specific_iteration = "")
