@@ -1,3 +1,5 @@
+require 'happymapper'
+
 class Project
   include HappyMapper
   element :id, Integer
