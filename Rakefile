@@ -12,7 +12,7 @@ begin
     gem.homepage = "http://github.com/jsmestad/pivotal-tracker"
     gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
     
-    manifest = Bundler::Environment.load(File.dirname(__FILE__) + '/Gemfile')
+    manifest = Bundler::Environment.new(File.dirname(__FILE__) + '/Gemfile')
     manifest.dependencies.each do |d|
       next if d.only
       gem.add_dependency(d.name, d.version)
