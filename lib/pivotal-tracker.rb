@@ -76,6 +76,11 @@ class PivotalTracker
     Iteration.parse(response).first
   end
 
+  def backlog
+    response = iterations_resource("/backlog").get
+    Iteration.parse(response)
+  end
+
   def iterations
     response = iterations_resource.get
     Iteration.parse(response)
