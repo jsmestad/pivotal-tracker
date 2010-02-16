@@ -1,5 +1,3 @@
-require File.join(File.dirname(__FILE__), 'vendor', 'gems', 'environment')
-Bundler.require_env
 require 'rake'
 require 'bundler'
 
@@ -12,14 +10,13 @@ begin
     gem.homepage = "http://github.com/jsmestad/pivotal-tracker"
     gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
     
-    manifest = Bundler::Environment.new(File.dirname(__FILE__) + '/Gemfile')
-    manifest.dependencies.each do |d|
-      next if d.only
-      gem.add_dependency(d.name, d.version)
+    bundle = Bundler::Definition.from_gemfile('Gemfile')
+    bundle.dependencies.each do |dep|
+      next unless dep.groups.include?(:runtime)
+      gem.add_dependency(dep.name, dep.version_requirements.to_s)
     end
-    
   end
-
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end

@@ -1,15 +1,15 @@
-source 'http://gemcutter.org'
+source :gemcutter
 
-gem 'rest-client'
-gem 'happymapper', '>= 0.2.4'
-gem 'builder'
+group :runtime do
+  gem 'rest-client'
+  gem 'happymapper', '>= 0.2.4'
+  gem 'builder'
+end
 
-gem 'rspec',      :only => :test, :require_as => 'spec'
-gem 'rake',       :only => :test
-gem 'bundler',    :only => :test
-gem 'jeweler',    :only => :test
-gem 'stale_fish', :only => :test
-
-bin_path 'gbin'
-
-disable_system_gems
+group :test do
+  gem 'rspec', :require => 'spec'
+  gem 'rake' 
+  gem 'bundler', '~> 0.9.5'
+  gem 'jeweler'
+  gem 'stale_fish'
+end

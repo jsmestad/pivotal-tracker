@@ -1,4 +1,5 @@
-Bundler.require_env
+require 'rest_client'
+require 'happymapper'
 require 'builder'
 require 'cgi'
 
