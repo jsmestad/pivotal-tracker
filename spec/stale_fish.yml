@@ -1,0 +1,13 @@
+stale:
+  configuration:
+    use_fakeweb: true
+  projects:
+    file_path: RAILS_ROOT + '/spec/fixtures/projects.xml'
+    source_url: http://www.pivotaltracker.com/services/v3/projects
+    last_updated_at: 
+    update_frequency: 2.weeks
+  project:
+    file_path: RAILS_ROOT + '/spec/fixtures/project.xml'
+    source_url: http://www.pivotaltracker.com/services/v3/projects/ + PROJECT_ID
+    last_updated_at: 
+    update_frequency: 2.weeks
