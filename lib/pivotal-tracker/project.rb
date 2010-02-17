@@ -1,27 +1,33 @@
 module PivotalTracker
   class Project
+    include HappyMapper
 
     class << self
       def all
-        # /projects
-        # Parse each and create new project array
-        # response.each {|x| projects << parse(x) }
-        #parse(connection['/projects'].get)
-        Client.connection['/projects'].get
+        @found = parse(Client.connection['/projects'].get)
       end
 
       def find(id)
-        # http://www.pivotaltracker.com/services/v2/projects/#{id}
-        # parse response
-        #parse(connection['/projects/#{id}'])
-        Client.connection["/projects/#{id}"].get
+        if @found
+          @found.detect { |document| document.id == id }
+        else
+          parse(Client.connection["/projects/#{id}"].get)
+        end
       end
     end
 
-    attr_accessor :stories
+    element :id, Integer
+    element :name, String
+    element :iteration_length, Integer
+    element :week_start_day, String
+    element :point_scale, String
 
-    def initialize
-      self.stories ||= []
+    def stories
+      @stories = Proxy.new(self, Story)
+    end
+
+    def memberships
+      @memberships = Proxy.new(self, Membership)
     end
 
   end
