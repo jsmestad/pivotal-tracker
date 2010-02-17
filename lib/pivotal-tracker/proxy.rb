@@ -19,12 +19,6 @@ module PivotalTracker
       return proxy_found.detect { |document| document.id == param }
     end
 
-    def build(args={})
-      object = @target.new(args)
-      found << object
-      object
-    end
-
     def <<(*objects)
       objects.flatten.each do |object|
         @found << object
