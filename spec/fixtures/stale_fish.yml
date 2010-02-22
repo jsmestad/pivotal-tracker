@@ -1,13 +1,13 @@
 stale:
   projects:
     file: RAILS_ROOT + '/spec/fixtures/projects.xml'
-    update_frequency: 2.weeks
+    update_interval: 2.weeks
     check_against: http://www.pivotaltracker.com/services/v3/projects
     request_type: GET
     last_updated_at: 
   project:
     file: RAILS_ROOT + '/spec/fixtures/project.xml'
-    update_frequency: 2.weeks
+    update_interval: 2.weeks
     check_against: http://www.pivotaltracker.com/services/v3/projects/59022
     request_type: GET
     last_updated_at: 
