@@ -1,1 +1,42 @@
-Access denied.
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <id>59022</id>
+  <name>pivotal-tracker gem</name>
+  <iteration_length type="integer">1</iteration_length>
+  <week_start_day>Monday</week_start_day>
+  <point_scale>0,1,2,3</point_scale>
+  <account>Justin Smestad</account>
+  <velocity_scheme>Average of 3 iterations</velocity_scheme>
+  <current_velocity>10</current_velocity>
+  <initial_velocity>10</initial_velocity>
+  <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
+  <labels></labels>
+  <last_activity_at type="datetime">2010/02/17 15:43:07 MST</last_activity_at>
+  <allow_attachments>true</allow_attachments>
+  <public>true</public>
+  <use_https>false</use_https>
+  <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
+  <commit_mode>false</commit_mode>
+  <memberships>
+    <membership>
+      <id>207328</id>
+      <person>
+        <email>justin.smestad@factorylabs.com</email>
+        <name>Justin Smestad</name>
+        <initials>JS</initials>
+      </person>
+      <role>Owner</role>
+    </membership>
+    <membership>
+      <id>207330</id>
+      <person>
+        <email>hone02@gmail.com</email>
+        <name>Terence Lee</name>
+        <initials>TL</initials>
+      </person>
+      <role>Owner</role>
+    </membership>
+  </memberships>
+  <integrations>
+  </integrations>
+</project>
