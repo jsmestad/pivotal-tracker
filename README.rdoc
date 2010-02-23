@@ -2,7 +2,31 @@
 
 Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
 
-Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
+== Note
+
+Version 0.0.8 and above are incompatible with previous versions. 
+
+== Features
+
+* Compatible with Pivotal Tracker API version 3
+* ActiveRecord-style Wrapper API
+* Support for SSL protected repositories
+
+== Overview
+
+    PivotalTracker::Client.token('myusername@email.com', 'secretpassword')        # Automatically fetch API Token
+    PivotalTracker::Client.token = 'jkfduisj97823974j2kl24899234'                 # Manually set API Token
+  
+    @projects = PivotalTracker::Project.all                                       # return all projects
+    @a_project = PivotalTracker::Project.find('84739')                            # find project with a given ID
+    
+    @a_project.stories.all                                                        # return all stories for "a_project"
+    @a_project.stories.all(:label => 'overdue', :story_type => ['bug', 'chore'])  # return all stories that match the passed filters
+    @a_project.stories.find('847762630')                                          # find story with a given ID
+    
+    # all tracker defined filters are allowed, as well as :limit & :offset for pagination
+
+The API is based on the following this gist: http://gist.github.com/283120
 
 == Getting Started
 
@@ -10,17 +34,17 @@ Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
 
     $ gem install pivotal-tracker
 
-* Contributing:
+* Contributing (requires Bundler >= 0.9.7):
 
     $ git clone git://github.com/jsmestad/pivotal-tracker
     $ cd pivotal-tracker
-    $ gem bundle
-    $ ./gbin/rake
+    $ bundle install
+    $ bundle exec rake
+    
+== Additional Information
 
-== Notes
-
-There are a few areas that need to be modified in order for this code to work correctly.
-You must set the Token key in the initialize method as well as project_id.
+Wiki: http://wiki.github.com/jsmestad/pivotal-tracker
+Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
 
 == Contributers
 
