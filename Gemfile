@@ -8,8 +8,8 @@ end
 
 group :test do
   gem 'rspec', :require => 'spec'
-  gem 'rake' 
+  gem 'rake'
   gem 'bundler', '~> 0.9.5'
   gem 'jeweler'
-  gem 'stale_fish'
+  gem 'stale_fish', '~> 1.3.0', :path => '/Users/justinsmestad/Documents/Development/github_projects/stale_fish'
 end
