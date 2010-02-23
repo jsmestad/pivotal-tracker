@@ -2,7 +2,7 @@ module PivotalTracker
   class Client
 
     class << self
-      attr_writer :use_ssl
+      attr_writer :use_ssl, :token
     end
 
     def self.use_ssl
