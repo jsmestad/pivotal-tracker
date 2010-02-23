@@ -4,9 +4,7 @@ module PivotalTracker
 
     class << self
       def all(project, options={})
-
         params = PivotalTracker.encode_options(options)
-        p params.inspect
         parse(Client.connection["/projects/#{project.id}/stories#{params}"].get)
       end
     end

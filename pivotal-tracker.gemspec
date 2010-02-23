@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/pivotal-tracker.rb",
      "lib/pivotal-tracker/client.rb",
-     "lib/pivotal-tracker/extensions.rb",
      "lib/pivotal-tracker/iteration.rb",
      "lib/pivotal-tracker/membership.rb",
      "lib/pivotal-tracker/note.rb",
