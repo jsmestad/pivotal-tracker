@@ -11,9 +11,9 @@ module PivotalTracker
 
     def self.token(username, password, method='post')
       response = if method == 'post'
-        RestClient.post 'https://www.pivotaltracker.com/services/tokens/active', :username => username, :password => password
+        RestClient.post 'https://www.pivotaltracker.com/services/v3/tokens/active', :username => username, :password => password
       else
-        RestClient.get "https://#{username}:#{password}@www.pivotaltracker.com/services/tokens/active"
+        RestClient.get "https://#{username}:#{password}@www.pivotaltracker.com/services/v3/tokens/active"
       end
       @token ||= Nokogiri::XML(response).search('guid').inner_html
     end
@@ -22,9 +22,9 @@ module PivotalTracker
     # this is your connection for the entire module
     def self.connection(options={})
       if use_ssl
-        @secure_connection ||= RestClient::Resource.new('https://www.pivotaltracker.com/services/v2', :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+        @secure_connection ||= RestClient::Resource.new('https://www.pivotaltracker.com/services/v3', :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
       else
-        @connection ||= RestClient::Resource.new('http://www.pivotaltracker.com/services/v2', :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+        @connection ||= RestClient::Resource.new('http://www.pivotaltracker.com/services/v3', :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
       end
     end
 

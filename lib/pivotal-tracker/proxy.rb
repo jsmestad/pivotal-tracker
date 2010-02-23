@@ -8,14 +8,15 @@ module PivotalTracker
     def initialize(owner, target)
       @owner = owner
       @target = target
+      @options = nil
     end
 
-    def all
-      proxy_found
+    def all(options={})
+      proxy_found(options)
     end
 
-    def find(param)
-      return all if param == :all
+    def find(param, options={})
+      return all(options) if param == :all
       return proxy_found.detect { |document| document.id == param }
     end
 
@@ -27,8 +28,13 @@ module PivotalTracker
 
     protected
 
-      def proxy_found
-        @found || load_found
+      def proxy_found(options)
+        # Check to see if options have changed
+        if @opts == options
+          @found || load_found(options)
+        else
+          load_found(options)
+        end
       end
 
     private
@@ -37,8 +43,9 @@ module PivotalTracker
         @target.send(method, *args, &block)
       end
 
-      def load_found
-        @target.all(@owner)
+      def load_found(options)
+        @opts = options
+        @target.all(@owner, @opts)
       end
 
   end
