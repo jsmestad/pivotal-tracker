@@ -3,11 +3,11 @@ require 'rest_client'
 require 'happymapper'
 require 'nokogiri'
 
-require 'pivotal-tracker/proxy'
-require 'pivotal-tracker/client'
-require 'pivotal-tracker/project'
-require 'pivotal-tracker/story'
-require 'pivotal-tracker/membership'
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'proxy')
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'client')
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'project')
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'story')
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'membership')
 
 module PivotalTracker
 
