@@ -22,6 +22,8 @@ module PivotalTracker
     element :accepted_at, DateTime
     element :labels, String
     element :description, String
+    element :jira_id, Integer
+    element :jira_url, String
 
   end
 end
