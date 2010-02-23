@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal-tracker}
-  s.version = "0.0.8.pre3"
+  s.version = "0.0.8.pre4"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
      "spec/pivotal_tacker_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
+     "spec/support/stale_fish_fixtures.rb",
      "spec/unit/pivotal-tracker/membership_spec.rb",
      "spec/unit/pivotal-tracker/project_spec.rb",
      "spec/unit/pivotal-tracker/story_spec.rb"
@@ -55,6 +56,7 @@ Gem::Specification.new do |s|
     "spec/extensions_spec.rb",
      "spec/pivotal_tacker_spec.rb",
      "spec/spec_helper.rb",
+     "spec/support/stale_fish_fixtures.rb",
      "spec/unit/pivotal-tracker/membership_spec.rb",
      "spec/unit/pivotal-tracker/project_spec.rb",
      "spec/unit/pivotal-tracker/story_spec.rb"
