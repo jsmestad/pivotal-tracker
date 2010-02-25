@@ -2,10 +2,13 @@ module PivotalTracker
   class Activity
     include HappyMapper
     class << self
-      def all(options={})
-        # TODO: make this project specific
+      def all(project=nil, options={})
         params = self.encode_options(options)
-        parse(Client.connection["/activities#{params}"].get)
+        if project
+          parse(Client.connection["/projects/#{project.id}/activities#{params}"].get)
+        else
+          parse(Client.connection["/activities#{params}"].get)
+        end
       end
 
       protected

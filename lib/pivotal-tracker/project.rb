@@ -22,6 +22,10 @@ module PivotalTracker
     element :week_start_day, String
     element :point_scale, String
 
+    def activities
+      @activities ||= Proxy.new(self, Activity)
+    end
+
     def iterations
       @iterations ||= Proxy.new(self, Iteration)
     end
