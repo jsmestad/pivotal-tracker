@@ -23,11 +23,11 @@ module PivotalTracker
     element :point_scale, String
 
     def stories
-      @stories = Proxy.new(self, Story)
+      @stories ||= Proxy.new(self, Story)
     end
 
     def memberships
-      @memberships = Proxy.new(self, Membership)
+      @memberships ||= Proxy.new(self, Membership)
     end
 
   end

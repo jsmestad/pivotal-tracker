@@ -12,7 +12,7 @@
     <initial_velocity>10</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
     <labels>ab_test,admin,backend,blocked,cloud migration,cms,dag,data issues,dealer,design,discuss,duplicate,enhancement,export,import,invalid,is,pending,spiff,verify</labels>
-    <last_activity_at type="datetime">2010/02/23 14:23:07 MST</last_activity_at>
+    <last_activity_at type="datetime">2010/02/25 10:25:08 MST</last_activity_at>
     <allow_attachments>true</allow_attachments>
     <public>false</public>
     <use_https>false</use_https>

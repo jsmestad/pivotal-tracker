@@ -8,7 +8,7 @@ module PivotalTracker
     def initialize(owner, target)
       @owner = owner
       @target = target
-      @options = nil
+      @opts = nil
     end
 
     def all(options={})
@@ -17,7 +17,7 @@ module PivotalTracker
 
     def find(param, options={})
       return all(options) if param == :all
-      return proxy_found.detect { |document| document.id == param }
+      return proxy_found(options).detect { |document| document.id == param }
     end
 
     def <<(*objects)

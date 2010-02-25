@@ -3,7 +3,7 @@ module PivotalTracker
     include HappyMapper
 
     class << self
-      def all(project)
+      def all(project, options={})
         parse(Client.connection["/projects/#{project.id}/memberships"].get)
       end
     end

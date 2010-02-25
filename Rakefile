@@ -9,7 +9,7 @@ begin
     gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/jsmestad/pivotal-tracker"
     gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-    
+
     bundle = Bundler::Definition.from_gemfile('Gemfile')
     bundle.dependencies.each do |dep|
       next unless dep.groups.include?(:runtime)

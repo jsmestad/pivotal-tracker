@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memberships type="array">
+  <membership>
+    <id>207328</id>
+    <person>
+      <email>justin.smestad@factorylabs.com</email>
+      <name>Justin Smestad</name>
+      <initials>JS</initials>
+    </person>
+    <role>Owner</role>
+    <project>
+      <id>59022</id>
+      <name>pivotal-tracker gem</name>
+    </project>
+  </membership>
+  <membership>
+    <id>207330</id>
+    <person>
+      <email>hone02@gmail.com</email>
+      <name>Terence Lee</name>
+      <initials>TL</initials>
+    </person>
+    <role>Owner</role>
+    <project>
+      <id>59022</id>
+      <name>pivotal-tracker gem</name>
+    </project>
+  </membership>
+</memberships>

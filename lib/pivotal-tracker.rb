@@ -16,7 +16,7 @@ module PivotalTracker
 
   def self.encode_options(options)
     return nil if !options.is_a?(Hash) || options.empty?
-    
+
     options_string = []
     options_string << "limit=#{options.delete(:limit)}" if options[:limit]
     options_string << "offset=#{options.delete(:offset)}" if options[:offset]
@@ -27,8 +27,8 @@ module PivotalTracker
       filters << "#{key}%3A#{values}" # %3A => :
     end
     options_string << "filter=#{filters.join('%20')}" unless filters.empty? # %20 => &amp;
-    
+
     return "?#{options_string.join('&')}"
   end
-  
+
 end

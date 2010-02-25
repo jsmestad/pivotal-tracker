@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stories type="array" count="2" limit="20" total="2">
+  <story>
+    <id type="integer">2524690</id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/2524690</url>
+    <estimate type="integer">3</estimate>
+    <current_state>unstarted</current_state>
+    <description></description>
+    <name>another gem</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/02/17 15:42:58 MST</created_at>
+    <updated_at type="datetime">2010/02/17 15:43:07 MST</updated_at>
+  </story>
+  <story>
+    <id type="integer">2524689</id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/2524689</url>
+    <estimate type="integer">2</estimate>
+    <current_state>unstarted</current_state>
+    <description></description>
+    <name>some gem</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/02/17 15:42:52 MST</created_at>
+    <updated_at type="datetime">2010/02/17 15:43:06 MST</updated_at>
+  </story>
+</stories>
