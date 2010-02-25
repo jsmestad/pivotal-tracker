@@ -21,7 +21,7 @@ Spec::Runner.configure do |config|
   # config.include(Rack::Test::Methods)
 
   config.before :suite do
-    StaleFish.update_stale!
+    StaleFish.update_stale
   end
 
 end

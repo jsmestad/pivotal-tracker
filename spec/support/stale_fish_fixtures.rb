@@ -21,6 +21,14 @@ module StaleFishFixtures
       connection["/projects/59022/stories/2606200/tasks"].get
     end
 
+    def update_activity_fixture
+      connection["/activities"].get
+    end
+
+    def update_project_activity_fixture
+      connection["/projects/59022/activities"].get
+    end
+
     protected
 
       def connection
