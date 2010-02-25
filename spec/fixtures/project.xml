@@ -10,8 +10,8 @@
   <current_velocity>10</current_velocity>
   <initial_velocity>10</initial_velocity>
   <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-  <labels></labels>
-  <last_activity_at type="datetime">2010/02/17 15:43:07 MST</last_activity_at>
+  <labels>test_dependent</labels>
+  <last_activity_at type="datetime">2010/02/25 11:55:44 MST</last_activity_at>
   <allow_attachments>true</allow_attachments>
   <public>true</public>
   <use_https>false</use_https>

@@ -5,9 +5,13 @@ module PivotalTracker
     class << self
       def all(project, options={})
         params = PivotalTracker.encode_options(options)
-        parse(Client.connection["/projects/#{project.id}/stories#{params}"].get)
+        stories = parse(Client.connection["/projects/#{project.id}/stories#{params}"].get)
+        stories.each { |s| s.project_id = project.id }
+        return stories
       end
     end
+
+    attr_accessor :project_id
 
     element :id, Integer
     element :story_type, String
@@ -24,6 +28,10 @@ module PivotalTracker
     element :description, String
     element :jira_id, Integer
     element :jira_url, String
+
+    def tasks
+      @tasks ||= Proxy.new(self, Task)
+    end
 
   end
 end

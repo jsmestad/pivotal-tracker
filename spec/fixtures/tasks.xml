@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tasks type="array">
+  <task>
+    <id type="integer">179024</id>
+    <description>Task number 1</description>
+    <position>1</position>
+    <complete>false</complete>
+    <created_at type="datetime">2010/02/25 11:55:00 MST</created_at>
+  </task>
+  <task>
+    <id type="integer">179025</id>
+    <description>Number 2 Task</description>
+    <position>2</position>
+    <complete>false</complete>
+    <created_at type="datetime">2010/02/25 11:55:04 MST</created_at>
+  </task>
+  <task>
+    <id type="integer">179026</id>
+    <description>3rd task is a charm</description>
+    <position>3</position>
+    <complete>true</complete>
+    <created_at type="datetime">2010/02/25 11:55:09 MST</created_at>
+  </task>
+</tasks>
