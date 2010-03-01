@@ -25,7 +25,7 @@ Version 0.0.8 and above are incompatible with previous versions.
     @a_project.stories.find(847762630)                                            # find story with a given ID
     
     @a_project.stories.create(:name => 'My Story', :story_type => 'feature')      # create a story for this project
-    @a_project.stories << PivotalTracker::Story(84739, :name => 'Another Story')  # same as above, useful for copying/cloning from proj
+    @a_project.stories << PivotalTracker::Story.new(84739, :name => 'Ur Story')   # same as above, useful for copying/cloning from proj
 
     # all tracker defined filters are allowed, as well as :limit & :offset for pagination
 
