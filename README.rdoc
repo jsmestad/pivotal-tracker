@@ -18,12 +18,15 @@ Version 0.0.8 and above are incompatible with previous versions.
     PivotalTracker::Client.token = 'jkfduisj97823974j2kl24899234'                 # Manually set API Token
   
     @projects = PivotalTracker::Project.all                                       # return all projects
-    @a_project = PivotalTracker::Project.find('84739')                            # find project with a given ID
+    @a_project = PivotalTracker::Project.find(84739)                              # find project with a given ID
     
     @a_project.stories.all                                                        # return all stories for "a_project"
     @a_project.stories.all(:label => 'overdue', :story_type => ['bug', 'chore'])  # return all stories that match the passed filters
-    @a_project.stories.find('847762630')                                          # find story with a given ID
+    @a_project.stories.find(847762630)                                            # find story with a given ID
     
+    @a_project.stories.create(:name => 'My Story', :story_type => 'feature')      # create a story for this project
+    @a_project.stories << PivotalTracker::Story(84739, :name => 'Another Story')  # same as above, useful for copying/cloning from proj
+
     # all tracker defined filters are allowed, as well as :limit & :offset for pagination
 
 The API is based on the following this gist: http://gist.github.com/283120
