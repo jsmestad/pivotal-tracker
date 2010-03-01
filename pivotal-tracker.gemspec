@@ -5,47 +5,52 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal-tracker}
-  s.version = "0.0.8.pre4"
+  s.version = "0.0.8.pre5"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = %q{2010-02-23}
+  s.date = %q{2010-03-01}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
   ]
   s.files = [
-    ".document",
-     ".gitignore",
+    ".gitignore",
      "Gemfile",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
      "lib/pivotal-tracker.rb",
+     "lib/pivotal-tracker/activity.rb",
      "lib/pivotal-tracker/client.rb",
      "lib/pivotal-tracker/iteration.rb",
      "lib/pivotal-tracker/membership.rb",
      "lib/pivotal-tracker/note.rb",
-     "lib/pivotal-tracker/person.rb",
      "lib/pivotal-tracker/project.rb",
      "lib/pivotal-tracker/proxy.rb",
      "lib/pivotal-tracker/story.rb",
      "lib/pivotal-tracker/task.rb",
      "lib/pivotal_tracker.rb",
      "pivotal-tracker.gemspec",
-     "spec/extensions_spec.rb",
+     "spec/fixtures/activity.xml",
+     "spec/fixtures/memberships.xml",
      "spec/fixtures/project.xml",
+     "spec/fixtures/project_activity.xml",
      "spec/fixtures/projects.xml",
      "spec/fixtures/stale_fish.yml",
-     "spec/pivotal_tacker_spec.rb",
+     "spec/fixtures/stories.xml",
+     "spec/fixtures/tasks.xml",
      "spec/spec.opts",
      "spec/spec_helper.rb",
      "spec/support/stale_fish_fixtures.rb",
+     "spec/unit/pivotal-tracker/activity_spec.rb",
+     "spec/unit/pivotal-tracker/iteration_spec.rb",
      "spec/unit/pivotal-tracker/membership_spec.rb",
      "spec/unit/pivotal-tracker/project_spec.rb",
-     "spec/unit/pivotal-tracker/story_spec.rb"
+     "spec/unit/pivotal-tracker/story_spec.rb",
+     "spec/unit/pivotal-tracker/task_spec.rb"
   ]
   s.homepage = %q{http://github.com/jsmestad/pivotal-tracker}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -53,13 +58,14 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Ruby wrapper for the Pivotal Tracker API}
   s.test_files = [
-    "spec/extensions_spec.rb",
-     "spec/pivotal_tacker_spec.rb",
-     "spec/spec_helper.rb",
+    "spec/spec_helper.rb",
      "spec/support/stale_fish_fixtures.rb",
+     "spec/unit/pivotal-tracker/activity_spec.rb",
+     "spec/unit/pivotal-tracker/iteration_spec.rb",
      "spec/unit/pivotal-tracker/membership_spec.rb",
      "spec/unit/pivotal-tracker/project_spec.rb",
-     "spec/unit/pivotal-tracker/story_spec.rb"
+     "spec/unit/pivotal-tracker/story_spec.rb",
+     "spec/unit/pivotal-tracker/task_spec.rb"
   ]
 
   if s.respond_to? :specification_version then

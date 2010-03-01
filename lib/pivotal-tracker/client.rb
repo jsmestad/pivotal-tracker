@@ -18,7 +18,6 @@ module PivotalTracker
       @token ||= Nokogiri::XML(response).search('guid').inner_html
     end
 
-    # TODO: document with YARD
     # this is your connection for the entire module
     def self.connection(options={})
       if use_ssl

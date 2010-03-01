@@ -4,7 +4,8 @@ module PivotalTracker
 
     class << self
       def all(project, options={})
-        parse(Client.connection["/project/#{project.id}/iterations"].get)
+        params = PivotalTracker.encode_options(options.only(:limit, :offset))
+        parse(Client.connection["/project/#{project.id}/iterations#{params}"].get)
       end
     end
 

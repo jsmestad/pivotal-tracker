@@ -22,7 +22,19 @@ module PivotalTracker
 
     def <<(*objects)
       objects.flatten.each do |object|
-        @found << object
+        if object.create
+          @found << object
+        end
+      end
+    end
+
+    def create(args)
+      object = @target.new(@owner, args)
+      if object.create
+        (@found ||= []) << object
+        return @found
+      else
+        return object
       end
     end
 
