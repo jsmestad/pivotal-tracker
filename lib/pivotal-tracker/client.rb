@@ -21,12 +21,12 @@ module PivotalTracker
     # TODO: document with YARD
     # this is your connection for the entire module
     def self.connection(options={})
-      if use_ssl
-        @secure_connection ||= RestClient::Resource.new('https://www.pivotaltracker.com/services/v3', :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
-      else
-        @connection ||= RestClient::Resource.new('http://www.pivotaltracker.com/services/v3', :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
-      end
+      @connection ||= RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
     end
 
+    protected
+    def self.protocol
+      use_ssl ? 'https' : 'http'
+    end
   end
 end
