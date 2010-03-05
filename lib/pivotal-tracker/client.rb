@@ -14,7 +14,7 @@ module PivotalTracker
         else
           RestClient.get "https://#{username}:#{password}@www.pivotaltracker.com/services/v3/tokens/active"
         end
-        @token ||= Nokogiri::XML(response).search('guid').inner_html
+        @token ||= Nokogiri::XML(response.body).search('guid').inner_html
       end
 
       # this is your connection for the entire module

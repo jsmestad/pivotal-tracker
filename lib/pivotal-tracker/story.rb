@@ -29,7 +29,7 @@ module PivotalTracker
     element :jira_id, Integer
     element :jira_url, String
 
-    def initialize(project, attributes={})
+    def initialize(project=nil, attributes={})
       self.project_id = project.is_a?(Integer) ? project : project.id
 
       attributes.each do |key, value|

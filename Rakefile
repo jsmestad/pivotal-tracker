@@ -13,7 +13,7 @@ begin
     bundle = Bundler::Definition.from_gemfile('Gemfile')
     bundle.dependencies.each do |dep|
       next unless dep.groups.include?(:runtime)
-      gem.add_dependency(dep.name, dep.version_requirements.to_s)
+      gem.add_dependency(dep.name, dep.requirement.to_s)
     end
   end
   Jeweler::GemcutterTasks.new

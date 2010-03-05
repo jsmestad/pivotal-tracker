@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal-tracker}
-  s.version = "0.0.8.pre5"
+  s.version = "0.0.8.pre6"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = %q{2010-03-01}
+  s.date = %q{2010-03-05}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "lib/pivotal-tracker.rb",
      "lib/pivotal-tracker/activity.rb",
      "lib/pivotal-tracker/client.rb",
+     "lib/pivotal-tracker/extensions.rb",
      "lib/pivotal-tracker/iteration.rb",
      "lib/pivotal-tracker/membership.rb",
      "lib/pivotal-tracker/note.rb",
@@ -55,7 +56,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/jsmestad/pivotal-tracker}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Ruby wrapper for the Pivotal Tracker API}
   s.test_files = [
     "spec/spec_helper.rb",
