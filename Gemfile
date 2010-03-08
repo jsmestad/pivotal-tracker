@@ -12,5 +12,5 @@ group :test do
   gem 'rake'
   gem 'bundler', '~> 0.9.5'
   gem 'jeweler'
-  gem 'stale_fish', '~> 1.3.0', :git => 'git://github.com/jsmestad/stale_fish.git'
+  gem 'stale_fish', '~> 1.3.0'
 end

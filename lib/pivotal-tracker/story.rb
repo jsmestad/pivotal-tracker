@@ -40,7 +40,7 @@ module PivotalTracker
     def create
       return false if project_id.nil?
       response = Client.connection["/projects/#{project_id}/stories"].post "#{self.to_xml}", :content_type => 'application/xml'
-      doc = Nokogiri::XML(response)
+      doc = Nokogiri::XML(response.body)
       @id = doc.search('id').inner_html
       self.url = doc.search('url').inner_html
       return true
