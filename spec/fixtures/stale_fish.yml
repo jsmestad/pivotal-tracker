@@ -1,5 +1,5 @@
 --- !omap
--stale:
+- stale:
   - memberships:
       file: 'memberships.xml'
       update_interval: 2.weeks
