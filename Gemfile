@@ -1,10 +1,10 @@
 source :gemcutter
 
 group :runtime do
-  gem 'rest-client'
+  gem 'rest-client', '~> 1.4.1'
   gem 'happymapper', '>= 0.2.4'
   gem 'builder'
-  gem 'nokogiri'
+  gem 'nokogiri', '~> 1.4.1'
 end
 
 group :test do
