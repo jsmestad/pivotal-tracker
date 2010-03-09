@@ -28,6 +28,7 @@ module PivotalTracker
 
           return "?#{options_string.join('&')}"
         end
+
     end
 
     element :id, Integer
