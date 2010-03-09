@@ -3,5 +3,5 @@
 coverage
 rdoc
 pkg
-vendor
-gbin
+
+.bundle
