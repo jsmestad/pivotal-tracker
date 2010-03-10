@@ -13,7 +13,8 @@ module PivotalTracker
     element :number, Integer
     element :start, DateTime
     element :finish, DateTime
-    # TODO: need to implement story building
-    # has_many :stories, Story
+
+    has_many :stories, Story
+
   end
 end

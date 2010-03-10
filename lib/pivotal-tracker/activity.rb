@@ -38,6 +38,8 @@ module PivotalTracker
     element :author, String
     element :project_id, Integer
     element :description, String
-    # TODO: <stories><story>...</story></stories>
+
+    has_many :stories, Story
+
   end
 end
