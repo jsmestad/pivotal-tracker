@@ -22,9 +22,8 @@ module PivotalTracker
 
     def <<(*objects)
       objects.flatten.each do |object|
-        if object.create
-          (@found ||= []) << object
-          return @found
+        if obj = object.create
+          return obj
         else
           return object
         end
@@ -32,10 +31,9 @@ module PivotalTracker
     end
 
     def create(args)
-      object = @target.new(@owner, args)
-      if object.create
-        (@found ||= []) << object
-        return @found
+      object = @target.new(args.merge({:owner => @owner}))
+      if obj = object.create
+        return obj
       else
         return object
       end
@@ -46,7 +44,7 @@ module PivotalTracker
       def proxy_found(options)
         # Check to see if options have changed
         if @opts == options
-          @found || load_found(options)
+          @found ||= load_found(options)
         else
           load_found(options)
         end

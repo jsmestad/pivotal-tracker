@@ -17,4 +17,11 @@ describe PivotalTracker::Story do
       @project.stories.find(2524690).should be_a(PivotalTracker::Story)
     end
   end
+
+  context ".create" do
+    it "should return the created story" do
+      @project.stories.create(:name => 'Create Stuff').should be_a(PivotalTracker::Story)
+    end
+  end
+
 end

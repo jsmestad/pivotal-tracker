@@ -17,7 +17,6 @@ module PivotalTracker
     element :story_type, String
     element :url, String
     element :estimate, Integer
-    # possible states: unscheduled, unstarted, started, finished, accepted, rejected
     element :current_state, String
     element :name, String
     element :requested_by, String
@@ -29,25 +28,34 @@ module PivotalTracker
     element :jira_id, Integer
     element :jira_url, String
 
-    def initialize(project=nil, attributes={})
-      self.project_id = project.is_a?(Integer) ? project : project.id
+    def initialize(attributes={})
+      self.project_id = attributes.delete(:owner).id if attributes[:owner]
 
-      attributes.each do |key, value|
-        self.send("#{key}=", value.is_a?(Array) ? values.join(',') : value )
-      end
+      update_attributes(attributes)
     end
 
     def create
-      return false if project_id.nil?
-      response = Client.connection["/projects/#{project_id}/stories"].post "#{self.to_xml}", :content_type => 'application/xml'
-      doc = Nokogiri::XML(response.body)
-      @id = doc.search('id').inner_html
-      self.url = doc.search('url').inner_html
-      return true
+      return self if project_id.nil?
+      response = Client.connection["/projects/#{project_id}/stories"].post(self.to_xml, :content_type => 'application/xml')
+      return Story.parse(response)
+    end
+
+    def update(attrs={})
+      update_attributes(attrs)
+      response = Client.connection["/projects/#{project_id}/stories/#{id}"].put(self.to_xml, :content_type => 'application/xml')
+      return Story.parse(response)
+    end
+
+    def delete
+      Client.connection["/projects/#{project_id}/stories/#{id}"].delete
     end
 
     def tasks
       @tasks ||= Proxy.new(self, Task)
+    end
+
+    def project=(proj_id)
+      self.project_id = proj_id
     end
 
     protected
@@ -68,6 +76,12 @@ module PivotalTracker
           }
         end
         return builder.to_xml
+      end
+
+      def update_attributes(attrs)
+        attrs.each do |k, v|
+          self.send("#{key}=", value.is_a?(Array) ? value.join(',') : value )
+        end
       end
   end
 end
