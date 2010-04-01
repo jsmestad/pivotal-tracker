@@ -7,6 +7,10 @@ module PivotalTracker
         params = PivotalTracker.encode_options(options)
         parse(Client.connection["/projects/#{project.id}/iterations#{params}"].get)
       end
+      
+      def current(project)
+        parse(Client.connection["projects/#{project.id}/iterations/current"].get)
+      end
     end
 
     element :id, Integer
