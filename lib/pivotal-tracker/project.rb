@@ -18,9 +18,14 @@ module PivotalTracker
 
     element :id, Integer
     element :name, String
-    element :iteration_length, Integer
     element :week_start_day, String
     element :point_scale, String
+    element :week_start_day, String
+    element :velocity_scheme, String
+    element :iteration_length, Integer
+    element :initial_velocity, Integer
+    element :current_velocity, Integer
+    element :last_activity_at, DateTime
 
     def activities
       @activities ||= Proxy.new(self, Activity)

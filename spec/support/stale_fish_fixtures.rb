@@ -29,6 +29,14 @@ module StaleFishFixtures
       connection["/projects/59022/activities"].get
     end
 
+    def update_iterations_all_fixture
+      connection["/projects/59022/iterations"].get
+    end
+    
+    def update_iterations_current_fixture
+      connection["/projects/59022/iterations/current"].get
+    end
+
     def create_new_story
       connection["/projects/59022/stories"].post("<story><name>Create stuff</name></story>", :content_type => 'application/xml')
     end

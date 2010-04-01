@@ -6,53 +6,67 @@
       check_against: http://www.pivotaltracker.com/services/v3/projects/59022/memberships
       request_type: GET
       update_method: StaleFishFixtures.update_memberships_fixture
-      last_updated_at: 2010-02-25T12:30:45-07:00
+      last_updated_at: 2010-04-01T10:05:49-07:00
   - projects:
       file: 'projects.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects
       request_type: GET
       update_method: StaleFishFixtures.update_projects_fixture
-      last_updated_at: 2010-02-25T12:30:44-07:00
+      last_updated_at: 2010-04-01T10:05:49-07:00
   - tasks:
       file: 'tasks.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories/2606200/tasks
       request_type: GET
       update_method: StaleFishFixtures.update_tasks_fixture
-      last_updated_at: 2010-02-25T12:30:43-07:00
+      last_updated_at: 2010-04-01T10:05:49-07:00
   - project:
       file: 'project.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects/59022
       request_type: GET
       update_method: StaleFishFixtures.update_project_fixture
-      last_updated_at: 2010-02-25T12:30:44-07:00
+      last_updated_at: 2010-04-01T10:05:49-07:00
   - activity:
       file: 'activity.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/activities
       request_type: GET
       update_method: StaleFishFixtures.update_activity_fixture
-      last_updated_at: 2010-02-25T12:31:21-07:00
+      last_updated_at: 2010-04-01T10:06:16-07:00
   - stories:
       file: 'stories.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories
       request_type: GET
       update_method: StaleFishFixtures.update_stories_fixture
-      last_updated_at: 2010-02-25T12:30:44-07:00
+      last_updated_at: 2010-04-01T10:06:17-07:00
   - project_activity:
       file: 'project_activity.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects/59022/activities
       request_type: GET
       update_method: StaleFishFixtures.update_project_activity_fixture
-      last_updated_at: 2010-02-25T12:30:45-07:00
+      last_updated_at: 2010-04-01T10:06:17-07:00
   - create_story:
       file: 'created_story.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories
       request_type: POST
       update_method: StaleFishFixtures.create_new_story
-      last_updated_at: 2010-03-10T11:40:34-07:00
+      last_updated_at: 2010-04-01T10:06:18-07:00
+  - iterations_current:
+      file: 'iterations_current.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/iterations/current
+      request_type: GET
+      update_method: StaleFishFixtures.update_iterations_current_fixture
+      last_updated_at: 2010-04-01T11:13:44-07:00
+  - iterations_all:
+      file: 'iterations_all.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/iterations
+      request_type: GET
+      update_method: StaleFishFixtures.update_iterations_all_fixture
+      last_updated_at: 2010-04-01T11:18:46-07:00
