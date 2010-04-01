@@ -9,7 +9,8 @@ module PivotalTracker
       end
       
       def current(project)
-        parse(Client.connection["projects/#{project.id}/iterations/current"].get)
+        array = parse(Client.connection["projects/#{project.id}/iterations/current"].get)
+        array.first if array
       end
     end
 
@@ -17,7 +18,6 @@ module PivotalTracker
     element :number, Integer
     element :start, DateTime
     element :finish, DateTime
-
     has_many :stories, Story
 
   end

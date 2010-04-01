@@ -1,175 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <activities type="array">
   <activity>
-    <id type="integer">13699571</id>
-    <version type="integer">18</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/25 11:55:44 MST</occurred_at>
+    <id type="integer">15848489</id>
+    <version type="integer">17402</version>
+    <event_type>note_create</event_type>
+    <occurred_at type="datetime">2010/04/01 10:37:49 MDT</occurred_at>
     <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad edited &quot;some gem&quot;</description>
+    <project_id type="integer">4165</project_id>
+    <description>Justin Smestad added comment: &quot;Brought this question to the dealer team, awaiting response.&quot;</description>
     <stories>
       <story>
-        <id type="integer">2524689</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/2524689</url>
-        <labels>test_dependent</labels>
+        <id type="integer">2969568</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2969568</url>
+        <notes>
+          <note>
+            <id type="integer">1402707</id>
+            <text>Brought this question to the dealer team, awaiting response.</text>
+          </note>
+        </notes>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">13699560</id>
-    <version type="integer">17</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/25 11:55:40 MST</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad edited &quot;another gem&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2524690</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/2524690</url>
-        <labels>test_dependent</labels>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">13699547</id>
-    <version type="integer">16</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/25 11:55:30 MST</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad edited &quot;Tasks Test&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2606200</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/2606200</url>
-        <current_state>unstarted</current_state>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">13699540</id>
-    <version type="integer">15</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/25 11:55:22 MST</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad started &quot;Tasks Test&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2606200</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/2606200</url>
-        <current_state>started</current_state>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">13699533</id>
-    <version type="integer">14</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/25 11:55:19 MST</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad edited &quot;Tasks Test&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2606200</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/2606200</url>
-        <current_state>unstarted</current_state>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">13699498</id>
-    <version type="integer">9</version>
-    <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/02/25 11:54:51 MST</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad added &quot;Tasks Test&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2606200</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/2606200</url>
-        <name>Tasks Test</name>
-        <story_type>feature</story_type>
-        <description>This is just some description.</description>
-        <estimate type="integer">2</estimate>
-        <labels>test_dependent</labels>
-        <current_state>unscheduled</current_state>
-        <owned_by>Terence Lee</owned_by>
-        <requested_by>Justin Smestad</requested_by>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">13692763</id>
-    <version type="integer">16482</version>
-    <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/02/25 10:25:08 MST</occurred_at>
+    <id type="integer">15848307</id>
+    <version type="integer">17401</version>
+    <event_type>note_create</event_type>
+    <occurred_at type="datetime">2010/04/01 10:35:17 MDT</occurred_at>
     <author>Michael Tully</author>
     <project_id type="integer">4165</project_id>
-    <description>Michael Tully added &quot;Importing Tender stories into Tracker&quot;</description>
+    <description>Michael Tully added comment: &quot;Here is a link to a form that is behaving as described above:
+http://www.audiusa.com/us/p_409D14/home/find...&quot;</description>
     <stories>
       <story>
-        <id type="integer">2605110</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2605110</url>
-        <name>Importing Tender stories into Tracker</name>
+        <id type="integer">2992729</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2992729</url>
+        <notes>
+          <note>
+            <id type="integer">1402689</id>
+            <text>Here is a link to a form that is behaving as described above:
+http://www.audiusa.com/us/p_409D14/home/find_your_audi/request_a_quote.html</text>
+          </note>
+        </notes>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">15832038</id>
+    <version type="integer">26</version>
+    <event_type>story_create</event_type>
+    <occurred_at type="datetime">2010/04/01 06:59:26 MDT</occurred_at>
+    <author>Justin Smestad</author>
+    <project_id type="integer">59022</project_id>
+    <description>Justin Smestad added &quot;Create stuff&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3014429</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/3014429</url>
+        <name>Create stuff</name>
         <story_type>feature</story_type>
-        <description>The Dealer Services team are wanting for stories received in Tender to be imported into Tracker to aid with client visibility</description>
         <current_state>unscheduled</current_state>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">13688278</id>
-    <version type="integer">16480</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/25 09:26:39 MST</occurred_at>
+    <id type="integer">15831002</id>
+    <version type="integer">25</version>
+    <event_type>story_create</event_type>
+    <occurred_at type="datetime">2010/04/01 06:36:05 MDT</occurred_at>
     <author>Justin Smestad</author>
-    <project_id type="integer">4165</project_id>
-    <description>Justin Smestad started &quot;Send emails on rejection/submission for approval&quot;</description>
+    <project_id type="integer">59022</project_id>
+    <description>Justin Smestad added &quot;Create stuff&quot;</description>
     <stories>
       <story>
-        <id type="integer">2499055</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2499055</url>
-        <current_state>started</current_state>
+        <id type="integer">3014248</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/3014248</url>
+        <name>Create stuff</name>
+        <story_type>feature</story_type>
+        <current_state>unscheduled</current_state>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">13662270</id>
-    <version type="integer">16479</version>
+    <id type="integer">15830699</id>
+    <version type="integer">24</version>
     <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/02/24 22:55:11 MST</occurred_at>
+    <occurred_at type="datetime">2010/04/01 06:30:29 MDT</occurred_at>
+    <author>Justin Smestad</author>
+    <project_id type="integer">59022</project_id>
+    <description>Justin Smestad added &quot;Create stuff&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3014199</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/3014199</url>
+        <name>Create stuff</name>
+        <story_type>feature</story_type>
+        <current_state>unscheduled</current_state>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">15815235</id>
+    <version type="integer">17399</version>
+    <event_type>story_update</event_type>
+    <occurred_at type="datetime">2010/03/31 23:11:37 MDT</occurred_at>
+    <author>Justin Smestad</author>
+    <project_id type="integer">4165</project_id>
+    <description>Justin Smestad edited &quot;West Covina (422A25) CPO/Used Images Missing&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">2861827</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2861827</url>
+        <labels>dealer</labels>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">15813265</id>
+    <version type="integer">17397</version>
+    <event_type>story_update</event_type>
+    <occurred_at type="datetime">2010/03/31 22:00:28 MDT</occurred_at>
+    <author>Parker Fleming</author>
+    <project_id type="integer">4165</project_id>
+    <description>Parker Fleming edited &quot;Form submission confirmation doesn't appear &quot;</description>
+    <stories>
+      <story>
+        <id type="integer">2992729</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2992729</url>
+        <current_state>unstarted</current_state>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">15813089</id>
+    <version type="integer">17396</version>
+    <event_type>note_create</event_type>
+    <occurred_at type="datetime">2010/03/31 21:53:48 MDT</occurred_at>
+    <author>Michael Tully</author>
+    <project_id type="integer">4165</project_id>
+    <description>Michael Tully added comment: &quot;Parker to follow up on 4/1/2010&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">2992729</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2992729</url>
+        <notes>
+          <note>
+            <id type="integer">1399800</id>
+            <text>Parker to follow up on 4/1/2010</text>
+          </note>
+        </notes>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">15803073</id>
+    <version type="integer">17395</version>
+    <event_type>story_update</event_type>
+    <occurred_at type="datetime">2010/03/31 17:29:27 MDT</occurred_at>
     <author>Jay Zeschin</author>
     <project_id type="integer">4165</project_id>
-    <description>Jay Zeschin added &quot;Migrate queue_daemon functionality to DJ/resque&quot;</description>
+    <description>Jay Zeschin edited &quot;IMS Brainstorm :: Session notes&quot;</description>
     <stories>
       <story>
-        <id type="integer">2599397</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2599397</url>
-        <name>Migrate queue_daemon functionality to DJ/resque</name>
-        <story_type>feature</story_type>
-        <current_state>unscheduled</current_state>
+        <id type="integer">2939417</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2939417</url>
+        <labels>brainstorm</labels>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">13650970</id>
-    <version type="integer">16478</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/02/24 16:59:35 MST</occurred_at>
-    <author>Justin Smestad</author>
+    <id type="integer">15803042</id>
+    <version type="integer">17393</version>
+    <event_type>story_create</event_type>
+    <occurred_at type="datetime">2010/03/31 17:28:44 MDT</occurred_at>
+    <author>Jay Zeschin</author>
     <project_id type="integer">4165</project_id>
-    <description>Justin Smestad accepted &quot;Embed proper offer details URL's for each dealer&quot;</description>
+    <description>Jay Zeschin added &quot;Social sharing (facebook, twitter)&quot;</description>
     <stories>
       <story>
-        <id type="integer">2455221</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2455221</url>
-        <accepted_at type="datetime">2010/02/24 23:59:35 UTC</accepted_at>
-        <current_state>accepted</current_state>
+        <id type="integer">3008813</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3008813</url>
+        <name>Social sharing (facebook, twitter)</name>
+        <story_type>feature</story_type>
+        <current_state>unscheduled</current_state>
       </story>
     </stories>
   </activity>

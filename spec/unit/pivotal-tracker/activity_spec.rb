@@ -11,7 +11,7 @@ describe PivotalTracker::Activity do
 
   context "with a specified project" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(PROJECT_ID)
     end
 
     it "should return an array of activities" do

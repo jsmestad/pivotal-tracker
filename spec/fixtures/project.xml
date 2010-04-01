@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
   <id>59022</id>
-  <name>pivotal-tracker gem</name>
+  <name>PivotalTracker.rb</name>
   <iteration_length type="integer">1</iteration_length>
   <week_start_day>Monday</week_start_day>
   <point_scale>0,1,2,3</point_scale>
@@ -11,7 +11,7 @@
   <initial_velocity>10</initial_velocity>
   <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
   <labels>test_dependent</labels>
-  <last_activity_at type="datetime">2010/02/25 11:55:44 MST</last_activity_at>
+  <last_activity_at type="datetime">2010/04/01 06:59:26 MDT</last_activity_at>
   <allow_attachments>true</allow_attachments>
   <public>true</public>
   <use_https>false</use_https>
