@@ -21,9 +21,9 @@ module PivotalTracker
           options_string << "newer_than_version=#{options.delete(:newer_than_version)}" if options[:newer_than_version]
 
           if options[:occurred_since]
-            options_string << "occurred_since_date=#{options[:occurred_since].utc}"
+            options_string << "occurred_since_date=\"#{options[:occurred_since].utc}\""
           elsif options[:occurred_since_date]
-            options_string << "occurred_since_date=#{options[:occurred_since]}"
+            options_string << "occurred_since_date=\"#{options[:occurred_since_date]}\""
           end
 
           return "?#{options_string.join('&')}"
