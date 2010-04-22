@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'bundler'
 require 'stale_fish'
 
