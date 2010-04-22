@@ -22,6 +22,10 @@ describe PivotalTracker::Story do
     it "should return the created story" do
       @project.stories.create(:name => 'Create Stuff').should be_a(PivotalTracker::Story)
     end
+    
+    it "should accept other_id and integration_id" do
+      @project.stories.create(:name => 'Create Stuff', :other_id => 234, :integration_id => 1).should be_a(PivotalTracker::Story)
+    end
   end
 
 end
