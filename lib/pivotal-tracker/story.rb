@@ -14,19 +14,21 @@ module PivotalTracker
     attr_accessor :project_id
 
     element :id, Integer
-    element :story_type, String
-    element :url, String
-    element :estimate, Integer
-    element :current_state, String
-    element :name, String
-    element :requested_by, String
-    element :owned_by, String
+    element :url, String    
     element :created_at, DateTime
     element :accepted_at, DateTime
-    element :labels, String
+
+    element :name, String
     element :description, String
+    element :story_type, String
+    element :estimate, Integer
+    element :current_state, String
+    element :requested_by, String
+    element :owned_by, String
+    element :labels, String
     element :jira_id, Integer
     element :jira_url, String
+    element :other_id, Integer
 
     def initialize(attributes={})
       self.project_id = attributes.delete(:owner).id if attributes[:owner]
@@ -64,15 +66,17 @@ module PivotalTracker
         builder = Nokogiri::XML::Builder.new do |xml|
           xml.story {
             xml.name "#{name}"
+            xml.description "#{description}"
             xml.story_type "#{story_type}"
             xml.estimate "#{estimate}"
             xml.current_state "#{current_state}"
             xml.requested_by "#{requested_by}"
             xml.owned_by "#{owned_by}"
             xml.labels "#{labels}"
-            xml.description "#{description}"
+            # See spec
             # xml.jira_id "#{jira_id}"
             # xml.jira_url "#{jira_url}"
+            xml.other_id "#{other_id}"
           }
         end
         return builder.to_xml
