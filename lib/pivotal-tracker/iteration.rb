@@ -12,6 +12,16 @@ module PivotalTracker
         array = parse(Client.connection["projects/#{project.id}/iterations/current"].get)
         array.first if array
       end
+
+      def done(project)
+        array = parse(Client.connection["projects/#{project.id}/iterations/done"].get)
+        array.first if array
+      end
+
+      def backlog(project)
+        array = parse(Client.connection["projects/#{project.id}/iterations/backlog"].get)
+        array.first if array
+      end
     end
 
     element :id, Integer

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<stories type="array" count="10" limit="20" total="10">
+<stories type="array" count="15" limit="20" total="15">
   <story>
     <id type="integer">2606200</id>
     <project_id type="integer">59022</project_id>
@@ -80,6 +80,71 @@
     <created_at type="datetime">2010/03/01 15:51:05 MST</created_at>
     <updated_at type="datetime">2010/03/01 15:51:05 MST</updated_at>
     <labels>test_dependent</labels>
+  </story>
+  <story>
+    <id type="integer">3256963</id>
+    <project_id type="integer">59022</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/3256963</url>
+    <estimate type="integer">-1</estimate>
+    <current_state>unscheduled</current_state>
+    <description></description>
+    <name>Create stuff</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/04/22 12:02:23 MDT</created_at>
+    <updated_at type="datetime">2010/04/22 12:02:23 MDT</updated_at>
+  </story>
+  <story>
+    <id type="integer">3256889</id>
+    <project_id type="integer">59022</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/3256889</url>
+    <estimate type="integer">-1</estimate>
+    <current_state>unscheduled</current_state>
+    <description></description>
+    <name>Create stuff</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/04/22 11:55:50 MDT</created_at>
+    <updated_at type="datetime">2010/04/22 11:55:50 MDT</updated_at>
+  </story>
+  <story>
+    <id type="integer">3256865</id>
+    <project_id type="integer">59022</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/3256865</url>
+    <estimate type="integer">-1</estimate>
+    <current_state>unscheduled</current_state>
+    <description></description>
+    <name>Create stuff</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/04/22 11:53:25 MDT</created_at>
+    <updated_at type="datetime">2010/04/22 11:53:25 MDT</updated_at>
+  </story>
+  <story>
+    <id type="integer">3200814</id>
+    <project_id type="integer">59022</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/3200814</url>
+    <estimate type="integer">-1</estimate>
+    <current_state>unscheduled</current_state>
+    <description></description>
+    <name>Create stuff</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/04/18 16:20:38 MDT</created_at>
+    <updated_at type="datetime">2010/04/18 16:20:38 MDT</updated_at>
+  </story>
+  <story>
+    <id type="integer">3017712</id>
+    <project_id type="integer">59022</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/3017712</url>
+    <estimate type="integer">-1</estimate>
+    <current_state>unscheduled</current_state>
+    <description></description>
+    <name>Create stuff</name>
+    <requested_by>Justin Smestad</requested_by>
+    <created_at type="datetime">2010/04/01 11:06:18 MDT</created_at>
+    <updated_at type="datetime">2010/04/01 11:06:18 MDT</updated_at>
   </story>
   <story>
     <id type="integer">3014429</id>

@@ -3,8 +3,8 @@
   <iteration>
     <id type="integer">1</id>
     <number type="integer">1</number>
-    <start type="datetime">2010/03/29 00:00:00 MDT</start>
-    <finish type="datetime">2010/04/05 00:00:00 MDT</finish>
+    <start type="datetime">2010/04/26 00:00:00 MDT</start>
+    <finish type="datetime">2010/05/03 00:00:00 MDT</finish>
     <stories type="array">
       <story>
         <id type="integer">2606200</id>
