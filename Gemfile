@@ -1,4 +1,4 @@
-source :gemcutter
+source 'http://rubygems.org'
 
 group :runtime do
   gem 'rest-client', '~> 1.4.1'
