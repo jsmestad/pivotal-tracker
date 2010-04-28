@@ -8,11 +8,11 @@
     <point_scale>0,1,2,3,5,8</point_scale>
     <account>JZ // Factory Labs</account>
     <velocity_scheme>Average of 2 iterations</velocity_scheme>
-    <current_velocity>17</current_velocity>
+    <current_velocity>27</current_velocity>
     <initial_velocity>10</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>ab_test,admin,backend,blocked,brainstorm,cloud migration,cms,dag,data issues,dealer,design,discuss,duplicate,enhancement,export,import,invalid,is,pending,spiff,verify</labels>
-    <last_activity_at type="datetime">2010/04/01 10:37:49 MDT</last_activity_at>
+    <labels>**duplicate**,ab_test,admin,backend,blocked,brainstorm,cloud migration,cms,dag,data issues,dealer,design,discuss,duplicate,enhancement,export,import,ims forms,invalid,is,justin,pending,spiff,verify</labels>
+    <last_activity_at type="datetime">2010/04/28 13:11:38 MDT</last_activity_at>
     <allow_attachments>true</allow_attachments>
     <public>false</public>
     <use_https>false</use_https>
@@ -188,13 +188,79 @@
           <name>Meghan Newlin</name>
           <initials>MN</initials>
         </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>239039</id>
+        <person>
+          <email>alex.jackson@pivotallabs.com</email>
+          <name>Alex Jackson</name>
+          <initials>AJ</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>239040</id>
+        <person>
+          <email>mbarinek@pivotallabs.com</email>
+          <name>Mike Barinek</name>
+          <initials>MB</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>246350</id>
+        <person>
+          <email>extern.spencer.sakata@audi.com</email>
+          <name>Spencer Sakata</name>
+          <initials>SS</initials>
+        </person>
+        <role>Viewer</role>
+      </membership>
+      <membership>
+        <id>246444</id>
+        <person>
+          <email>charles@pivotallabs.com</email>
+          <name>Charles LeRose</name>
+          <initials>CL</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>252586</id>
+        <person>
+          <email>don.petersen@factorylabs.com</email>
+          <name>Don Petersen</name>
+          <initials>DP</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>252590</id>
+        <person>
+          <email>mgehard@pivotallabs.com</email>
+          <name>Mike Gehard</name>
+          <initials>MG</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>252856</id>
+        <person>
+          <email>ben.grogan@factorylabs.com</email>
+          <name>Ben Grogan</name>
+          <initials>BG</initials>
+        </person>
         <role>Member</role>
       </membership>
     </memberships>
     <integrations>
       <integration>
         <id type="integer">217</id>
-        <title>JIRA</title>
+        <type>JIRA</type>
+        <name>Jira</name>
+        <field_name>jira_id</field_name>
+        <field_label>JIRA ID</field_label>
         <active>true</active>
       </integration>
     </integrations>
@@ -210,8 +276,8 @@
     <current_velocity>10</current_velocity>
     <initial_velocity>10</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>crash,dag site,dasb&#252;ro,dealer site,ie issue,ims bug,ims enhancement,ims forms,last one,major,minor,possible dupe,text</labels>
-    <last_activity_at type="datetime">2010/03/29 17:22:29 MDT</last_activity_at>
+    <labels>crash,dag site,dasb&#252;ro,dealer site,ie issue,ims bug,ims enhancement,ims forms,jira,last one,major,minor,possible dupe,text</labels>
+    <last_activity_at type="datetime">2010/04/27 16:01:08 MDT</last_activity_at>
     <allow_attachments>true</allow_attachments>
     <public>false</public>
     <use_https>false</use_https>
@@ -269,6 +335,24 @@
           <email>jennifer.kolling@factorylabs.com</email>
           <name>Jen Kolling</name>
           <initials>JK</initials>
+        </person>
+        <role>Member</role>
+      </membership>
+      <membership>
+        <id>256802</id>
+        <person>
+          <email>cnewbury@ibeta.com</email>
+          <name>Chantelle Newbury</name>
+          <initials>CN</initials>
+        </person>
+        <role>Member</role>
+      </membership>
+      <membership>
+        <id>256803</id>
+        <person>
+          <email>kwells@ibeta.com</email>
+          <name>Keith Wells</name>
+          <initials>KW</initials>
         </person>
         <role>Member</role>
       </membership>
@@ -408,6 +492,101 @@
     </integrations>
   </project>
   <project>
+    <id>70777</id>
+    <name>IMS - Performance</name>
+    <iteration_length type="integer">1</iteration_length>
+    <week_start_day>Monday</week_start_day>
+    <point_scale>0,1,2,3</point_scale>
+    <account>JZ // Factory Labs</account>
+    <velocity_scheme>Average of 3 iterations</velocity_scheme>
+    <current_velocity>10</current_velocity>
+    <initial_velocity>10</initial_velocity>
+    <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
+    <labels></labels>
+    <last_activity_at type="datetime">2010/04/28 14:29:14 MDT</last_activity_at>
+    <allow_attachments>true</allow_attachments>
+    <public>false</public>
+    <use_https>false</use_https>
+    <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
+    <commit_mode>false</commit_mode>
+    <memberships>
+      <membership>
+        <id>239100</id>
+        <person>
+          <email>jay.zeschin@factorylabs.com</email>
+          <name>Jay Zeschin</name>
+          <initials>JZ</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>239101</id>
+        <person>
+          <email>alex.jackson@pivotallabs.com</email>
+          <name>Alex Jackson</name>
+          <initials>AJ</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>239102</id>
+        <person>
+          <email>mbarinek@pivotallabs.com</email>
+          <name>Mike Barinek</name>
+          <initials>MB</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>239103</id>
+        <person>
+          <email>gabe.varela@factorylabs.com</email>
+          <name>Gabe Varela</name>
+          <initials>GV</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>239104</id>
+        <person>
+          <email>justin.smestad@factorylabs.com</email>
+          <name>Justin Smestad</name>
+          <initials>JS</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>246446</id>
+        <person>
+          <email>charles@pivotallabs.com</email>
+          <name>Charles LeRose</name>
+          <initials>CL</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>252593</id>
+        <person>
+          <email>mgehard@pivotallabs.com</email>
+          <name>Mike Gehard</name>
+          <initials>MG</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+      <membership>
+        <id>252594</id>
+        <person>
+          <email>don.petersen@factorylabs.com</email>
+          <name>Don Petersen</name>
+          <initials>DP</initials>
+        </person>
+        <role>Owner</role>
+      </membership>
+    </memberships>
+    <integrations>
+    </integrations>
+  </project>
+  <project>
     <id>63671</id>
     <name>pairable</name>
     <iteration_length type="integer">1</iteration_length>
@@ -419,7 +598,7 @@
     <initial_velocity>10</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
     <labels>chef,design</labels>
-    <last_activity_at type="datetime">2010/03/31 13:13:00 MDT</last_activity_at>
+    <last_activity_at type="datetime">2010/04/02 11:53:19 MDT</last_activity_at>
     <allow_attachments>true</allow_attachments>
     <public>false</public>
     <use_https>false</use_https>
@@ -487,7 +666,7 @@
     <initial_velocity>10</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
     <labels>test_dependent</labels>
-    <last_activity_at type="datetime">2010/04/01 06:59:26 MDT</last_activity_at>
+    <last_activity_at type="datetime">2010/04/22 12:02:23 MDT</last_activity_at>
     <allow_attachments>true</allow_attachments>
     <public>true</public>
     <use_https>false</use_https>

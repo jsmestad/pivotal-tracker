@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iterations type="array">
   <iteration>
-    <id type="integer">1</id>
-    <number type="integer">1</number>
-    <start type="datetime">2010/04/26 00:00:00 MDT</start>
-    <finish type="datetime">2010/05/03 00:00:00 MDT</finish>
+    <id type="integer">3</id>
+    <number type="integer">3</number>
+    <start type="datetime">2010/05/03 00:00:00 MDT</start>
+    <finish type="datetime">2010/05/10 00:00:00 MDT</finish>
     <stories type="array">
       <story>
         <id type="integer">2606200</id>
@@ -44,20 +44,14 @@
           </task>
         </tasks>
       </story>
-      <story>
-        <id type="integer">2524690</id>
-        <project_id type="integer">59022</project_id>
-        <story_type>feature</story_type>
-        <url>http://www.pivotaltracker.com/story/show/2524690</url>
-        <estimate type="integer">3</estimate>
-        <current_state>unstarted</current_state>
-        <description></description>
-        <name>another gem</name>
-        <requested_by>Justin Smestad</requested_by>
-        <created_at type="datetime">2010/02/17 15:42:58 MST</created_at>
-        <updated_at type="datetime">2010/02/17 15:43:07 MST</updated_at>
-        <labels>test_dependent</labels>
-      </story>
+    </stories>
+  </iteration>
+  <iteration>
+    <id type="integer">4</id>
+    <number type="integer">4</number>
+    <start type="datetime">2010/05/10 00:00:00 MDT</start>
+    <finish type="datetime">2010/05/17 00:00:00 MDT</finish>
+    <stories type="array">
       <story>
         <id type="integer">2524689</id>
         <project_id type="integer">59022</project_id>
@@ -72,6 +66,14 @@
         <updated_at type="datetime">2010/02/17 15:43:06 MST</updated_at>
         <labels>test_dependent</labels>
       </story>
+    </stories>
+  </iteration>
+  <iteration>
+    <id type="integer">5</id>
+    <number type="integer">5</number>
+    <start type="datetime">2010/05/17 00:00:00 MDT</start>
+    <finish type="datetime">2010/05/24 00:00:00 MDT</finish>
+    <stories type="array">
       <story>
         <id type="integer">2641089</id>
         <project_id type="integer">59022</project_id>

@@ -1,187 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <activities type="array">
   <activity>
-    <id type="integer">15848489</id>
-    <version type="integer">17402</version>
-    <event_type>note_create</event_type>
-    <occurred_at type="datetime">2010/04/01 10:37:49 MDT</occurred_at>
-    <author>Justin Smestad</author>
+    <id type="integer">17645182</id>
+    <version type="integer">18645</version>
+    <event_type>story_create</event_type>
+    <occurred_at type="datetime">2010/04/28 13:11:38 MDT</occurred_at>
+    <author>Sean Heckethorn</author>
     <project_id type="integer">4165</project_id>
-    <description>Justin Smestad added comment: &quot;Brought this question to the dealer team, awaiting response.&quot;</description>
+    <description>Sean Heckethorn added &quot;Speedway Motors (4991426) :: Inventory not refreshing&quot;</description>
     <stories>
       <story>
-        <id type="integer">2969568</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2969568</url>
+        <id type="integer">3328124</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3328124</url>
+        <name>Speedway Motors (4991426) :: Inventory not refreshing</name>
+        <story_type>feature</story_type>
+        <description>Speedway has shown 16 vehicles for the past several days, although the IL file shows 23 Audi made VINs.</description>
+        <current_state>unscheduled</current_state>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">17573139</id>
+    <version type="integer">18644</version>
+    <event_type>note_create</event_type>
+    <occurred_at type="datetime">2010/04/27 17:09:00 MDT</occurred_at>
+    <author>Sean Heckethorn</author>
+    <project_id type="integer">4165</project_id>
+    <description>Sean Heckethorn added comment: &quot;Sean - We have identified 2 items of interest in regards to the imagelist
+file delivered for Audi of Haw...&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3177657</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3177657</url>
         <notes>
           <note>
-            <id type="integer">1402707</id>
-            <text>Brought this question to the dealer team, awaiting response.</text>
+            <id type="integer">1539974</id>
+            <text>Sean - We have identified 2 items of interest in regards to the imagelist
+file delivered for Audi of Hawaii - CC146936. Please note that the image
+sequence value in the 5th field appear to reflect a &quot;0&quot; value on many of the
+records (see attached file delivered today, 27th). We attempted to process
+the feed while ignoring the sequence value on the records, however we found
+many records returning 404 errors for the image URLs (most recent process
+details listed below).
+
+The sequence value is optional for the imagelist records, and you may choose
+to drop this from the feed. In the absence of this value we will process the
+images in the sequence they are presented in the file. 
+
+We will continue to monitor the next file deliveries for continued URL
+errors. Please let us know if you need any further details.
+
+
+Thanks, 
+Bryan Ward 
+Operations Project Manager
+Cars.com Inventory support
+Product Inventory Team
+ProductInventoryTeam@cars.com
+support@cars.com</text>
           </note>
         </notes>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">15848307</id>
-    <version type="integer">17401</version>
+    <id type="integer">17573116</id>
+    <version type="integer">18643</version>
     <event_type>note_create</event_type>
-    <occurred_at type="datetime">2010/04/01 10:35:17 MDT</occurred_at>
-    <author>Michael Tully</author>
+    <occurred_at type="datetime">2010/04/27 17:08:29 MDT</occurred_at>
+    <author>Sean Heckethorn</author>
     <project_id type="integer">4165</project_id>
-    <description>Michael Tully added comment: &quot;Here is a link to a form that is behaving as described above:
-http://www.audiusa.com/us/p_409D14/home/find...&quot;</description>
+    <description>Sean Heckethorn added comment: &quot;Received the following from Cars.com:
+
+Hi Sean,
+ 
+My apologies that it&#8217;s taken a while to get back to ...&quot;</description>
     <stories>
       <story>
-        <id type="integer">2992729</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2992729</url>
+        <id type="integer">3177657</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3177657</url>
         <notes>
           <note>
-            <id type="integer">1402689</id>
-            <text>Here is a link to a form that is behaving as described above:
-http://www.audiusa.com/us/p_409D14/home/find_your_audi/request_a_quote.html</text>
+            <id type="integer">1539971</id>
+            <text>Received the following from Cars.com:
+
+Hi Sean,
+ 
+My apologies that it&#8217;s taken a while to get back to you.  Bryan Ward within our dealer inventory group, or a member of his team, should be reaching out to you shortly to discuss the issue.  Apparently, we have been receiving 404 errors when attempting to pull images. 
+ 
+If there&#8217;s anything else we can help with, don&#8217;t hesitate to let me know.
+ 
+Thank you,
+Emera</text>
           </note>
         </notes>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">15832038</id>
-    <version type="integer">26</version>
-    <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/04/01 06:59:26 MDT</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad added &quot;Create stuff&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">3014429</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/3014429</url>
-        <name>Create stuff</name>
-        <story_type>feature</story_type>
-        <current_state>unscheduled</current_state>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">15831002</id>
-    <version type="integer">25</version>
-    <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/04/01 06:36:05 MDT</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad added &quot;Create stuff&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">3014248</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/3014248</url>
-        <name>Create stuff</name>
-        <story_type>feature</story_type>
-        <current_state>unscheduled</current_state>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">15830699</id>
-    <version type="integer">24</version>
-    <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/04/01 06:30:29 MDT</occurred_at>
-    <author>Justin Smestad</author>
-    <project_id type="integer">59022</project_id>
-    <description>Justin Smestad added &quot;Create stuff&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">3014199</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/59022/stories/3014199</url>
-        <name>Create stuff</name>
-        <story_type>feature</story_type>
-        <current_state>unscheduled</current_state>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">15815235</id>
-    <version type="integer">17399</version>
+    <id type="integer">17570401</id>
+    <version type="integer">18641</version>
     <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/03/31 23:11:37 MDT</occurred_at>
+    <occurred_at type="datetime">2010/04/27 16:34:23 MDT</occurred_at>
     <author>Justin Smestad</author>
     <project_id type="integer">4165</project_id>
-    <description>Justin Smestad edited &quot;West Covina (422A25) CPO/Used Images Missing&quot;</description>
+    <description>Justin Smestad delivered &quot;Event triggers should fire if animation is killed.&quot;</description>
     <stories>
       <story>
-        <id type="integer">2861827</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2861827</url>
-        <labels>dealer</labels>
+        <id type="integer">3309084</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3309084</url>
+        <current_state>delivered</current_state>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">15813265</id>
-    <version type="integer">17397</version>
+    <id type="integer">17570394</id>
+    <version type="integer">18640</version>
     <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/03/31 22:00:28 MDT</occurred_at>
-    <author>Parker Fleming</author>
+    <occurred_at type="datetime">2010/04/27 16:34:20 MDT</occurred_at>
+    <author>Justin Smestad</author>
     <project_id type="integer">4165</project_id>
-    <description>Parker Fleming edited &quot;Form submission confirmation doesn't appear &quot;</description>
+    <description>Justin Smestad finished &quot;Event triggers should fire if animation is killed.&quot;</description>
     <stories>
       <story>
-        <id type="integer">2992729</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2992729</url>
-        <current_state>unstarted</current_state>
+        <id type="integer">3309084</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3309084</url>
+        <current_state>finished</current_state>
       </story>
     </stories>
   </activity>
   <activity>
-    <id type="integer">15813089</id>
-    <version type="integer">17396</version>
-    <event_type>note_create</event_type>
-    <occurred_at type="datetime">2010/03/31 21:53:48 MDT</occurred_at>
-    <author>Michael Tully</author>
-    <project_id type="integer">4165</project_id>
-    <description>Michael Tully added comment: &quot;Parker to follow up on 4/1/2010&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2992729</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2992729</url>
-        <notes>
-          <note>
-            <id type="integer">1399800</id>
-            <text>Parker to follow up on 4/1/2010</text>
-          </note>
-        </notes>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">15803073</id>
-    <version type="integer">17395</version>
-    <event_type>story_update</event_type>
-    <occurred_at type="datetime">2010/03/31 17:29:27 MDT</occurred_at>
-    <author>Jay Zeschin</author>
-    <project_id type="integer">4165</project_id>
-    <description>Jay Zeschin edited &quot;IMS Brainstorm :: Session notes&quot;</description>
-    <stories>
-      <story>
-        <id type="integer">2939417</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/2939417</url>
-        <labels>brainstorm</labels>
-      </story>
-    </stories>
-  </activity>
-  <activity>
-    <id type="integer">15803042</id>
-    <version type="integer">17393</version>
+    <id type="integer">17569819</id>
+    <version type="integer">18639</version>
     <event_type>story_create</event_type>
-    <occurred_at type="datetime">2010/03/31 17:28:44 MDT</occurred_at>
-    <author>Jay Zeschin</author>
+    <occurred_at type="datetime">2010/04/27 16:27:24 MDT</occurred_at>
+    <author>Mike Gehard</author>
     <project_id type="integer">4165</project_id>
-    <description>Jay Zeschin added &quot;Social sharing (facebook, twitter)&quot;</description>
+    <description>Mike Gehard added &quot;Extract FTP server tests into an integration-style test&quot;</description>
     <stories>
       <story>
-        <id type="integer">3008813</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3008813</url>
-        <name>Social sharing (facebook, twitter)</name>
-        <story_type>feature</story_type>
+        <id type="integer">3314530</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3314530</url>
+        <name>Extract FTP server tests into an integration-style test</name>
+        <story_type>chore</story_type>
+        <description>Don't use transactions, instead clean DB before/after (maybe check out database_cleaner).</description>
         <current_state>unscheduled</current_state>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">17569612</id>
+    <version type="integer">18638</version>
+    <event_type>story_update</event_type>
+    <occurred_at type="datetime">2010/04/27 16:25:19 MDT</occurred_at>
+    <author>Mike Gehard</author>
+    <project_id type="integer">4165</project_id>
+    <description>Mike Gehard edited &quot;Refactor tests to remove deprecation warning for &quot;should_have_named_scope is deprecated&quot;&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3314496</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3314496</url>
+        <story_type>chore</story_type>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">17569600</id>
+    <version type="integer">18637</version>
+    <event_type>story_create</event_type>
+    <occurred_at type="datetime">2010/04/27 16:25:10 MDT</occurred_at>
+    <author>Mike Gehard</author>
+    <project_id type="integer">4165</project_id>
+    <description>Mike Gehard added &quot;Refactor tests to remove deprecation warning for &quot;should_have_named_scope is deprecated&quot;&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3314496</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3314496</url>
+        <name>Refactor tests to remove deprecation warning for &quot;should_have_named_scope is deprecated&quot;</name>
+        <story_type>feature</story_type>
+        <description>Change these tests to test positive/negative cases where a method is called and the collection returned by that method is tested for existence or absences of an object based on the objects state.</description>
+        <current_state>unscheduled</current_state>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">17568659</id>
+    <version type="integer">18636</version>
+    <event_type>story_update</event_type>
+    <occurred_at type="datetime">2010/04/27 16:14:05 MDT</occurred_at>
+    <author>Justin Smestad</author>
+    <project_id type="integer">4165</project_id>
+    <description>Justin Smestad started &quot;Event triggers should fire if animation is killed.&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3309084</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3309084</url>
+        <current_state>started</current_state>
+      </story>
+    </stories>
+  </activity>
+  <activity>
+    <id type="integer">17568617</id>
+    <version type="integer">18631</version>
+    <event_type>story_update</event_type>
+    <occurred_at type="datetime">2010/04/27 16:13:46 MDT</occurred_at>
+    <author>Justin Smestad</author>
+    <project_id type="integer">4165</project_id>
+    <description>Justin Smestad delivered &quot;Learn More should only operate on unlocked items&quot;</description>
+    <stories>
+      <story>
+        <id type="integer">3309434</id>
+        <url>http://www.pivotaltracker.com/services/v3/projects/4165/stories/3309434</url>
+        <current_state>delivered</current_state>
       </story>
     </stories>
   </activity>
