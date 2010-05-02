@@ -21,7 +21,7 @@ describe PivotalTracker::Iteration do
       @iteration = PivotalTracker::Iteration.current(@project)
     end
 
-    it "should return an array of Iterations for the given Project" do
+    it "should return a single Iteration" do
       @iteration.should be_a(PivotalTracker::Iteration)
     end
   end
