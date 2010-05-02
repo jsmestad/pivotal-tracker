@@ -13,14 +13,14 @@ module PivotalTracker
         array.first if array
       end
 
-      def done(project)
-        array = parse(Client.connection["projects/#{project.id}/iterations/done"].get)
-        array.first if array
+      def done(project, options={})
+        params = PivotalTracker.encode_options(options)
+        parse(Client.connection["/projects/#{project.id}/iterations/done#{params}"].get)
       end
 
-      def backlog(project)
-        array = parse(Client.connection["projects/#{project.id}/iterations/backlog"].get)
-        array.first if array
+      def backlog(project, options={})
+        params = PivotalTracker.encode_options(options)
+        parse(Client.connection["/projects/#{project.id}/iterations/backlog#{params}"].get)
       end
     end
 
