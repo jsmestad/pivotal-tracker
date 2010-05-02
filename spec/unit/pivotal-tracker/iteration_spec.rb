@@ -38,7 +38,7 @@ describe PivotalTracker::Iteration do
 
   describe ".done" do
     before do
-      @iteration = PivotalTracker::Iteration.backlog(@project)
+      @iteration = PivotalTracker::Iteration.done(@project)
     end
 
     it "should return an array of Iterations for the given Project" do
