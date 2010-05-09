@@ -21,28 +21,30 @@ describe PivotalTracker::Iteration do
       @iteration = PivotalTracker::Iteration.current(@project)
     end
 
-    it "should return an array of Iterations for the given Project" do
+    it "should return a single Iteration" do
       @iteration.should be_a(PivotalTracker::Iteration)
     end
   end
 
   describe ".backlog" do
     before do
-      @iteration = PivotalTracker::Iteration.backlog(@project)
+      @iterations = PivotalTracker::Iteration.backlog(@project)
     end
 
     it "should return an array of Iterations for the given Project" do
-      @iteration.should be_a(PivotalTracker::Iteration)
+      @iterations.should be_a(Array)
+      @iterations.first.should be_a(PivotalTracker::Iteration)
     end
   end
 
   describe ".done" do
     before do
-      @iteration = PivotalTracker::Iteration.backlog(@project)
+      @iterations = PivotalTracker::Iteration.done(@project)
     end
 
     it "should return an array of Iterations for the given Project" do
-      @iteration.should be_a(PivotalTracker::Iteration)
+      @iterations.should be_a(Array)
+      @iterations.first.should be_a(PivotalTracker::Iteration)
     end
   end
 
