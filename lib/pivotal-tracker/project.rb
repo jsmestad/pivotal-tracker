@@ -18,6 +18,7 @@ module PivotalTracker
 
     element :id, Integer
     element :name, String
+    element :account, String
     element :week_start_day, String
     element :point_scale, String
     element :week_start_day, String
