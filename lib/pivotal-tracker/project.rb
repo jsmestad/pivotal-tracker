@@ -44,5 +44,14 @@ module PivotalTracker
       @memberships ||= Proxy.new(self, Membership)
     end
 
+    def iteration(group)
+      case group.to_sym
+      when :done: Iteration.done(self)
+      when :current: Iteration.current(self)
+      when :backlog: Iteration.backlog(self)
+      else
+        raise ArgumentError, "Invalid group. Use :done, :current or :backlog instead."
+      end
+    end
   end
 end
