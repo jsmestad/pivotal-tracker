@@ -11,12 +11,11 @@ module PivotalTracker
       end
     end
 
-    attr_accessor :project_id
-
     element :id, Integer
     element :url, String    
     element :created_at, DateTime
     element :accepted_at, DateTime
+    element :project_id, Integer
 
     element :name, String
     element :description, String
@@ -31,8 +30,6 @@ module PivotalTracker
     element :other_id, Integer
 
     def initialize(attributes={})
-      self.project_id = attributes.delete(:owner).id if attributes[:owner]
-
       update_attributes(attributes)
     end
 
@@ -54,10 +51,6 @@ module PivotalTracker
 
     def tasks
       @tasks ||= Proxy.new(self, Task)
-    end
-
-    def project=(proj_id)
-      self.project_id = proj_id
     end
 
     protected
