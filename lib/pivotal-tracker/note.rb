@@ -10,7 +10,7 @@ module PivotalTracker
       end
     end
 
-		attr_accessor :project_id, :story_id
+    attr_accessor :project_id, :story_id
 
     element :id, Integer
     element :text, String
@@ -19,11 +19,11 @@ module PivotalTracker
     has_one :story, Story
 
     def initialize(attributes={})
-    	if attributes[:owner]
-				self.story = attributes.delete(:owner) 
-				self.project_id = self.story.project_id
-				self.story_id = self.story.id
-			end
+      if attributes[:owner]
+        self.story = attributes.delete(:owner) 
+        self.project_id = self.story.project_id
+        self.story_id = self.story.id
+      end
 
       update_attributes(attributes)
     end
@@ -33,7 +33,7 @@ module PivotalTracker
       return Note.parse(response)
     end
 
-		# Pivotal Tracker API doesn't seem to support updating or deleting notes at this time.
+    # Pivotal Tracker API doesn't seem to support updating or deleting notes at this time.
 
     protected
 

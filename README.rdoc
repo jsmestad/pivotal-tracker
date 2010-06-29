@@ -26,6 +26,11 @@ Version 0.0.8 and above are incompatible with previous versions.
     
     @a_project.stories.create(:name => 'My Story', :story_type => 'feature')      # create a story for this project
 
+    @story = @a_project.stories.find(847762630)
+    @story.notes.all                                                              # return all notes (comments) for a story
+    @story.notes.create(:text => 'A new coment', :noted_at => '06/29/2010 05:00 EST')  # add a new story
+    
+
     # all tracker defined filters are allowed, as well as :limit & :offset for pagination
 
     # The below are planned to be added to the final release:
