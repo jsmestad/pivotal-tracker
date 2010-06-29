@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notes type="array">
+  <note>
+    <id type="integer">1912486</id>
+    <text>This is comment 1</text>
+    <author>Justin Smestad</author>
+    <noted_at type="datetime">2010/04/28 15:49:36 UTC</noted_at>
+  </note>
+  <note>
+    <id type="integer">1912487</id>
+    <text>This is comment 2.
+
+It has some line breaks in it.</text>
+    <author>Justin Smestad</author>
+    <noted_at type="datetime">2010/06/28 16:19:31 UTC</noted_at>
+  </note>
+</notes>
