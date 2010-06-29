@@ -39,7 +39,9 @@ module PivotalTracker
     def create
       return self if project_id.nil?
       response = Client.connection["/projects/#{project_id}/stories"].post(self.to_xml, :content_type => 'application/xml')
-      return Story.parse(response)
+      new_story = Story.parse(response)
+      new_story.project_id = project_id
+      return new_story
     end
 
     def update(attrs={})
@@ -50,6 +52,10 @@ module PivotalTracker
 
     def delete
       Client.connection["/projects/#{project_id}/stories/#{id}"].delete
+    end
+
+    def notes
+      @notes ||= Proxy.new(self, Note)
     end
 
     def tasks
