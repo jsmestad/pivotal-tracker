@@ -48,6 +48,10 @@ module StaleFishFixtures
     def create_new_story
       connection["/projects/59022/stories"].post("<story><name>Create stuff</name></story>", :content_type => 'application/xml')
     end
+    
+    def update_notes_fixture
+      connection["/projects/59022/stories/2524689/notes"].get
+    end
 
     protected
 

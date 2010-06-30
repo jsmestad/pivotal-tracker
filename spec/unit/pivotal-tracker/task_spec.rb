@@ -3,7 +3,7 @@ require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
 describe PivotalTracker::Task do
   before do
     @project = PivotalTracker::Project.find(59022)
-    @story = @project.stories.all.first
+    @story = @project.stories.find(2606200)
   end
 
   context ".all" do
