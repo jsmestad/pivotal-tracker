@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 group :runtime do
-  gem 'rest-client', '~> 1.4.1'
+  gem 'rest-client', '~> 1.5.1'
   gem 'happymapper', '>= 0.2.4'
   gem 'builder'
   gem 'nokogiri', '~> 1.4.1'
