@@ -18,6 +18,7 @@ module PivotalTracker
 
     element :id, Integer
     element :name, String
+    element :account, String
     element :week_start_day, String
     element :point_scale, String
     element :week_start_day, String
@@ -43,5 +44,14 @@ module PivotalTracker
       @memberships ||= Proxy.new(self, Membership)
     end
 
+    def iteration(group)
+      case group.to_sym
+      when :done: Iteration.done(self)
+      when :current: Iteration.current(self)
+      when :backlog: Iteration.backlog(self)
+      else
+        raise ArgumentError, "Invalid group. Use :done, :current or :backlog instead."
+      end
+    end
   end
 end
