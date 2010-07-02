@@ -55,11 +55,14 @@ The API is based on the following this gist: http://gist.github.com/283120
     
 == Additional Information
 
-Wiki: http://wiki.github.com/jsmestad/pivotal-tracker
-Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
+* Wiki: http://wiki.github.com/jsmestad/pivotal-tracker
+* Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
+* Pivotal API v3 Docs: http://www.pivotaltracker.com/help/api?version=v3
 
-== Contributers
+== Contributors
 
 * Justin Smestad (http://github.com/jsmestad)
 * Josh Nichols (http://github.com/technicalpickles)
 * Terence Lee (http://github.com/hone)
+* Gabor Ratky (http://github.com/rgabo)
+* Leon ?? (http://github.com/sbleon)
