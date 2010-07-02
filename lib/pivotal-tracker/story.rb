@@ -30,6 +30,9 @@ module PivotalTracker
     element :other_id, Integer
 
     def initialize(attributes={})
+      if attributes[:owner]
+        self.project_id = attributes.delete(:owner).id
+      end
       update_attributes(attributes)
     end
 
