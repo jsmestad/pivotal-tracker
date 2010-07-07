@@ -23,6 +23,14 @@ describe PivotalTracker::Project do
     it "should be an instance of Project" do
       @project.should be_a(PivotalTracker::Project)
     end
+
+    it "should have a use_https attribute" do
+      @project.respond_to?(:use_https).should be_true
+    end
+
+    it "should have false for use_https" do
+      @project.use_https.should be_false
+    end
   end
 
   context ".stories" do

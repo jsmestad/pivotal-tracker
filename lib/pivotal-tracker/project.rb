@@ -27,6 +27,7 @@ module PivotalTracker
     element :initial_velocity, Integer
     element :current_velocity, Integer
     element :last_activity_at, DateTime
+    element :use_https, Boolean
 
     def activities
       @activities ||= Proxy.new(self, Activity)
