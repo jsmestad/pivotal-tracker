@@ -28,6 +28,7 @@ module PivotalTracker
     element :jira_id, Integer
     element :jira_url, String
     element :other_id, Integer
+    element :integration_id, Integer
 
     def initialize(attributes={})
       if attributes[:owner]
@@ -79,6 +80,7 @@ module PivotalTracker
             # xml.jira_id "#{jira_id}"
             # xml.jira_url "#{jira_url}"
             xml.other_id "#{other_id}"
+            xml.integration_id "#{integration_id}"
           }
         end
         return builder.to_xml

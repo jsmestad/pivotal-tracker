@@ -87,7 +87,11 @@ describe PivotalTracker::Story do
       
       it "should include other_id" do
         story_for(:other_id => 10)["other_id"].should == "10"
-      end      
+      end
+
+      it "should include integration_id" do
+        story_for(:integration_id => 1000)["integration_id"].should == '1000'
+      end
       
       # the tracker returns 422 when this is included, even if it is not used
       # it "should include jira_id" do
