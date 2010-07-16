@@ -8,13 +8,13 @@ require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'extensions')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'proxy')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'client')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'project')
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'attachment')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'story')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'task')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'membership')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'activity')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'iteration')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'note')
-
 module PivotalTracker
 
   # define error types

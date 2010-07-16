@@ -10,9 +10,8 @@ module PivotalTracker
         return stories
       end
     end
-
+    
     attr_accessor :project_id
-
     element :id, Integer
     element :url, String    
     element :created_at, DateTime
@@ -30,9 +29,11 @@ module PivotalTracker
     element :jira_url, String
     element :other_id, Integer
 
+    has_many :attachments, Attachment
+
+
     def initialize(attributes={})
       self.project_id = attributes.delete(:owner).id if attributes[:owner]
-
       update_attributes(attributes)
     end
 
@@ -61,7 +62,7 @@ module PivotalTracker
     def tasks
       @tasks ||= Proxy.new(self, Task)
     end
-
+    
     def project=(proj_id)
       self.project_id = proj_id
     end
