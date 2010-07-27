@@ -15,6 +15,7 @@ require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'membership')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'activity')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'iteration')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'note')
+
 module PivotalTracker
 
   # define error types
