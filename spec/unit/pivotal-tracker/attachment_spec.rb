@@ -3,6 +3,7 @@ require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
 describe PivotalTracker::Attachment do
 
   before do
+    PivotalTracker::Client.token = TOKEN
     @project = PivotalTracker::Project.find(102622)
     @story = @project.stories.find(4460598)
   end
@@ -29,18 +30,28 @@ describe PivotalTracker::Attachment do
     end
   end
 
-  context "without description"do
+  context "without description" do
     it "should have a blank string for the description" do
       @story.attachments.first.description.should be_a(String)
       @story.attachments.first.description.should be_blank
     end
   end
 
-  context "with description"do
+  context "with description" do
     it "should have a non-blank string for the description" do
       @story.attachments.first.description.should be_a(String)
       @story.attachments.last.description.should_not be_blank
     end
   end
 
+  context "uploading" do
+    it "should return an attachment object with a pending status" do
+      @target_story = @project.stories.find(4473735)
+      orig_net_lock = FakeWeb.allow_net_connect?
+      FakeWeb.allow_net_connect = true
+      resource = @target_story.upload_attachment(File.dirname(__FILE__) + '/../../../LICENSE')
+      FakeWeb.allow_net_connect = orig_net_lock
+      resource.should be_a(PivotalTracker::Attachment)
+    end
+  end
 end

@@ -13,6 +13,8 @@ require 'spec/autorun'
 PROJECT_ID = ENV['PROJECT_ID'] || "102622"
 TOKEN = '8358666c5a593a3c82cda728c8a62b63'
 
+PivotalTracker::Client.token = TOKEN
+
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].each {|f| require f}

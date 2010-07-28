@@ -10,6 +10,7 @@ module PivotalTracker
     element :uploaded_by, String
     element :uploaded_at, DateTime
     element :url, String
+    element :status, String
 
   end
 end

@@ -53,6 +53,10 @@ module StaleFishFixtures
       connection["/projects/102622/stories/4460038/notes"].get
     end
 
+#    def upload_attachment_fixture
+#      connection["/projects/102622/stories/4473735/attachments"].post(:Filedata => File.new(File.dirname(__FILE__) + '/../../LICENSE'))
+#    end
+
     protected
 
       def connection

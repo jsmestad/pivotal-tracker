@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<stories type="array" count="6" limit="20" total="6">
+<stories type="array" count="7" limit="20" total="7">
   <story>
     <id type="integer">4460116</id>
     <project_id type="integer">102622</project_id>
@@ -101,6 +101,19 @@
         <url>http://www.pivotaltracker.com/resource/download/493019</url>
       </attachment>
     </attachments>
+  </story>
+  <story>
+    <id type="integer">4473735</id>
+    <project_id type="integer">102622</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/4473735</url>
+    <estimate type="integer">1</estimate>
+    <current_state>unstarted</current_state>
+    <description></description>
+    <name>Attachment upload test story</name>
+    <requested_by>Jon</requested_by>
+    <created_at type="datetime">2010/07/28 18:17:33 UTC</created_at>
+    <updated_at type="datetime">2010/07/28 18:17:44 UTC</updated_at>
   </story>
   <story>
     <id type="integer">4460096</id>
