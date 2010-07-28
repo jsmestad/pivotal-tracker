@@ -114,6 +114,24 @@
     <requested_by>Jon</requested_by>
     <created_at type="datetime">2010/07/28 18:17:33 UTC</created_at>
     <updated_at type="datetime">2010/07/28 18:17:44 UTC</updated_at>
+    <attachments type="array">
+      <attachment>
+        <id type="integer">493883</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 20:08:16 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/493883</url>
+      </attachment>
+      <attachment>
+        <id type="integer">493885</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 20:08:59 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/493885</url>
+      </attachment>
+    </attachments>
   </story>
   <story>
     <id type="integer">4460096</id>
