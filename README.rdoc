@@ -30,6 +30,7 @@ Version 0.0.8 and above are incompatible with previous versions.
     @story.notes.all                                                              # return all notes (comments) for a story
     @story.notes.create(:text => 'A new coment', :noted_at => '06/29/2010 05:00 EST')  # add a new story
     
+    @story.attachments                                                            # return an array of all attachment items (data only, not the files)
 
     # all tracker defined filters are allowed, as well as :limit & :offset for pagination
 
