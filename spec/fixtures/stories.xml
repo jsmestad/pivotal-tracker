@@ -92,6 +92,14 @@
         <uploaded_at type="datetime">2010/07/27 22:34:23 UTC</uploaded_at>
         <url>http://www.pivotaltracker.com/resource/download/491576</url>
       </attachment>
+      <attachment>
+        <id type="integer">493019</id>
+        <filename>README.rdoc</filename>
+        <description>README file from api gem</description>
+        <uploaded_by>Jon</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 15:16:18 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/493019</url>
+      </attachment>
     </attachments>
   </story>
   <story>

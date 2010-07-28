@@ -7,10 +7,39 @@ describe PivotalTracker::Attachment do
     @story = @project.stories.find(4460598)
   end
 
-  context ".all" do
-    it "should return an array of attachments" do
-      @story.attachments.should be_a(Array)
-      @story.attachments.first.should be_a(PivotalTracker::Attachment)
+  context "always" do
+    it "should return an integer id" do
+      @story.attachments.first.id.should be_a(Integer)
+    end
+
+    it "should return a string for url" do
+      @story.attachments.first.url.should be_a(String)
+    end
+
+    it "should return a string for filename" do
+      @story.attachments.first.filename.should be_a(String)
+    end
+
+    it "should return a string for uploaded_by" do
+      @story.attachments.first.uploaded_by.should be_a(String)
+    end
+
+    it "should return a datetime for uploaded_at" do
+      @story.attachments.first.uploaded_at.should be_a(DateTime)
+    end
+  end
+
+  context "without description"do
+    it "should have a blank string for the description" do
+      @story.attachments.first.description.should be_a(String)
+      @story.attachments.first.description.should be_blank
+    end
+  end
+
+  context "with description"do
+    it "should have a non-blank string for the description" do
+      @story.attachments.first.description.should be_a(String)
+      @story.attachments.last.description.should_not be_blank
     end
   end
 

@@ -24,6 +24,14 @@ describe PivotalTracker::Story do
     end
   end
 
+  context ".attachments" do
+    it "should return an array of attachments" do
+      @story = @project.stories.find(4460598)
+      @story.attachments.should be_a(Array)
+      @story.attachments.first.should be_a(PivotalTracker::Attachment)
+    end
+  end
+
   context ".new" do
 
     def story_for(attrs)

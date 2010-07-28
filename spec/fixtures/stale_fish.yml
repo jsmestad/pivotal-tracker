@@ -41,7 +41,7 @@
       check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories
       request_type: GET
       update_method: StaleFishFixtures.update_stories_fixture
-      last_updated_at: 2010-07-28T10:04:40-05:00
+      last_updated_at: 2010-07-28T12:02:13-05:00
   - project_activity:
       file: 'project_activity.xml'
       update_interval: 2.weeks
