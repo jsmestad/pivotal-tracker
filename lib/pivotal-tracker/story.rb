@@ -11,8 +11,10 @@ module PivotalTracker
       end
     end
 
+    tag "story"
+
     element :id, Integer
-    element :url, String    
+    element :url, String
     element :created_at, DateTime
     element :accepted_at, DateTime
     element :project_id, Integer
@@ -30,8 +32,7 @@ module PivotalTracker
     element :other_id, Integer
     element :integration_id, Integer
 
-    has_many :attachments, Attachment
-
+    has_many :attachments, Attachment, :tag => 'attachments'
 
     def initialize(attributes={})
       if attributes[:owner]

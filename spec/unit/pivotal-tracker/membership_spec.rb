@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
 
 describe PivotalTracker::Project do
   before do
-    @project = PivotalTracker::Project.find(59022)
+    @project = PivotalTracker::Project.find(102622)
   end
 
   context ".all" do
@@ -14,7 +14,7 @@ describe PivotalTracker::Project do
 
   context ".find" do
     it "should return the given membership" do
-      @project.memberships.find(207328).should be_a(PivotalTracker::Membership)
+      @project.memberships.find(331832).should be_a(PivotalTracker::Membership)
     end
   end
 end

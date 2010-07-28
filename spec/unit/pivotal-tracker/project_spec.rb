@@ -17,7 +17,7 @@ describe PivotalTracker::Project do
 
   context ".find" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(102622)
     end
 
     it "should be an instance of Project" do
@@ -35,7 +35,7 @@ describe PivotalTracker::Project do
 
   context ".stories" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(102622)
     end
 
     it "should have a stories association" do
@@ -45,7 +45,7 @@ describe PivotalTracker::Project do
 
   context ".memberships" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(102622)
     end
 
     it "should have a memberships association" do

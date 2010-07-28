@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <story>
-  <id type="integer">4097942</id>
-  <project_id type="integer">59022</project_id>
+  <id type="integer">4460096</id>
+  <project_id type="integer">102622</project_id>
   <story_type>feature</story_type>
-  <url>http://www.pivotaltracker.com/story/show/4097942</url>
+  <url>http://www.pivotaltracker.com/story/show/4460096</url>
   <estimate type="integer">-1</estimate>
   <current_state>unscheduled</current_state>
   <description></description>
   <name>Create stuff</name>
-  <requested_by>Leon Miller-Out</requested_by>
-  <created_at type="datetime">2010/06/30 03:02:32 UTC</created_at>
-  <updated_at type="datetime">2010/06/30 03:02:33 UTC</updated_at>
+  <requested_by>Test Suite Access</requested_by>
+  <created_at type="datetime">2010/07/27 21:56:41 UTC</created_at>
+  <updated_at type="datetime">2010/07/27 21:56:41 UTC</updated_at>
 </story>

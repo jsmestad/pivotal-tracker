@@ -5,4 +5,5 @@ rdoc
 pkg
 vendor
 .bundle
+.idea
 request_test.rb
