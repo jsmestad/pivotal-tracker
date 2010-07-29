@@ -71,6 +71,19 @@ module PivotalTracker
       Attachment.parse(Client.connection["/projects/#{project_id}/stories/#{id}/attachments"].post(:Filedata => File.new(filename)))
     end
 
+    def move_to_project(new_project)
+      case new_project.class
+        when PivotalTracker::Story
+          update :project_id => new_project.project_id
+        when PivotalTracker::Project
+          update :project_id => new_project.id
+        when String
+          update :project_id => new_project.to_i
+        when Integer
+          update :project_id => new_project
+      end
+    end
+
     protected
 
       def to_xml
@@ -84,6 +97,7 @@ module PivotalTracker
             xml.requested_by "#{requested_by}"
             xml.owned_by "#{owned_by}"
             xml.labels "#{labels}"
+            xml.project_id "#{project_id}"
             # See spec
             # xml.jira_id "#{jira_id}"
             # xml.jira_url "#{jira_url}"

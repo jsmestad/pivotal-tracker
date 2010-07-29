@@ -116,20 +116,60 @@
     <updated_at type="datetime">2010/07/28 18:17:44 UTC</updated_at>
     <attachments type="array">
       <attachment>
-        <id type="integer">493883</id>
+        <id type="integer">493961</id>
         <filename>LICENSE</filename>
         <description></description>
         <uploaded_by>Test Suite Access</uploaded_by>
-        <uploaded_at type="datetime">2010/07/28 20:08:16 UTC</uploaded_at>
-        <url>http://www.pivotaltracker.com/resource/download/493883</url>
+        <uploaded_at type="datetime">2010/07/28 20:48:16 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/493961</url>
       </attachment>
       <attachment>
-        <id type="integer">493885</id>
+        <id type="integer">494110</id>
         <filename>LICENSE</filename>
         <description></description>
         <uploaded_by>Test Suite Access</uploaded_by>
-        <uploaded_at type="datetime">2010/07/28 20:08:59 UTC</uploaded_at>
-        <url>http://www.pivotaltracker.com/resource/download/493885</url>
+        <uploaded_at type="datetime">2010/07/28 22:07:41 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/494110</url>
+      </attachment>
+      <attachment>
+        <id type="integer">494128</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 22:16:03 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/494128</url>
+      </attachment>
+      <attachment>
+        <id type="integer">494129</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 22:17:49 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/494129</url>
+      </attachment>
+      <attachment>
+        <id type="integer">494130</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 22:19:17 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/494130</url>
+      </attachment>
+      <attachment>
+        <id type="integer">494180</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 22:44:36 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/494180</url>
+      </attachment>
+      <attachment>
+        <id type="integer">494183</id>
+        <filename>LICENSE</filename>
+        <description></description>
+        <uploaded_by>Test Suite Access</uploaded_by>
+        <uploaded_at type="datetime">2010/07/28 22:46:35 UTC</uploaded_at>
+        <url>http://www.pivotaltracker.com/resource/download/494183</url>
       </attachment>
     </attachments>
   </story>

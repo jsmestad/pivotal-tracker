@@ -9,11 +9,11 @@
       last_updated_at: 2010-07-27T16:56:35-05:00
   - projects:
       file: 'projects.xml'
-      update_interval: 2.weeks
+      update_interval: 2.seconds
       check_against: http://www.pivotaltracker.com/services/v3/projects
       request_type: GET
       update_method: StaleFishFixtures.update_projects_fixture
-      last_updated_at: 2010-07-27T16:56:35-05:00
+      last_updated_at: 2010-07-28T17:48:17-05:00
   - tasks:
       file: 'tasks.xml'
       update_interval: 2.weeks
@@ -37,11 +37,11 @@
       last_updated_at: 2010-07-27T16:56:36-05:00
   - stories:
       file: 'stories.xml'
-      update_interval: 2.weeks
+      update_interval: 2.seconds
       check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories
       request_type: GET
       update_method: StaleFishFixtures.update_stories_fixture
-      last_updated_at: 2010-07-28T15:48:01-05:00
+      last_updated_at: 2010-07-28T17:48:18-05:00
   - project_activity:
       file: 'project_activity.xml'
       update_interval: 2.weeks
