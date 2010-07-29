@@ -33,7 +33,7 @@
       <name>Test Suite Access</name>
       <initials>TEST</initials>
     </person>
-    <role>Owner</role>
+    <role>Member</role>
     <project>
       <id>102622</id>
       <name>Pivotal Tracker API Gem</name>

@@ -72,15 +72,28 @@ module PivotalTracker
     end
 
     def move_to_project(new_project)
-      case new_project.class
-        when PivotalTracker::Story
-          update :project_id => new_project.project_id
-        when PivotalTracker::Project
-          update :project_id => new_project.id
-        when String
-          update :project_id => new_project.to_i
-        when Integer
-          update :project_id => new_project
+      move = true
+      old_project_id = self.project_id
+      target_project = -1
+      case new_project.class.to_s
+        when 'PivotalTracker::Story'
+          target_project = new_project.project_id
+        when 'PivotalTracker::Project'
+          target_project = new_project.id
+        when 'String'
+          target_project = new_project.to_i
+        when 'Fixnum', 'Integer'
+          target_project = new_project
+        else
+          move = false
+      end
+      if move
+        move_builder = Nokogiri::XML::Builder.new do |story|
+          story.story {
+            story.project_id "#{target_project}"
+                  }
+        end
+        Story.parse(Client.connection["/projects/#{old_project_id}/stories/#{id}"].put(move_builder.to_xml, :content_type => 'application/xml'))
       end
     end
 

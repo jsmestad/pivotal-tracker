@@ -7,11 +7,11 @@
   <point_scale>0,1,2,3</point_scale>
   <account>Jon</account>
   <velocity_scheme>Average of 3 iterations</velocity_scheme>
-  <current_velocity>10</current_velocity>
-  <initial_velocity>10</initial_velocity>
+  <current_velocity>2</current_velocity>
+  <initial_velocity>2</initial_velocity>
   <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
   <labels></labels>
-  <last_activity_at type="datetime">2010/07/27 21:53:25 UTC</last_activity_at>
+  <last_activity_at type="datetime">2010/07/29 19:13:13 UTC</last_activity_at>
   <allow_attachments>true</allow_attachments>
   <public>true</public>
   <use_https>false</use_https>
@@ -43,7 +43,7 @@
         <name>Test Suite Access</name>
         <initials>TEST</initials>
       </person>
-      <role>Owner</role>
+      <role>Member</role>
     </membership>
   </memberships>
   <integrations>

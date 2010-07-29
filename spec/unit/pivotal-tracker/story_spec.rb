@@ -33,42 +33,39 @@ describe PivotalTracker::Story do
   end
 
   context ".move_to_project" do
-    before do
-      @target_project = PivotalTracker::Project.find(103014)
+    before(:each) do
       @orig_net_lock = FakeWeb.allow_net_connect?
+      FakeWeb.allow_net_connect = true
+      @target_project = PivotalTracker::Project.find(103014)
+      @movable_story = @project.stories.find(4490874)
     end
 
     it "should return an updated story from the target project when passed a PivotalTracker::Story" do
-      FakeWeb.allow_net_connect = true
-      @story = @project.stories.create(:name => 'To Be Moved')
-      @target_story = @target_project.stories.find(4477972)
-      @story.move_to_project(@target_story)
-      FakeWeb.allow_net_connect = @orig_net_lock
-      @story.project_id.should == @target_story.project_id
+      target_story = @target_project.stories.find(4477972)
+      response = @movable_story.move_to_project(target_story)
+      response.project_id.should == target_story.project_id
     end
 
     it "should return an updated story from the target project when passed a PivotalTracker::Project" do
-      FakeWeb.allow_net_connect = true
-      @story = @project.stories.create(:name => 'To Be Moved')
-      @story.move_to_project(@target_project)
-      FakeWeb.allow_net_connect = @orig_net_lock
-      @story.project_id.should == @target_project.id
+      response = @movable_story.move_to_project(@target_project)
+      response.project_id.should == @target_project.id
     end
 
     it "should return an updated story from the target project when passed a String" do
-      FakeWeb.allow_net_connect = true
-      @story = @project.stories.create(:name => 'To Be Moved')
-      @story.move_to_project('103014')
-      FakeWeb.allow_net_connect = @orig_net_lock
-      @story.project_id.should == 103014
+      response = @movable_story.move_to_project('103014')
+      response.project_id.should == 103014
     end
 
     it "should return an updated story from the target project when passed an Integer"do
-      FakeWeb.allow_net_connect = true
-      @story = @project.stories.create(:name => 'To Be Moved')
-      @story.move_to_project(103014)
+      response = @movable_story.move_to_project(103014)
+      response.project_id.should == 103014
+    end
+
+    after (:each) do
+      @movable_story = @target_project.stories.find(4490874)
+      response = @movable_story.move_to_project(102622)
       FakeWeb.allow_net_connect = @orig_net_lock
-      @story.project_id.should == 103014
+      response.project_id.should == 102622
     end
   end
 

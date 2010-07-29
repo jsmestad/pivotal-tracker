@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iterations type="array">
   <iteration>
-    <id type="integer">1</id>
-    <number type="integer">1</number>
+    <id type="integer">3</id>
+    <number type="integer">3</number>
     <start type="datetime">2010/07/26 05:00:00 UTC</start>
     <finish type="datetime">2010/08/02 05:00:00 UTC</finish>
     <stories type="array">
@@ -15,9 +15,9 @@
         <current_state>unstarted</current_state>
         <description>Generic description</description>
         <name>Tasks Test</name>
-        <requested_by>Jon</requested_by>
+        <requested_by>Jon Mischo</requested_by>
         <created_at type="datetime">2010/07/27 21:51:01 UTC</created_at>
-        <updated_at type="datetime">2010/07/27 21:51:45 UTC</updated_at>
+        <updated_at type="datetime">2010/07/27 22:20:46 UTC</updated_at>
         <tasks type="array">
           <task>
             <id type="integer">468113</id>
@@ -41,19 +41,6 @@
             <created_at type="datetime">2010/07/27 21:51:42 UTC</created_at>
           </task>
         </tasks>
-      </story>
-      <story>
-        <id type="integer">4460038</id>
-        <project_id type="integer">102622</project_id>
-        <story_type>feature</story_type>
-        <url>http://www.pivotaltracker.com/story/show/4460038</url>
-        <estimate type="integer">1</estimate>
-        <current_state>unstarted</current_state>
-        <description>This is a story that has comments.</description>
-        <name>This is for comments</name>
-        <requested_by>Jon</requested_by>
-        <created_at type="datetime">2010/07/27 21:53:16 UTC</created_at>
-        <updated_at type="datetime">2010/07/27 21:53:25 UTC</updated_at>
       </story>
     </stories>
   </iteration>
