@@ -8,9 +8,8 @@ group :runtime do
 end
 
 group :test do
-  gem 'rspec', :require => 'spec'
+  gem 'rspec', '~> 1.3.0', :require => 'spec'
   gem 'rake'
-  gem 'bundler', '~> 0.9.26'
   gem 'jeweler'
   gem 'stale_fish', '~> 1.3.0'
 end
