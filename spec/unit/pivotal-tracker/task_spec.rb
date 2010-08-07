@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), '..', '..', 'spec_helper')
 
 describe PivotalTracker::Task do
   before do
-    @project = PivotalTracker::Project.find(59022)
-    @story = @project.stories.find(2606200)
+    @project = PivotalTracker::Project.find(102622)
+    @story = @project.stories.find(4459994)
   end
 
   context ".all" do
@@ -15,7 +15,7 @@ describe PivotalTracker::Task do
 
   context ".find" do
     it "should return a given task" do
-      @story.tasks.find(179025).should be_a(PivotalTracker::Task)
+      @story.tasks.find(468113).should be_a(PivotalTracker::Task)
     end
   end
 end

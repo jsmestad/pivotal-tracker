@@ -1,358 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projects type="array">
   <project>
-    <id>4165</id>
-    <name>Audi IMS</name>
+    <id>102622</id>
+    <name>Pivotal Tracker API Gem</name>
     <iteration_length type="integer">1</iteration_length>
     <week_start_day>Monday</week_start_day>
-    <point_scale>0,1,2,3,5,8</point_scale>
-    <account>JZ // Factory Labs</account>
-    <velocity_scheme>Average of 2 iterations</velocity_scheme>
-    <current_velocity>27</current_velocity>
-    <initial_velocity>10</initial_velocity>
+    <point_scale>0,1,2,3</point_scale>
+    <account>Jon</account>
+    <velocity_scheme>Average of 3 iterations</velocity_scheme>
+    <current_velocity>2</current_velocity>
+    <initial_velocity>2</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>**duplicate**,ab_test,admin,backend,blocked,brainstorm,cloud migration,cms,dag,data issues,dealer,design,discuss,duplicate,enhancement,export,import,ims forms,invalid,is,justin,pending,spiff,verify</labels>
-    <last_activity_at type="datetime">2010/04/28 13:11:38 MDT</last_activity_at>
+    <labels></labels>
+    <last_activity_at type="datetime">2010/07/29 19:13:13 UTC</last_activity_at>
     <allow_attachments>true</allow_attachments>
-    <public>false</public>
+    <public>true</public>
     <use_https>false</use_https>
-    <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
+    <bugs_and_chores_are_estimatable>true</bugs_and_chores_are_estimatable>
     <commit_mode>true</commit_mode>
     <memberships>
       <membership>
-        <id>62553</id>
+        <id>331822</id>
         <person>
-          <email>jay.zeschin@factorylabs.com</email>
-          <name>Jay Zeschin</name>
-          <initials>JZ</initials>
+          <email>jmischo@sittercity.com</email>
+          <name>Jon</name>
+          <initials>JM</initials>
         </person>
         <role>Owner</role>
       </membership>
       <membership>
-        <id>62554</id>
+        <id>331823</id>
         <person>
-          <email>gabe.varela@factorylabs.com</email>
-          <name>Gabe Varela</name>
-          <initials>GV</initials>
+          <email>jmischo@quagility.com</email>
+          <name>Jon Mischo</name>
+          <initials>JM</initials>
         </person>
         <role>Owner</role>
       </membership>
       <membership>
-        <id>73972</id>
+        <id>331832</id>
         <person>
-          <email>sean.heckethorn@factorylabs.com</email>
-          <name>Sean Heckethorn</name>
-          <initials>SH</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>75962</id>
-        <person>
-          <email>ross.maupin@factorylabs.com</email>
-          <name>Ross Maupin</name>
-          <initials>RM</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>76927</id>
-        <person>
-          <email>bree@factorylabs.com</email>
-          <name>Bree Rossi</name>
-          <initials>BR</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>82072</id>
-        <person>
-          <email>matt.kitt@factorylabs.com</email>
-          <name>Matthew Kitt</name>
-          <initials>MK</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>83996</id>
-        <person>
-          <email>craig@factorylabs.com</email>
-          <name>Craig Partin</name>
-          <initials>cp</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>87636</id>
-        <person>
-          <email>grant@factorylabs.com</email>
-          <name>Grant Davis</name>
-          <initials>GD</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>92467</id>
-        <person>
-          <email>jeremy@factorylabs.com</email>
-          <name>Jeremy Jackson</name>
-          <initials>JJ</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>93302</id>
-        <person>
-          <email>justin.smestad@factorylabs.com</email>
-          <name>Justin Smestad</name>
-          <initials>JS</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>94356</id>
-        <person>
-          <email>ryan.boyajian@factorylabs.com</email>
-          <name>Ryan Boyajian</name>
-          <initials>RB</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>109877</id>
-        <person>
-          <email>sam@factorylabs.com</email>
-          <name>Sam Kuhlmann</name>
-          <initials>SamK</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>133358</id>
-        <person>
-          <email>kat.grider@factorylabs.com</email>
-          <name>Kat</name>
-          <initials>KG</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>136705</id>
-        <person>
-          <email>peter.gornell@factorylabs.com</email>
-          <name>Peter Gornell</name>
-          <initials>PG</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>152809</id>
-        <person>
-          <email>michael.tully@factorylabs.com</email>
-          <name>Michael Tully</name>
-          <initials>MT</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>158208</id>
-        <person>
-          <email>drew.finkbeiner@factorylabs.com</email>
-          <name>Drew Finkbeiner</name>
-          <initials>DF</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>162762</id>
-        <person>
-          <email>jennifer.kolling@factorylabs.com</email>
-          <name>Jen Kolling</name>
-          <initials>JK</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>164347</id>
-        <person>
-          <email>parker.fleming@factorylabs.com</email>
-          <name>Parker Fleming</name>
-          <initials>PF</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>223286</id>
-        <person>
-          <email>meghan.newlin@factorylabs.com</email>
-          <name>Meghan Newlin</name>
-          <initials>MN</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>239039</id>
-        <person>
-          <email>alex.jackson@pivotallabs.com</email>
-          <name>Alex Jackson</name>
-          <initials>AJ</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>239040</id>
-        <person>
-          <email>mbarinek@pivotallabs.com</email>
-          <name>Mike Barinek</name>
-          <initials>MB</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>246350</id>
-        <person>
-          <email>extern.spencer.sakata@audi.com</email>
-          <name>Spencer Sakata</name>
-          <initials>SS</initials>
-        </person>
-        <role>Viewer</role>
-      </membership>
-      <membership>
-        <id>246444</id>
-        <person>
-          <email>charles@pivotallabs.com</email>
-          <name>Charles LeRose</name>
-          <initials>CL</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>252586</id>
-        <person>
-          <email>don.petersen@factorylabs.com</email>
-          <name>Don Petersen</name>
-          <initials>DP</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>252590</id>
-        <person>
-          <email>mgehard@pivotallabs.com</email>
-          <name>Mike Gehard</name>
-          <initials>MG</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>252856</id>
-        <person>
-          <email>ben.grogan@factorylabs.com</email>
-          <name>Ben Grogan</name>
-          <initials>BG</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-    </memberships>
-    <integrations>
-      <integration>
-        <id type="integer">217</id>
-        <type>JIRA</type>
-        <name>Jira</name>
-        <field_name>jira_id</field_name>
-        <field_label>JIRA ID</field_label>
-        <active>true</active>
-      </integration>
-    </integrations>
-  </project>
-  <project>
-    <id>57587</id>
-    <name>Audi Tier 2/3 Sweeps</name>
-    <iteration_length type="integer">1</iteration_length>
-    <week_start_day>Monday</week_start_day>
-    <point_scale>0,1,2,3</point_scale>
-    <account>Parker Fleming</account>
-    <velocity_scheme>Average of 3 iterations</velocity_scheme>
-    <current_velocity>10</current_velocity>
-    <initial_velocity>10</initial_velocity>
-    <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>crash,dag site,dasb&#252;ro,dealer site,ie issue,ims bug,ims enhancement,ims forms,jira,last one,major,minor,possible dupe,text</labels>
-    <last_activity_at type="datetime">2010/04/27 16:01:08 MDT</last_activity_at>
-    <allow_attachments>true</allow_attachments>
-    <public>false</public>
-    <use_https>false</use_https>
-    <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
-    <commit_mode>true</commit_mode>
-    <memberships>
-      <membership>
-        <id>203104</id>
-        <person>
-          <email>parker.fleming@factorylabs.com</email>
-          <name>Parker Fleming</name>
-          <initials>PF</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>203107</id>
-        <person>
-          <email>sean.heckethorn@factorylabs.com</email>
-          <name>Sean Heckethorn</name>
-          <initials>SH</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>203108</id>
-        <person>
-          <email>drew.finkbeiner@factorylabs.com</email>
-          <name>Drew Finkbeiner</name>
-          <initials>DF</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>203109</id>
-        <person>
-          <email>michael.tully@factorylabs.com</email>
-          <name>Michael Tully</name>
-          <initials>MT</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>219072</id>
-        <person>
-          <email>justin.smestad@factorylabs.com</email>
-          <name>Justin Smestad</name>
-          <initials>JS</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>233705</id>
-        <person>
-          <email>jennifer.kolling@factorylabs.com</email>
-          <name>Jen Kolling</name>
-          <initials>JK</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>256802</id>
-        <person>
-          <email>cnewbury@ibeta.com</email>
-          <name>Chantelle Newbury</name>
-          <initials>CN</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>256803</id>
-        <person>
-          <email>kwells@ibeta.com</email>
-          <name>Keith Wells</name>
-          <initials>KW</initials>
+          <email>pivotal-tracker-api-gem@quagility.com</email>
+          <name>Test Suite Access</name>
+          <initials>TEST</initials>
         </person>
         <role>Member</role>
       </membership>
@@ -361,149 +51,18 @@
     </integrations>
   </project>
   <project>
-    <id>21978</id>
-    <name>Brown Bag</name>
+    <id>103014</id>
+    <name>Pivotal Tracker API Gem Target Project</name>
     <iteration_length type="integer">1</iteration_length>
     <week_start_day>Monday</week_start_day>
     <point_scale>0,1,2,3</point_scale>
-    <account>JS // FDL</account>
-    <velocity_scheme>Average of 3 iterations</velocity_scheme>
-    <current_velocity>10</current_velocity>
-    <initial_velocity>10</initial_velocity>
-    <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>app-dev,ui-dev</labels>
-    <last_activity_at type="datetime">2009/10/14 13:45:39 MDT</last_activity_at>
-    <allow_attachments>true</allow_attachments>
-    <public>false</public>
-    <use_https>false</use_https>
-    <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
-    <commit_mode>false</commit_mode>
-    <memberships>
-      <membership>
-        <id>107889</id>
-        <person>
-          <email>justin.smestad@factorylabs.com</email>
-          <name>Justin Smestad</name>
-          <initials>JS</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>107890</id>
-        <person>
-          <email>gabe.varela@factorylabs.com</email>
-          <name>Gabe Varela</name>
-          <initials>GV</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>107891</id>
-        <person>
-          <email>jay.zeschin@factorylabs.com</email>
-          <name>Jay Zeschin</name>
-          <initials>JZ</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>107892</id>
-        <person>
-          <email>matt.kitt@factorylabs.com</email>
-          <name>Matthew Kitt</name>
-          <initials>MK</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>107893</id>
-        <person>
-          <email>justin.gitlin@factorylabs.com</email>
-          <name>Justin Gitlin</name>
-          <initials>JG</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>107894</id>
-        <person>
-          <email>craig@factorylabs.com</email>
-          <name>Craig Partin</name>
-          <initials>cp</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>107895</id>
-        <person>
-          <email>ryan.boyajian@factorylabs.com</email>
-          <name>Ryan Boyajian</name>
-          <initials>RB</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>107896</id>
-        <person>
-          <email>grant@factorylabs.com</email>
-          <name>Grant Davis</name>
-          <initials>GD</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>113057</id>
-        <person>
-          <email>kris.collins@factorylabs.com</email>
-          <name>Kris Collins</name>
-          <initials>KC</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>116351</id>
-        <person>
-          <email>sean.dougherty@factorylabs.com</email>
-          <name>Sean Dougherty</name>
-          <initials>scd</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>116371</id>
-        <person>
-          <email>jeremy@factorylabs.com</email>
-          <name>Jeremy Jackson</name>
-          <initials>JJ</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>116372</id>
-        <person>
-          <email>todd.sheridan@factorylabs.com</email>
-          <name>Todd Sheridan</name>
-          <initials>TS</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-    </memberships>
-    <integrations>
-    </integrations>
-  </project>
-  <project>
-    <id>70777</id>
-    <name>IMS - Performance</name>
-    <iteration_length type="integer">1</iteration_length>
-    <week_start_day>Monday</week_start_day>
-    <point_scale>0,1,2,3</point_scale>
-    <account>JZ // Factory Labs</account>
+    <account>Jon</account>
     <velocity_scheme>Average of 3 iterations</velocity_scheme>
     <current_velocity>10</current_velocity>
     <initial_velocity>10</initial_velocity>
     <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
     <labels></labels>
-    <last_activity_at type="datetime">2010/04/28 14:29:14 MDT</last_activity_at>
+    <last_activity_at type="datetime">2010/07/29 19:13:12 UTC</last_activity_at>
     <allow_attachments>true</allow_attachments>
     <public>false</public>
     <use_https>false</use_https>
@@ -511,183 +70,29 @@
     <commit_mode>false</commit_mode>
     <memberships>
       <membership>
-        <id>239100</id>
+        <id>333170</id>
         <person>
-          <email>jay.zeschin@factorylabs.com</email>
-          <name>Jay Zeschin</name>
-          <initials>JZ</initials>
+          <email>jmischo@sittercity.com</email>
+          <name>Jon</name>
+          <initials>JM</initials>
         </person>
         <role>Owner</role>
       </membership>
       <membership>
-        <id>239101</id>
+        <id>333172</id>
         <person>
-          <email>alex.jackson@pivotallabs.com</email>
-          <name>Alex Jackson</name>
-          <initials>AJ</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>239102</id>
-        <person>
-          <email>mbarinek@pivotallabs.com</email>
-          <name>Mike Barinek</name>
-          <initials>MB</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>239103</id>
-        <person>
-          <email>gabe.varela@factorylabs.com</email>
-          <name>Gabe Varela</name>
-          <initials>GV</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>239104</id>
-        <person>
-          <email>justin.smestad@factorylabs.com</email>
-          <name>Justin Smestad</name>
-          <initials>JS</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>246446</id>
-        <person>
-          <email>charles@pivotallabs.com</email>
-          <name>Charles LeRose</name>
-          <initials>CL</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>252593</id>
-        <person>
-          <email>mgehard@pivotallabs.com</email>
-          <name>Mike Gehard</name>
-          <initials>MG</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>252594</id>
-        <person>
-          <email>don.petersen@factorylabs.com</email>
-          <name>Don Petersen</name>
-          <initials>DP</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-    </memberships>
-    <integrations>
-    </integrations>
-  </project>
-  <project>
-    <id>63671</id>
-    <name>pairable</name>
-    <iteration_length type="integer">1</iteration_length>
-    <week_start_day>Monday</week_start_day>
-    <point_scale>0,1,2,3</point_scale>
-    <account>Justin Smestad</account>
-    <velocity_scheme>Average of 3 iterations</velocity_scheme>
-    <current_velocity>10</current_velocity>
-    <initial_velocity>10</initial_velocity>
-    <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>chef,design</labels>
-    <last_activity_at type="datetime">2010/04/02 11:53:19 MDT</last_activity_at>
-    <allow_attachments>true</allow_attachments>
-    <public>false</public>
-    <use_https>false</use_https>
-    <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
-    <commit_mode>false</commit_mode>
-    <memberships>
-      <membership>
-        <id>220065</id>
-        <person>
-          <email>justin.smestad@factorylabs.com</email>
-          <name>Justin Smestad</name>
-          <initials>JS</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>220066</id>
-        <person>
-          <email>hone02@gmail.com</email>
-          <name>Terence Lee</name>
-          <initials>TL</initials>
+          <email>pivotal-tracker-api-gem@quagility.com</email>
+          <name>Test Suite Access</name>
+          <initials>TEST</initials>
         </person>
         <role>Member</role>
       </membership>
       <membership>
-        <id>229939</id>
+        <id>333173</id>
         <person>
-          <email>bracer@gmail.com</email>
-          <name>Brian Racer</name>
-          <initials>BR</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>237849</id>
-        <person>
-          <email>c.nguyen2213@yahoo.com</email>
-          <name>Chris Nguyen</name>
-          <initials>CN</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-      <membership>
-        <id>238064</id>
-        <person>
-          <email>bobbywilson0@gmail.com</email>
-          <name>Bobby Wilson</name>
-          <initials>BW</initials>
-        </person>
-        <role>Member</role>
-      </membership>
-    </memberships>
-    <integrations>
-    </integrations>
-  </project>
-  <project>
-    <id>59022</id>
-    <name>PivotalTracker.rb</name>
-    <iteration_length type="integer">1</iteration_length>
-    <week_start_day>Monday</week_start_day>
-    <point_scale>0,1,2,3</point_scale>
-    <account>Justin Smestad</account>
-    <velocity_scheme>Average of 3 iterations</velocity_scheme>
-    <current_velocity>10</current_velocity>
-    <initial_velocity>10</initial_velocity>
-    <number_of_done_iterations_to_show>12</number_of_done_iterations_to_show>
-    <labels>test_dependent</labels>
-    <last_activity_at type="datetime">2010/04/22 12:02:23 MDT</last_activity_at>
-    <allow_attachments>true</allow_attachments>
-    <public>true</public>
-    <use_https>false</use_https>
-    <bugs_and_chores_are_estimatable>false</bugs_and_chores_are_estimatable>
-    <commit_mode>false</commit_mode>
-    <memberships>
-      <membership>
-        <id>207328</id>
-        <person>
-          <email>justin.smestad@factorylabs.com</email>
-          <name>Justin Smestad</name>
-          <initials>JS</initials>
-        </person>
-        <role>Owner</role>
-      </membership>
-      <membership>
-        <id>207330</id>
-        <person>
-          <email>hone02@gmail.com</email>
-          <name>Terence Lee</name>
-          <initials>TL</initials>
+          <email>jmischo@quagility.com</email>
+          <name>Jon Mischo</name>
+          <initials>JM</initials>
         </person>
         <role>Owner</role>
       </membership>

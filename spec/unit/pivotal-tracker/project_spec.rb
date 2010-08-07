@@ -17,17 +17,25 @@ describe PivotalTracker::Project do
 
   context ".find" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(102622)
     end
 
     it "should be an instance of Project" do
       @project.should be_a(PivotalTracker::Project)
     end
+
+    it "should have a use_https attribute" do
+      @project.respond_to?(:use_https).should be_true
+    end
+
+    it "should have false for use_https" do
+      @project.use_https.should be_false
+    end
   end
 
   context ".stories" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(102622)
     end
 
     it "should have a stories association" do
@@ -37,7 +45,7 @@ describe PivotalTracker::Project do
 
   context ".memberships" do
     before do
-      @project = PivotalTracker::Project.find(59022)
+      @project = PivotalTracker::Project.find(102622)
     end
 
     it "should have a memberships association" do

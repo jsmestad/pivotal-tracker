@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notes type="array">
   <note>
-    <id type="integer">1922689</id>
-    <text>This is comment 1</text>
-    <author>Leon Miller-Out</author>
-    <noted_at type="datetime">2010/06/30 03:01:59 UTC</noted_at>
+    <id type="integer">2111593</id>
+    <text>This is a comment...whee!</text>
+    <author>Jon</author>
+    <noted_at type="datetime">2010/07/27 22:15:48 UTC</noted_at>
   </note>
   <note>
-    <id type="integer">1922690</id>
-    <text>This is comment 2.
-
-It has some line breaks in it.</text>
-    <author>Leon Miller-Out</author>
-    <noted_at type="datetime">2010/06/30 03:02:03 UTC</noted_at>
+    <id type="integer">2128955</id>
+    <text>Test note</text>
+    <author>Test Suite Access</author>
+    <noted_at type="datetime">2010/07/29 18:15:09 UTC</noted_at>
+  </note>
+  <note>
+    <id type="integer">2128959</id>
+    <text>Test note</text>
+    <author>Test Suite Access</author>
+    <noted_at type="datetime">2010/07/29 18:16:12 UTC</noted_at>
+  </note>
+  <note>
+    <id type="integer">2129077</id>
+    <text>Test note</text>
+    <author>Test Suite Access</author>
+    <noted_at type="datetime">2010/07/29 18:22:26 UTC</noted_at>
+  </note>
+  <note>
+    <id type="integer">2129374</id>
+    <text>Test note</text>
+    <author>Test Suite Access</author>
+    <noted_at type="datetime">2010/07/29 18:55:44 UTC</noted_at>
   </note>
 </notes>

@@ -6,19 +6,19 @@ module StaleFishFixtures
     end
 
     def update_project_fixture
-      connection["/projects/59022"].get
+      connection["/projects/102622"].get
     end
 
     def update_stories_fixture
-      connection["/projects/59022/stories?limit=20"].get
+      connection["/projects/102622/stories?limit=20"].get
     end
 
     def update_memberships_fixture
-      connection["/projects/59022/memberships"].get
+      connection["/projects/102622/memberships"].get
     end
 
     def update_tasks_fixture
-      connection["/projects/59022/stories/2606200/tasks"].get
+      connection["/projects/102622/stories/4459994/tasks"].get
     end
 
     def update_activity_fixture
@@ -26,32 +26,36 @@ module StaleFishFixtures
     end
 
     def update_project_activity_fixture
-      connection["/projects/59022/activities"].get
+      connection["/projects/102622/activities"].get
     end
 
     def update_iterations_all_fixture
-      connection["/projects/59022/iterations"].get
+      connection["/projects/102622/iterations"].get
     end
-    
+
     def update_iterations_current_fixture
-      connection["/projects/59022/iterations/current"].get
+      connection["/projects/102622/iterations/current"].get
     end
 
     def update_iterations_backlog_fixture
-      connection["/projects/59022/iterations/backlog"].get
+      connection["/projects/102622/iterations/backlog"].get
     end
 
     def update_iterations_done_fixture
-      connection["/projects/59022/iterations/done"].get
+      connection["/projects/102622/iterations/done"].get
     end
 
     def create_new_story
-      connection["/projects/59022/stories"].post("<story><name>Create stuff</name></story>", :content_type => 'application/xml')
+      connection["/projects/102622/stories"].post("<story><name>Create stuff</name></story>", :content_type => 'application/xml')
     end
-    
+
     def update_notes_fixture
-      connection["/projects/59022/stories/2524689/notes"].get
+      connection["/projects/102622/stories/4460038/notes"].get
     end
+
+#    def upload_attachment_fixture
+#      connection["/projects/102622/stories/4473735/attachments"].post(:Filedata => File.new(File.dirname(__FILE__) + '/../../LICENSE'))
+#    end
 
     protected
 

@@ -11,12 +11,13 @@ module PivotalTracker
       end
     end
 
-    attr_accessor :project_id
+    tag "story"
 
     element :id, Integer
-    element :url, String    
+    element :url, String
     element :created_at, DateTime
     element :accepted_at, DateTime
+    element :project_id, Integer
 
     element :name, String
     element :description, String
@@ -29,10 +30,14 @@ module PivotalTracker
     element :jira_id, Integer
     element :jira_url, String
     element :other_id, Integer
+    element :integration_id, Integer
+
+    has_many :attachments, Attachment, :tag => 'attachments'
 
     def initialize(attributes={})
-      self.project_id = attributes.delete(:owner).id if attributes[:owner]
-
+      if attributes[:owner]
+        self.project_id = attributes.delete(:owner).id
+      end
       update_attributes(attributes)
     end
 
@@ -62,8 +67,34 @@ module PivotalTracker
       @tasks ||= Proxy.new(self, Task)
     end
 
-    def project=(proj_id)
-      self.project_id = proj_id
+    def upload_attachment(filename)
+      Attachment.parse(Client.connection["/projects/#{project_id}/stories/#{id}/attachments"].post(:Filedata => File.new(filename)))
+    end
+
+    def move_to_project(new_project)
+      move = true
+      old_project_id = self.project_id
+      target_project = -1
+      case new_project.class.to_s
+        when 'PivotalTracker::Story'
+          target_project = new_project.project_id
+        when 'PivotalTracker::Project'
+          target_project = new_project.id
+        when 'String'
+          target_project = new_project.to_i
+        when 'Fixnum', 'Integer'
+          target_project = new_project
+        else
+          move = false
+      end
+      if move
+        move_builder = Nokogiri::XML::Builder.new do |story|
+          story.story {
+            story.project_id "#{target_project}"
+                  }
+        end
+        Story.parse(Client.connection["/projects/#{old_project_id}/stories/#{id}"].put(move_builder.to_xml, :content_type => 'application/xml'))
+      end
     end
 
     protected
@@ -79,10 +110,12 @@ module PivotalTracker
             xml.requested_by "#{requested_by}"
             xml.owned_by "#{owned_by}"
             xml.labels "#{labels}"
+            xml.project_id "#{project_id}"
             # See spec
             # xml.jira_id "#{jira_id}"
             # xml.jira_url "#{jira_url}"
             xml.other_id "#{other_id}"
+            xml.integration_id "#{integration_id}"
           }
         end
         return builder.to_xml

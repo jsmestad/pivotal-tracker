@@ -3,98 +3,98 @@
   - memberships:
       file: 'memberships.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/memberships
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/memberships
       request_type: GET
       update_method: StaleFishFixtures.update_memberships_fixture
-      last_updated_at: 2010-06-29T23:02:18-04:00
+      last_updated_at: 2010-07-29T14:15:09-05:00
   - projects:
       file: 'projects.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/projects
       request_type: GET
       update_method: StaleFishFixtures.update_projects_fixture
-      last_updated_at: 2010-06-29T23:02:20-04:00
+      last_updated_at: 2010-07-29T14:15:09-05:00
   - tasks:
       file: 'tasks.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories/2606200/tasks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4459994/tasks
       request_type: GET
       update_method: StaleFishFixtures.update_tasks_fixture
-      last_updated_at: 2010-06-29T23:02:25-04:00
+      last_updated_at: 2010-07-29T14:15:10-05:00
   - project:
       file: 'project.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622
       request_type: GET
       update_method: StaleFishFixtures.update_project_fixture
-      last_updated_at: 2010-06-29T23:02:26-04:00
+      last_updated_at: 2010-07-29T14:15:11-05:00
   - activity:
       file: 'activity.xml'
       update_interval: 2.weeks
       check_against: http://www.pivotaltracker.com/services/v3/activities
       request_type: GET
       update_method: StaleFishFixtures.update_activity_fixture
-      last_updated_at: 2010-06-29T23:02:26-04:00
+      last_updated_at: 2010-07-29T14:15:11-05:00
   - stories:
       file: 'stories.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories
       request_type: GET
       update_method: StaleFishFixtures.update_stories_fixture
-      last_updated_at: 2010-06-29T23:02:28-04:00
+      last_updated_at: 2010-07-29T14:15:12-05:00
   - project_activity:
       file: 'project_activity.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/activities
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/activities
       request_type: GET
       update_method: StaleFishFixtures.update_project_activity_fixture
-      last_updated_at: 2010-06-29T23:02:29-04:00
+      last_updated_at: 2010-07-29T14:15:13-05:00
   - create_story:
       file: 'created_story.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories
       request_type: POST
       update_method: StaleFishFixtures.create_new_story
-      last_updated_at: 2010-06-29T23:02:29-04:00
+      last_updated_at: 2010-07-29T14:15:14-05:00
   - iterations_current:
       file: 'iterations_current.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/iterations/current
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/iterations/current
       request_type: GET
       update_method: StaleFishFixtures.update_iterations_current_fixture
-      last_updated_at: 2010-06-29T23:02:30-04:00
+      last_updated_at: 2010-07-29T14:15:14-05:00
   - iterations_done:
       file: 'iterations_done.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/iterations/done
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/iterations/done
       request_type: GET
       update_method: StaleFishFixtures.update_iterations_done_fixture
-      last_updated_at: 2010-06-29T23:02:30-04:00
+      last_updated_at: 2010-07-29T14:15:14-05:00
   - iterations_backlog:
       file: 'iterations_backlog.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/iterations/backlog
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/iterations/backlog
       request_type: GET
       update_method: StaleFishFixtures.update_iterations_backlog_fixture
-      last_updated_at: 2010-06-29T23:02:31-04:00
+      last_updated_at: 2010-07-29T14:15:15-05:00
   - iterations_all:
       file: 'iterations_all.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/iterations
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/iterations
       request_type: GET
       update_method: StaleFishFixtures.update_iterations_all_fixture
-      last_updated_at: 2010-06-29T23:02:31-04:00
+      last_updated_at: 2010-07-29T14:15:16-05:00
   - notes:
       file: 'notes.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories/2524689/notes
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4460038/notes
       request_type: GET
       update_method: StaleFishFixtures.update_notes_fixture
-      last_updated_at: 2010-06-29T23:02:31-04:00
+      last_updated_at: 2010-07-29T14:15:16-05:00
   - create_note:
       file: 'created_note.xml'
       update_interval: 2.weeks
-      check_against: http://www.pivotaltracker.com/services/v3/projects/59022/stories/2524689/notes
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4460038/notes
       request_type: POST
       update_method: StaleFishFixtures.create_new_story
-      last_updated_at: 2010-06-29T23:02:32-04:00
+      last_updated_at: 2010-07-29T14:15:17-05:00
