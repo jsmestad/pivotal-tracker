@@ -47,9 +47,9 @@ module PivotalTracker
 
     def iteration(group)
       case group.to_sym
-      when :done: Iteration.done(self)
-      when :current: Iteration.current(self)
-      when :backlog: Iteration.backlog(self)
+      when :done then Iteration.done(self)
+      when :current then Iteration.current(self)
+      when :backlog then Iteration.backlog(self)
       else
         raise ArgumentError, "Invalid group. Use :done, :current or :backlog instead."
       end
