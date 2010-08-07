@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotal-tracker}
-  s.version = "0.2.0.6"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = %q{2010-07-29}
+  s.date = %q{2010-08-07}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".gitignore",
      "Gemfile",
+     "Gemfile.lock",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
@@ -89,18 +90,30 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.2"])
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, [">= 0.9.26"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<stale_fish>, ["~> 1.3.0"])
     else
       s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_dependency(%q<builder>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, ["~> 1.4.2"])
+      s.add_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
+      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<bundler>, [">= 0.9.26"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
     end
   else
     s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
     s.add_dependency(%q<happymapper>, [">= 0.3.2"])
     s.add_dependency(%q<builder>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, ["~> 1.4.2"])
+    s.add_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
+    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<bundler>, [">= 0.9.26"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
   end
 end
 
