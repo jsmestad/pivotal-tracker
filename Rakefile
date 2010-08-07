@@ -1,5 +1,4 @@
 require 'rake'
-require 'bundler'
 
 begin
   require 'jeweler'
@@ -16,7 +15,7 @@ begin
     gem.add_dependency 'nokogiri', '~> 1.4.3.1'
     
     gem.add_development_dependency 'rspec'
-    gem.add_development_dependency 'bundler', '~> 0.9.26'
+    gem.add_development_dependency 'bundler', '>= 0.9.26'
     gem.add_development_dependency 'jeweler'
     gem.add_development_dependency 'stale_fish', '~> 1.3.0'
   end
