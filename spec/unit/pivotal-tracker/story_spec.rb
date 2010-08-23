@@ -86,14 +86,6 @@ describe PivotalTracker::Story do
         story_for(:url => "somewhere")["url"].should be_nil
       end
 
-      it "should include created_at" do
-        story_for(:created_at => Time.now)["created_at"].should be_nil
-      end
-
-      it "should include accepted_at" do
-        story_for(:accepted_at => Time.now)["accepted_at"].should be_nil
-      end
-
     end
 
     describe "attributes that are sent to the tracker" do
@@ -147,6 +139,24 @@ describe PivotalTracker::Story do
       #   story_for(:jira_url => "somewhere")["jira_url"].should == "somewhere"
       # end
 
+      [:created_at, :accepted_at].each do |date_attribute|
+        it "should include #{date_attribute} date when given a string" do
+          story_for(:created_at => '9/20/1984, 10:23am UTC')["created_at"].should == "1984-09-20T10:23:00+00:00"
+        end
+
+        it "should include #{date_attribute} date when given a Time" do
+          story_for(:created_at => Time.parse('9/20/1984, 10:23am UTC'))["created_at"].should == "1984-09-20T10:23:00+00:00"
+        end
+
+        it "should include #{date_attribute} date when given a DateTime" do
+          story_for(:created_at => DateTime.parse('9/20/1984, 10:23am UTC'))["created_at"].should == "1984-09-20T10:23:00+00:00"
+        end
+
+        it "should include #{date_attribute} date when given a Date" do
+          # Dates don't have time zones, but the time will be in local time, so we convert the date to create the expectation
+          story_for(:created_at => Date.parse('9/20/1984'))["created_at"].should == DateTime.parse('9/20/1984').to_s
+        end
+      end
     end
 
   end
