@@ -116,6 +116,8 @@ module PivotalTracker
             # xml.jira_url "#{jira_url}"
             xml.other_id "#{other_id}"
             xml.integration_id "#{integration_id}"
+            xml.created_at DateTime.parse(created_at.to_s).to_s if created_at
+            xml.accepted_at DateTime.parse(accepted_at.to_s).to_s if accepted_at
           }
         end
         return builder.to_xml
