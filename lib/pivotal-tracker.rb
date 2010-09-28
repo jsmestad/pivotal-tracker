@@ -23,19 +23,17 @@ module PivotalTracker
 
   def self.encode_options(options)
     return nil if !options.is_a?(Hash) || options.empty?
-
-    options_string = []
-    options_string << "limit=#{options.delete(:limit)}" if options[:limit]
-    options_string << "offset=#{options.delete(:offset)}" if options[:offset]
-
-    filters = []
-    options.each do |key, value|
-      values = value.is_a?(Array) ? value.map {|x| CGI.escape(x) }.join(',') : CGI.escape(value)
-      filters << "#{key}%3A#{values}" # %3A => :
+    options_strings = []
+    # remove options which are not filters, and encode them as such
+    [:limit, :offset].each do |o|
+      options_strings << "#{CGI.escape(o.to_s)}=#{CGI.escape(options.delete(o))}" if options[o]
     end
-    options_string << "filter=#{filters.join('%20')}" unless filters.empty? # %20 => &amp;
-
-    return "?#{options_string.join('&')}"
+    # assume remaining key-value pairs describe filters, and encode them as such.
+    filters_string = options.map do |key, value|
+      [value].flatten.map {|v| "#{CGI.escape(key.to_s)}%3A#{CGI.escape(v)}"}.join('&filter=')
+    end
+    options_strings << "filter=#{filters_string}" unless filters_string.empty?
+    return "?#{options_strings.join('&')}"
   end
 
 end
