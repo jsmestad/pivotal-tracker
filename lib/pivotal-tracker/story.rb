@@ -9,6 +9,12 @@ module PivotalTracker
         stories.each { |s| s.project_id = project.id }
         return stories
       end
+
+      def find(param, project_id)
+        story = parse(Client.connection["/projects/#{project_id}/stories/#{param}"].get)
+        story.project_id = project_id
+        return story
+      end
     end
 
     tag "story"

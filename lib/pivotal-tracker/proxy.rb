@@ -17,6 +17,7 @@ module PivotalTracker
 
     def find(param, options={})
       return all(options) if param == :all
+      return @target.find(param, @owner.id) if @target.respond_to?("find")
       return proxy_found(options).detect { |document| document.id == param }
     end
 
