@@ -11,8 +11,12 @@ module PivotalTracker
       end
 
       def find(param, project_id)
-        story = parse(Client.connection["/projects/#{project_id}/stories/#{param}"].get)
-        story.project_id = project_id
+        begin
+          story = parse(Client.connection["/projects/#{project_id}/stories/#{param}"].get)
+          story.project_id = project_id
+        rescue RestClient::ExceptionWithResponse
+          story = nil
+        end
         return story
       end
     end
