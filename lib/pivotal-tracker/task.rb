@@ -42,6 +42,7 @@ module PivotalTracker
             xml.complete "#{complete}"
           }
         end
+        return builder.to_xml
       end
 
   end
