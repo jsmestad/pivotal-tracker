@@ -46,4 +46,8 @@ module PivotalTracker
       end
 
   end
+
+  class Task
+    include Validation
+  end
 end

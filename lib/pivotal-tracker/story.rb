@@ -139,4 +139,8 @@ module PivotalTracker
         end
       end
   end
+
+  class Story
+    include Validation
+  end
 end

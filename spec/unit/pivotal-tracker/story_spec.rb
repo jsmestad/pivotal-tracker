@@ -22,6 +22,27 @@ describe PivotalTracker::Story do
     it "should return the created story" do
       @project.stories.create(:name => 'Create Stuff').should be_a(PivotalTracker::Story)
     end
+
+    context "on failure" do
+      before do
+        FakeWeb.register_uri(:post, "http://www.pivotaltracker.com/services/v3/projects/#{@project.id}/stories",
+          :body => %{<?xml version="1.0" encoding="UTF-8"?>
+             <errors>
+               <error>error#1 message</error>
+               <error>error#2 message</error>
+             </errors>%},
+           :status => "422")
+      end
+
+      it "should not raise an exception" do
+        expect { @project.stories.create }.to_not raise_error(Exception)
+      end
+
+      it "should report errors encountered" do
+        story = @project.stories.create :name => "Invalid story"
+        story.errors.messages.should =~ ["error#1 message", "error#2 message"]
+      end
+    end
   end
 
   context ".attachments" do

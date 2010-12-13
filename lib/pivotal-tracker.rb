@@ -4,6 +4,7 @@ require 'happymapper'
 require 'nokogiri'
 
 
+require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'validation')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'extensions')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'proxy')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'client')
