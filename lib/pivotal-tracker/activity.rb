@@ -23,7 +23,8 @@ module PivotalTracker
           if options[:occurred_since]
             options_string << "occurred_since_date=\"#{options[:occurred_since].utc}\""
           elsif options[:occurred_since_date]
-            options_string << "occurred_since_date=\"#{options[:occurred_since_date]}\""
+            #NOTE currently forces UTC as the timezone
+            options_string << "occurred_since_date=#{URI.escape options[:occurred_since_date].strftime("%Y/%m/%d %H:%M:%S UTC")}"
           end
 
           return "?#{options_string.join('&')}"
