@@ -41,6 +41,7 @@ module PivotalTracker
     element :jira_url, String
     element :other_id, Integer
     element :integration_id, Integer
+    element :deadline, DateTime # Only available for Release stories
 
     has_many :attachments, Attachment, :tag => 'attachments'
 
@@ -128,6 +129,7 @@ module PivotalTracker
             xml.integration_id "#{integration_id}"
             xml.created_at DateTime.parse(created_at.to_s).to_s if created_at
             xml.accepted_at DateTime.parse(accepted_at.to_s).to_s if accepted_at
+            xml.deadline DateTime.parse(deadline.to_s).to_s if deadline
           }
         end
         return builder.to_xml
