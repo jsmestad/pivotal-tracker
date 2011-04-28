@@ -4,7 +4,7 @@ group :runtime do
   gem 'rest-client', '~> 1.6.0'
   gem 'happymapper', '>= 0.3.2'
   gem 'builder'
-  gem 'nokogiri', '~> 1.4.3.1'
+  gem 'nokogiri', '~> 1.4'
 end
 
 group :test do
