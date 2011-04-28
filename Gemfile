@@ -12,4 +12,5 @@ group :test do
   gem 'rake'
   gem 'jeweler'
   gem 'stale_fish', '~> 1.3.0'
+  gem "ruby-debug"
 end
