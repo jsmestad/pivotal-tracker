@@ -24,7 +24,7 @@ module PivotalTracker
       def connection(options={})
         raise NoToken unless @token.present?
         
-        @connections = {}
+        @connections ||= {}
         
         @connections[@token] ||= RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
       end
