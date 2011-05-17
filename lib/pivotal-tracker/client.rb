@@ -1,5 +1,7 @@
 module PivotalTracker
   class Client
+    
+    class NoToken < StandardError; end
 
     class << self
       attr_writer :use_ssl, :token
@@ -20,7 +22,11 @@ module PivotalTracker
 
       # this is your connection for the entire module
       def connection(options={})
-        @connection ||= RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+        raise NoToken unless @token.present?
+        
+        @connections ||= {}
+        
+        @connections[@token] ||= RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
       end
 
       protected
