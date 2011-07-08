@@ -26,6 +26,8 @@ module PivotalTracker
     options_strings = options.inject({}) do |m, (k,v)|
       if [:limit, :offset].include?(k.to_sym)
         m.update k => v
+      elsif k.to_sym == :search
+        m.update :filter => v
       else
         filter_query = %{#{k}:#{[v].flatten.join(",")}}
         m.update :filter => (m[:filter] ? "#{m[:filter]} #{filter_query}" : filter_query)
