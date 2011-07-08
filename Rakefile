@@ -1,20 +1,19 @@
-# encoding: utf-8
 require 'rake'
 
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "tsenart-pivotal-tracker"
+    gem.name = "pivotal-tracker"
     gem.summary = %Q{Ruby wrapper for the Pivotal Tracker API}
     gem.email = "justin.smestad@gmail.com"
-    gem.homepage = "http://github.com/tsenart/pivotal-tracker"
-    gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee", "Tomás Senart"]
+    gem.homepage = "http://github.com/jsmestad/pivotal-tracker"
+    gem.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
 
     gem.add_dependency 'rest-client', '~> 1.6.0'
     gem.add_dependency 'happymapper', '>= 0.3.2'
     gem.add_dependency 'builder'
     gem.add_dependency 'nokogiri', '~> 1.4.3.1'
-
+    
     gem.add_development_dependency 'rspec'
     gem.add_development_dependency 'bundler', '>= 0.9.26'
     gem.add_development_dependency 'jeweler'
