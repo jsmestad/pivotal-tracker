@@ -12,10 +12,10 @@ begin
     gem.add_dependency 'rest-client', '~> 1.6.0'
     gem.add_dependency 'happymapper', '>= 0.3.2'
     gem.add_dependency 'builder'
-    gem.add_dependency 'nokogiri', '~> 1.4.3.1'
-    
+    gem.add_dependency 'nokogiri', '>= 1.4.3'
+
     gem.add_development_dependency 'rspec'
-    gem.add_development_dependency 'bundler', '>= 0.9.26'
+    gem.add_development_dependency 'bundler', '~> 1.0.12'
     gem.add_development_dependency 'jeweler'
     gem.add_development_dependency 'stale_fish', '~> 1.3.0'
   end
