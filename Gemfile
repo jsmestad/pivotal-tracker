@@ -12,5 +12,6 @@ group :test do
   gem 'rake'
   gem 'jeweler'
   gem 'stale_fish', '~> 1.3.0'
-  gem "ruby-debug"
+  gem "ruby-debug", :platforms => :mri_18
+  gem "ruby-debug19", :platforms => :mri_19
 end
