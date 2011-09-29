@@ -24,7 +24,9 @@ module PivotalTracker
       def connection(options={})
         raise NoToken if @token.to_s.empty?
 
-        new_or_cached_connection
+        @connections ||= {}
+
+        cached_connection? && !protocol_changed? ? cached_connection : new_connection
       end
 
       protected
@@ -37,19 +39,20 @@ module PivotalTracker
           !@connections[@token].nil?
         end
 
-        def protocol_changed?
-          if cached_connection?
-            return @connections[@token].url.match(/^(.*):\/\//).captures.first != protocol
-          end
-          false
+        def cached_connection
+          @connections[@token]
         end
 
-        def new_or_cached_connection
-          @connections ||= {}
-          if !cached_connection? || protocol_changed?
-            @connections[@token] = RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
-          end
-          @connections[@token]
+        def new_connection
+          @connections[@token] = RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+        end
+
+        def protocol_changed?
+          cached_connection? ? (cached_connection_protocol != protocol) : false
+        end
+
+        def cached_connection_protocol
+          cached_connection.url.match(/^(.*):\/\//).captures.first
         end
     end
 
