@@ -4,7 +4,7 @@ module PivotalTracker
     class NoToken < StandardError; end
 
     class << self
-      attr_writer :use_ssl, :token
+      attr_writer :use_ssl
 
       def use_ssl
         @use_ssl || false
@@ -27,6 +27,13 @@ module PivotalTracker
         @connections ||= {}
 
         cached_connection? && !protocol_changed? ? cached_connection : new_connection
+      end
+
+      def token=(token)
+        if token != @token
+          @token = token
+          @connections.delete(token) unless @connections.nil?
+        end
       end
 
       protected

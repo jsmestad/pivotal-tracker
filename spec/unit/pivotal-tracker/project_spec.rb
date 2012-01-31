@@ -3,6 +3,7 @@ require 'spec_helper'
 describe PivotalTracker::Project do
   context ".all" do
     before do
+      PivotalTracker::Client.token = TOKEN
       @projects = PivotalTracker::Project.all
     end
 

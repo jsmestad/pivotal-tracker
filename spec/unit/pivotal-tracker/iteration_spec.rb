@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe PivotalTracker::Iteration do
   before do
+    PivotalTracker::Client.token = TOKEN
     @project = PivotalTracker::Project.find(PROJECT_ID)
   end
 

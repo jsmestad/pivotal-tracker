@@ -35,6 +35,34 @@
       request_type: GET
       update_method: StaleFishFixtures.update_activity_fixture
       last_updated_at: 2010-07-29T20:15:11+01:00
+  - story-4460038:
+      file: 'story-4460038.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4460038
+      request_type: GET
+      update_method: StaleFishFixtures.update_story_fixture
+      last_updated_at: 2010-07-30T03:15:11+08:00
+  - story-4459994:
+      file: 'story-4459994.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4459994
+      request_type: GET
+      update_method: StaleFishFixtures.update_story_fixture
+      last_updated_at: 2010-07-30T03:15:11+08:00
+  - story-4460598:
+      file: 'story-4460598.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4460598
+      request_type: GET
+      update_method: StaleFishFixtures.update_story_fixture
+      last_updated_at: 2010-07-30T03:15:11+08:00
+  - story-4473735:
+      file: 'story-4473735.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4473735
+      request_type: GET
+      update_method: StaleFishFixtures.update_story_fixture
+      last_updated_at: 2010-07-30T03:15:11+08:00
   - stories:
       file: 'stories.xml'
       update_interval: 2.weeks
