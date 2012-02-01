@@ -4,14 +4,13 @@ module PivotalTracker
     class NoToken < StandardError; end
 
     class << self
-      attr_writer :use_ssl
+      attr_writer :use_ssl, :token
 
       def use_ssl
         @use_ssl || false
       end
 
       def token(username, password, method='post')
-        return @token if @token
         response = if method == 'post'
           RestClient.post 'https://www.pivotaltracker.com/services/v3/tokens/active', :username => username, :password => password
         else
@@ -29,11 +28,8 @@ module PivotalTracker
         cached_connection? && !protocol_changed? ? cached_connection : new_connection
       end
 
-      def token=(token)
-        if token != @token
-          @token = token
-          @connections.delete(token) unless @connections.nil?
-        end
+      def clear_connections
+        @connections = nil
       end
 
       protected
