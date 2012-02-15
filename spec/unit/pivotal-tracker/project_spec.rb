@@ -52,4 +52,38 @@ describe PivotalTracker::Project do
       @project.respond_to?(:memberships).should be_true
     end
   end
+
+  context ".create" do
+    before do
+      @project = PivotalTracker::Project.new(:name => 'Pivotal Tracker API Gem')
+    end
+
+    it "should return the created project" do
+      @project.create
+      @project.should be_a(PivotalTracker::Project)
+      @project.name.should == 'Pivotal Tracker API Gem'
+    end
+
+    context "on failure" do
+      before do
+        FakeWeb.register_uri(:post, "http://www.pivotaltracker.com/services/v3/projects",
+                             :body   => %{<?xml version="1.0" encoding="UTF-8"?>
+             <errors>
+               <error>error#1 message</error>
+               <error>error#2 message</error>
+             </errors>%},
+                             :status => "422")
+      end
+
+      it "should not raise an exception" do
+        expect { @project.create }.to_not raise_error(Exception)
+      end
+
+      it "should report errors encountered" do
+        @project.create
+        @project.errors.messages.should =~ ["error#1 message", "error#2 message"]
+      end
+    end
+  end
+
 end
