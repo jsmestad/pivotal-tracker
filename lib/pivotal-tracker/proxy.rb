@@ -31,7 +31,7 @@ module PivotalTracker
       end
     end
 
-    def create(args)
+    def create(args = {})
       object = @target.new(args.merge({:owner => @owner}))
       if obj = object.create
         return obj

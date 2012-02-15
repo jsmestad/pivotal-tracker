@@ -9,6 +9,10 @@ module StaleFishFixtures
       connection["/projects/102622"].get
     end
 
+    def update_story_fixture
+      connection["/projects/102622/stories/4460038"].get
+    end
+
     def update_stories_fixture
       connection["/projects/102622/stories?limit=20"].get
     end

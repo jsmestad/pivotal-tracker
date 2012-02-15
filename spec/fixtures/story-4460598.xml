@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<story>
+  <id type="integer">4460598</id>
+  <project_id type="integer">102622</project_id>
+  <story_type>feature</story_type>
+  <url>http://www.pivotaltracker.com/story/show/4460598</url>
+  <estimate type="integer">3</estimate>
+  <current_state>unstarted</current_state>
+  <description>This story has attachments.</description>
+  <name>Story with attachments</name>
+  <requested_by>Jon Mischo</requested_by>
+  <created_at type="datetime">2010/07/27 22:33:13 UTC</created_at>
+  <updated_at type="datetime">2010/07/27 22:33:28 UTC</updated_at>
+  <attachments type="array">
+    <attachment>
+      <id type="integer">491576</id>
+      <filename>LICENSE</filename>
+      <description></description>
+      <uploaded_by>Jon</uploaded_by>
+      <uploaded_at type="datetime">2010/07/27 22:34:23 UTC</uploaded_at>
+      <url>http://www.pivotaltracker.com/resource/download/491576</url>
+    </attachment>
+    <attachment>
+      <id type="integer">493019</id>
+      <filename>README.rdoc</filename>
+      <description>README file from api gem</description>
+      <uploaded_by>Jon</uploaded_by>
+      <uploaded_at type="datetime">2010/07/28 15:16:18 UTC</uploaded_at>
+      <url>http://www.pivotaltracker.com/resource/download/493019</url>
+    </attachment>
+  </attachments>
+</story>

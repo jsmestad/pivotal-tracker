@@ -11,7 +11,6 @@ module PivotalTracker
       end
 
       def token(username, password, method='post')
-        return @token if @token
         response = if method == 'post'
           RestClient.post 'https://www.pivotaltracker.com/services/v3/tokens/active', :username => username, :password => password
         else
@@ -27,6 +26,10 @@ module PivotalTracker
         @connections ||= {}
 
         cached_connection? && !protocol_changed? ? cached_connection : new_connection
+      end
+
+      def clear_connections
+        @connections = nil
       end
 
       protected
