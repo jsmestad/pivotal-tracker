@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{pivotal-tracker}
-  s.version = "0.4.1"
+  s.name = "pivotal-tracker"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = %q{2011-07-10}
-  s.email = %q{justin.smestad@gmail.com}
+  s.date = "2012-02-15"
+  s.email = "justin.smestad@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -65,10 +65,10 @@ Gem::Specification.new do |s|
     "spec/unit/pivotal-tracker/story_spec.rb",
     "spec/unit/pivotal-tracker/task_spec.rb"
   ]
-  s.homepage = %q{http://github.com/jsmestad/pivotal-tracker}
+  s.homepage = "http://github.com/jsmestad/pivotal-tracker"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.7.2}
-  s.summary = %q{Ruby wrapper for the Pivotal Tracker API}
+  s.rubygems_version = "1.8.11"
+  s.summary = "Ruby wrapper for the Pivotal Tracker API"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -77,6 +77,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4"])
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
@@ -89,6 +90,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_dependency(%q<builder>, [">= 0"])
+      s.add_dependency(%q<nokogiri>, ["~> 1.4"])
       s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_dependency(%q<builder>, [">= 0"])
@@ -102,6 +104,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
     s.add_dependency(%q<happymapper>, [">= 0.3.2"])
     s.add_dependency(%q<builder>, [">= 0"])
+    s.add_dependency(%q<nokogiri>, ["~> 1.4"])
     s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
     s.add_dependency(%q<happymapper>, [">= 0.3.2"])
     s.add_dependency(%q<builder>, [">= 0"])
