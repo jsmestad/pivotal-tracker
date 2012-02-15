@@ -18,6 +18,16 @@ module PivotalTracker
     element :complete, Boolean
     element :created_at, DateTime
 
+    def initialize(attributes={})
+      if attributes[:owner]
+        self.story = attributes.delete(:owner)
+        self.project_id = self.story.project_id
+        self.story_id = self.story.id
+      end
+      
+      update_attributes(attributes)
+    end
+    
     def create
       response = Client.connection["/projects/#{project_id}/stories/#{story_id}/tasks"].post(self.to_xml, :content_type => 'application/xml')
       return Task.parse(response)
@@ -43,6 +53,12 @@ module PivotalTracker
           }
         end
         return builder.to_xml
+      end
+      
+      def update_attributes(attrs)
+        attrs.each do |key, value|
+          self.send("#{key}=", value.is_a?(Array) ? value.join(',') : value )
+        end
       end
 
   end
