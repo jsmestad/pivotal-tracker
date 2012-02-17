@@ -5,17 +5,18 @@
 
 Gem::Specification.new do |s|
   s.name = "pivotal-tracker"
-  s.version = "0.5.0"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = "2012-02-15"
+  s.date = "2012-02-17"
   s.email = "justin.smestad@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
   ]
   s.files = [
+    ".rspec",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
@@ -51,6 +52,10 @@ Gem::Specification.new do |s|
     "spec/fixtures/projects.xml",
     "spec/fixtures/stale_fish.yml",
     "spec/fixtures/stories.xml",
+    "spec/fixtures/story-4459994.xml",
+    "spec/fixtures/story-4460038.xml",
+    "spec/fixtures/story-4460598.xml",
+    "spec/fixtures/story-4473735.xml",
     "spec/fixtures/tasks.xml",
     "spec/spec.opts",
     "spec/spec_helper.rb",
