@@ -1,14 +1,12 @@
-require 'rubygems'
 require 'bundler'
-require 'stale_fish'
 
 Bundler.require(:default, :runtime, :test)
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'pivotal-tracker'
-require 'spec'
-require 'spec/autorun'
+require 'rspec'
+require 'rspec/autorun'
 
 PROJECT_ID = ENV['PROJECT_ID'] || "102622"
 TOKEN = '8358666c5a593a3c82cda728c8a62b63'
@@ -30,7 +28,7 @@ Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].e
 
 StaleFish.setup(File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish.yml'))
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   # config.include(Rack::Test::Methods)
 
   config.before :suite do

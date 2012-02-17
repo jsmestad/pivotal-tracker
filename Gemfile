@@ -8,10 +8,8 @@ group :runtime do
 end
 
 group :test do
-  gem 'rspec', '~> 1.3.0', :require => 'spec'
+  gem 'rspec'
   gem 'rake'
   gem 'jeweler'
-  gem 'stale_fish', '~> 1.3.0'
-  gem "ruby-debug", :platforms => :mri_18
-  gem "ruby-debug19", :platforms => :mri_19
+  gem 'stale_fish', '~> 1.3.1', :path => '../stale_fish'
 end
