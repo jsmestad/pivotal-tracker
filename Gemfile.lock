@@ -1,10 +1,3 @@
-PATH
-  remote: ../stale_fish
-  specs:
-    stale_fish (1.3.1)
-      activesupport
-      fakeweb
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -41,6 +34,9 @@ GEM
     rspec-expectations (2.8.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.8.0)
+    stale_fish (1.3.2)
+      activesupport
+      fakeweb
 
 PLATFORMS
   ruby
@@ -53,4 +49,4 @@ DEPENDENCIES
   rake
   rest-client (~> 1.6.0)
   rspec
-  stale_fish (~> 1.3.1)!
+  stale_fish (~> 1.3.2)

@@ -11,5 +11,5 @@ group :test do
   gem 'rspec'
   gem 'rake'
   gem 'jeweler'
-  gem 'stale_fish', '~> 1.3.1', :path => '../stale_fish'
+  gem 'stale_fish', '~> 1.3.2'
 end
