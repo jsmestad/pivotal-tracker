@@ -34,6 +34,9 @@ describe PivotalTracker::Client do
           and_return(@resource)
 
           PivotalTracker::Client.connection.should == @resource
+
+          # We need to clear the connections or it causes later spec failures
+          PivotalTracker::Client.clear_connections
         end
 
       end
