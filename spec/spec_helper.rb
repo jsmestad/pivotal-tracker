@@ -15,6 +15,15 @@ TOKEN = '8358666c5a593a3c82cda728c8a62b63'
 
 PivotalTracker::Client.token = TOKEN
 
+# tm: hack StaleFish
+module StaleFish
+  class Fixture
+    def is_stale?
+      false
+    end
+  end
+end
+
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].each {|f| require f}
