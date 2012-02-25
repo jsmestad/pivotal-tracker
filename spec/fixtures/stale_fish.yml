@@ -133,3 +133,15 @@
       request_type: POST
       update_method: StaleFishFixtures.create_new_story
       last_updated_at: 2010-07-29T20:15:17+01:00
+  - bugs:
+      file: 'bugs.xml'
+      update_interval: nil
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories?filter=story_type%3Abug
+      request_type: GET
+      last_updated_at: 
+  - features:
+      file: 'features.xml'
+      update_interval: nil
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories?filter=story_type%3Afeature
+      request_type: GET
+      last_updated_at: 

@@ -10,6 +10,20 @@ describe PivotalTracker::Story do
       @project.stories.all.should be_a(Array)
       @project.stories.all.first.should be_a(PivotalTracker::Story)
     end
+
+    it "should allow filtering" do
+      @project.stories.all(:story_type => ['bug']).should be_a(Array)
+      @project.stories.all(:story_type => ['feature']).should be_a(Array)
+    end
+
+    it "should cache stories" do
+      count = @project.stories.all.count
+      @project.stories.all.count.should == count
+      bugs_count = @project.stories.all(:story_type => ['bug']).count
+      bugs_count.should_not == count
+      @project.stories.all(:story_type => ['bug']).count.should == bugs_count
+    end
+
   end
 
   context ".find" do

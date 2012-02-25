@@ -8,7 +8,7 @@ module PivotalTracker
     def initialize(owner, target)
       @owner = owner
       @target = target
-      @opts = nil
+      @opts = {}
     end
 
     def all(options={})
@@ -43,12 +43,11 @@ module PivotalTracker
     protected
 
       def proxy_found(options)
-        # Check to see if options have changed
-        if @opts == options
-          @found ||= load_found(options)
-        else
-          load_found(options)
+        if @found.nil? or @opts != options
+          @opts = options
+          @found = load_found()
         end
+        @found
       end
 
     private
@@ -57,8 +56,7 @@ module PivotalTracker
         @target.send(method, *args, &block)
       end
 
-      def load_found(options)
-        @opts = options
+      def load_found()
         @target.all(@owner, @opts)
       end
 
