@@ -31,12 +31,13 @@ module PivotalTracker
 
     def self.included(klass)
       klass.class_eval do
-        if klass.instance_methods.include?(:create)
+        instance_methods = klass.instance_methods.map {|name| name.to_sym}
+        if instance_methods.include?(:create)
           alias_method :create_without_validations, :create
           alias_method :create, :create_with_validations
         end
 
-        if klass.instance_methods.include?(:update)
+        if instance_methods.include?(:update)
           alias_method :update_without_validations, :update
           alias_method :update, :update_with_validations
         end
