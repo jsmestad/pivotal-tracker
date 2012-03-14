@@ -3,6 +3,8 @@
   <project>
     <id>102622</id>
     <name>Pivotal Tracker API Gem</name>
+    <first_iteration_start_time type="datetime">2011/12/05 06:00:00 UTC</first_iteration_start_time>
+    <current_iteration_number type="integer">4</current_iteration_number>
     <iteration_length type="integer">1</iteration_length>
     <week_start_day>Monday</week_start_day>
     <point_scale>0,1,2,3</point_scale>
@@ -53,6 +55,8 @@
   <project>
     <id>103014</id>
     <name>Pivotal Tracker API Gem Target Project</name>
+    <first_iteration_start_time type="datetime">2010/10/02 08:00:00 UTC</first_iteration_start_time>
+    <current_iteration_number type="integer">14</current_iteration_number>
     <iteration_length type="integer">1</iteration_length>
     <week_start_day>Monday</week_start_day>
     <point_scale>0,1,2,3</point_scale>

@@ -5,21 +5,28 @@ describe PivotalTracker::Project do
     before do
       PivotalTracker::Client.token = TOKEN
       @projects = PivotalTracker::Project.all
+       @project = @projects.first  
     end
 
     it "should return an array of available projects" do
       @projects.should be_a(Array)
     end
 
-    it "should be a project instance" do
+    it "should be a project instance" do      
       @projects.first.should be_a(PivotalTracker::Project)
     end
     
-    it "should not have nil in field first_iteration_start_time" do
-      @projects.each do |pt|
-         pt.first_iteration_start_time.should_not be_nil
+    it "should not have nil in field first_iteration_start_time" do  
+      @projects.each do |pt|                
+        pt.first_iteration_start_time.should_not be_nil
       end 
     end 
+    
+    it "should not have nil in field current_iteration_number" do  
+      @projects.each do |pt|                
+        pt.current_iteration_number.should_not be_nil
+      end 
+    end
   end
 
   context ".find" do
