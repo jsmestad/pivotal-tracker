@@ -22,7 +22,6 @@ module PivotalTracker
     element :week_start_day, String
     element :point_scale, String
     element :labels, String
-    #element :week_start_day, String
     element :velocity_scheme, String
     element :iteration_length, Integer
     element :initial_velocity, Integer
