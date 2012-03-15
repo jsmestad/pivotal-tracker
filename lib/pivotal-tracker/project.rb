@@ -22,13 +22,14 @@ module PivotalTracker
     element :week_start_day, String
     element :point_scale, String
     element :labels, String
-    element :week_start_day, String
     element :velocity_scheme, String
     element :iteration_length, Integer
     element :initial_velocity, Integer
     element :current_velocity, Integer
     element :last_activity_at, DateTime
     element :use_https, Boolean
+    element :first_iteration_start_time, DateTime
+    element :current_iteration_number, Integer
 
     def initialize(attributes={})
       update_attributes(attributes)
