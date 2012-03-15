@@ -15,11 +15,16 @@ describe PivotalTracker::Project do
       @projects.first.should be_a(PivotalTracker::Project)
     end
     
-    it "should not have nil in field first_iteration_start_time" do
+    it "should parse first_iteration_start_time" do
       @projects.each do |pt|
-         pt.first_iteration_start_time.should_not be_nil
+        pt.first_iteration_start_time.should_not be_nil
       end 
     end 
+    it "should parse field current_iteration_number" do  
+      @projects.each do |pt|                
+        pt.current_iteration_number.should_not be_nil
+      end 
+    end
   end
 
   context ".find" do
