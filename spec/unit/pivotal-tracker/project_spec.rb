@@ -13,7 +13,7 @@ describe PivotalTracker::Project do
 
     it "should be a project instance" do
       @projects.first.should be_a(PivotalTracker::Project)
-    end
+    end        
   end
 
   context ".find" do
@@ -31,6 +31,14 @@ describe PivotalTracker::Project do
 
     it "should have false for use_https" do
       @project.use_https.should be_false
+    end
+    
+    it "should have first_iteration_start_time attribute" do
+      @project.respond_to?(:first_iteration_start_time).should be_true
+    end
+     
+    it "should have current_iteration_number attribute" do  
+      @project.respond_to?(:current_iteration_number).should be_true
     end
   end
 
