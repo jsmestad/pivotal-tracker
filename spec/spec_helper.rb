@@ -9,7 +9,7 @@ require 'pivotal-tracker'
 require 'rspec'
 require 'rspec/autorun'
 
-PROJECT_ID = ENV['PROJECT_ID'] || "102622"
+PROJECT_ID = ENV['PROJECT_ID'] || 102622
 TOKEN = '8358666c5a593a3c82cda728c8a62b63'
 
 PivotalTracker::Client.token = TOKEN
