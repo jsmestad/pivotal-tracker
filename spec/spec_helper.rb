@@ -40,4 +40,7 @@ RSpec.configure do |config|
     StaleFish.update_stale
   end
 
+  config.before :each do
+    PivotalTracker::Client.clear_connections
+  end
 end
