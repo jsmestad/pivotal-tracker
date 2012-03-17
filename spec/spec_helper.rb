@@ -1,4 +1,5 @@
 require 'bundler'
+require 'fileutils'
 
 Bundler.require(:default, :runtime, :test)
 $LOAD_PATH.unshift(File.dirname(__FILE__))
@@ -27,10 +28,13 @@ end
 # in ./support/ and its subdirectories.
 Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].each {|f| require f}
 
-StaleFish.setup(File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish.yml'))
 
 RSpec.configure do |config|
-  # config.include(Rack::Test::Methods)
+  # Give StaleFish temporary file which is ignored by git
+  org_stale_fish_config = File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish.yml')
+  tmp_stale_fish_config = File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish-tmp.yml')
+  FileUtils.copy_file org_stale_fish_config, tmp_stale_fish_config, :remove_destination => true
+  StaleFish.setup(tmp_stale_fish_config)
 
   config.before :suite do
     StaleFish.update_stale
