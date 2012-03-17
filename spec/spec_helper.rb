@@ -13,7 +13,8 @@ TOKEN = '8358666c5a593a3c82cda728c8a62b63'
 
 PivotalTracker::Client.token = TOKEN
 
-# tm: hack StaleFish
+# tm: hack StaleFish to prevent it from accessing real API which slows down the test.
+#   Fixtures should be upated manually.
 module StaleFish
   class Fixture
     def is_stale?
