@@ -68,41 +68,39 @@ describe PivotalTracker::Story do
   end
 
   context ".move_to_project" do
-    before(:each) do
-      pending
-      @orig_net_lock = FakeWeb.allow_net_connect?
-      FakeWeb.allow_net_connect = true
-      @target_project = PivotalTracker::Project.find(103014)
-      @movable_story = @project.stories.find(4490874)
+    let(:expected_uri) {"http://www.pivotaltracker.com/services/v3/projects/#{project_id}/stories/#{story_id}"}
+    let(:project_id) { @project.id }
+    let(:movable_story) { @project.stories.find(4459994) }
+    let(:story_id) { movable_story.id }
+    let(:target_project) { PivotalTracker::Project.new(:id => 103014) }
+
+    before do
+      FakeWeb.register_uri(:put, expected_uri, :body => %{<?xml version="1.0" encoding="UTF-8"?>
+                                                       <story>
+                                                         <project_id type="integer">#{target_project.id}</project_id>
+                                                       </story>})
     end
 
     it "should return an updated story from the target project when passed a PivotalTracker::Story" do
-      target_story = @target_project.stories.find(4477972)
-      response = @movable_story.move_to_project(target_story)
+      target_story = PivotalTracker::Story.new(:project_id => target_project.id)
+      response = movable_story.move_to_project(target_story)
+      response.should_not be_nil
       response.project_id.should == target_story.project_id
     end
 
     it "should return an updated story from the target project when passed a PivotalTracker::Project" do
-      response = @movable_story.move_to_project(@target_project)
-      response.project_id.should == @target_project.id
+      response = movable_story.move_to_project(target_project)
+      response.project_id.should == target_project.id
     end
 
     it "should return an updated story from the target project when passed a String" do
-      response = @movable_story.move_to_project('103014')
-      response.project_id.should == 103014
+      response = movable_story.move_to_project(target_project.id.to_s)
+      response.project_id.should == target_project.id
     end
 
     it "should return an updated story from the target project when passed an Integer"do
-      response = @movable_story.move_to_project(103014)
-      response.project_id.should == 103014
-    end
-
-    after (:each) do
-      pending
-      @movable_story = @target_project.stories.find(4490874)
-      response = @movable_story.move_to_project(102622)
-      FakeWeb.allow_net_connect = @orig_net_lock
-      response.project_id.should == 102622
+      response = movable_story.move_to_project(target_project.id.to_i)
+      response.project_id.should == target_project.id
     end
   end
 
