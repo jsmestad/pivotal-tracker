@@ -53,7 +53,7 @@ describe PivotalTracker::Attachment do
 
     it "should return an attachment object with a pending status" do
       FakeWeb.allow_net_connect = true
-      resource = @target_story.upload_attachment(File.dirname(__FILE__) + '/../../../LICENSE')
+      resource = @target_story.upload_attachment(File.dirname(__FILE__) + '/../../LICENSE')
       FakeWeb.allow_net_connect = @orig_net_lock
       resource.should be_a(PivotalTracker::Attachment)
       resource.status.should == 'Pending'
