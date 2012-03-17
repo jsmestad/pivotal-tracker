@@ -1,4 +1,8 @@
 module PivotalTracker
+  API_PATH = 'www.pivotaltracker.com/services/v3'
+  API_URL_SSL = 'https://' + API_PATH
+  API_URL = 'http://' + API_PATH
+
   class Client
 
     class NoToken < StandardError; end
@@ -12,9 +16,9 @@ module PivotalTracker
 
       def token(username, password, method='post')
         response = if method == 'post'
-          RestClient.post 'https://www.pivotaltracker.com/services/v3/tokens/active', :username => username, :password => password
+          RestClient.post API_URL_SSL + '/tokens/active', :username => username, :password => password
         else
-          RestClient.get "https://#{username}:#{password}@www.pivotaltracker.com/services/v3/tokens/active"
+          RestClient.get "https://#{username}:#{password}@#{API_PATH}/tokens/active"
         end
         @token= Nokogiri::XML(response.body).search('guid').inner_html
       end
@@ -47,7 +51,7 @@ module PivotalTracker
         end
 
         def new_connection
-          @connections[@token] = RestClient::Resource.new("#{protocol}://www.pivotaltracker.com/services/v3", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+          @connections[@token] = RestClient::Resource.new("#{protocol}://#{API_PATH}", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
         end
 
         def protocol_changed?
