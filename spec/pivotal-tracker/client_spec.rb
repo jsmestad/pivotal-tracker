@@ -21,7 +21,8 @@ describe PivotalTracker::Client do
         end
 
         it "called to RestClient::Resource using the new token" do
-          RestClient::Resource.should_receive(:new).with(PivotalTracker::API_URL, :headers => {'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml'})
+          RestClient::Resource.should_receive(:new).
+              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' })
 
           PivotalTracker::Client.connection
         end
@@ -30,8 +31,8 @@ describe PivotalTracker::Client do
           @resource = Object.new
 
           RestClient::Resource.should_receive(:new).
-          with(PivotalTracker::API_URL, :headers => {'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml'}).
-          and_return(@resource)
+              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }).
+              and_return(@resource)
 
           PivotalTracker::Client.connection.should == @resource
 
@@ -53,8 +54,8 @@ describe PivotalTracker::Client do
         @resource = Object.new
 
         RestClient::Resource.should_receive(:new).
-        with(PivotalTracker::API_URL, :headers => {'X-TrackerToken' => "abc123", 'Content-Type' => 'application/xml'}).
-        and_return(@resource)
+            with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "abc123", 'Content-Type' => 'application/xml' }).
+            and_return(@resource)
 
         PivotalTracker::Client.connection.should == @resource
       end
@@ -66,7 +67,8 @@ describe PivotalTracker::Client do
         end
 
         it "called to RestClient::Resource using the new token" do
-          RestClient::Resource.should_receive(:new).with(PivotalTracker::API_URL, :headers => {'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml'})
+          RestClient::Resource.should_receive(:new).
+              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' })
 
           PivotalTracker::Client.connection
         end
@@ -75,14 +77,71 @@ describe PivotalTracker::Client do
           @resource = Object.new
 
           RestClient::Resource.should_receive(:new).
-          with(PivotalTracker::API_URL, :headers => {'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml'}).
-          and_return(@resource)
+              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }).
+              and_return(@resource)
 
           PivotalTracker::Client.connection.should == @resource
         end
 
       end
 
+    end
+  end
+
+  describe ".tracker_host" do
+    it "returns www.pivotaltracker.com by default" do
+      PivotalTracker::Client.tracker_host.should == 'www.pivotaltracker.com'
+    end
+  end
+
+  describe ".tracker_host=" do
+    it "sets the tracker_host" do
+      tracker_host_url                    = 'http://some_other_tracker_tracker_host_url'
+      PivotalTracker::Client.tracker_host = tracker_host_url
+      PivotalTracker::Client.tracker_host.should == tracker_host_url
+      PivotalTracker::Client.tracker_host = nil
+    end
+  end
+
+  describe "#api_ssl_url" do
+    context "when not passed a username and password" do
+      before do
+        PivotalTracker::Client.tracker_host = nil
+        PivotalTracker::Client.use_ssl      = true
+      end
+      it "returns https://www.pivotaltracker.com/services/v3" do
+        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v3'
+      end
+    end
+    context "when passed a username and password" do
+      before do
+        PivotalTracker::Client.tracker_host = nil
+        PivotalTracker::Client.use_ssl      = false
+      end
+      it "returns https://USER:PASSWORD@www.pivotaltracker.com/services/v3" do
+        PivotalTracker::Client.api_ssl_url('USER', 'PASSWORD').should == 'https://USER:PASSWORD@www.pivotaltracker.com/services/v3'
+      end
+    end
+  end
+
+  describe "#api_url" do
+    context "when not passed a username and password" do
+      before do
+        PivotalTracker::Client.tracker_host = nil
+        PivotalTracker::Client.use_ssl      = true
+      end
+      it "returns https://www.pivotaltracker.com/services/v3" do
+        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v3'
+      end
+    end
+    context "when passed a username and password" do
+      before do
+        PivotalTracker::Client.tracker_host = nil
+        PivotalTracker::Client.use_ssl      = false
+      end
+      it "returns https://www.pivotaltracker.com/services/v3" do
+        PivotalTracker::Client.api_ssl_url('user', 'password').should == 'https://user:password@www.pivotaltracker.com/services/v3'
+      end
     end
   end
 
