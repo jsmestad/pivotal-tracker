@@ -96,7 +96,7 @@ describe PivotalTracker::Client do
 
   describe ".tracker_host=" do
     it "sets the tracker_host" do
-      tracker_host_url                    = 'http://some_other_tracker_tracker_host_url'
+      tracker_host_url = 'http://some_other_tracker_tracker_host_url'
       PivotalTracker::Client.tracker_host = tracker_host_url
       PivotalTracker::Client.tracker_host.should == tracker_host_url
       PivotalTracker::Client.tracker_host = nil
