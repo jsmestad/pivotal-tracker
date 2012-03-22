@@ -75,7 +75,7 @@ describe PivotalTracker::Project do
 
     context "on failure" do
       before do
-        FakeWeb.register_uri(:post, "http://www.pivotaltracker.com/services/v3/projects",
+        FakeWeb.register_uri(:post, "#{PivotalTracker::Client.api_url}/projects",
                              :body   => %{<?xml version="1.0" encoding="UTF-8"?>
              <errors>
                <error>error#1 message</error>
