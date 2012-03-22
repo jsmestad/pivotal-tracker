@@ -22,7 +22,7 @@ describe PivotalTracker::Client do
 
         it "called to RestClient::Resource using the new token" do
           RestClient::Resource.should_receive(:new).
-              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' })
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' })
 
           PivotalTracker::Client.connection
         end
@@ -31,7 +31,7 @@ describe PivotalTracker::Client do
           @resource = Object.new
 
           RestClient::Resource.should_receive(:new).
-              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }).
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }).
               and_return(@resource)
 
           PivotalTracker::Client.connection.should == @resource
@@ -54,7 +54,7 @@ describe PivotalTracker::Client do
         @resource = Object.new
 
         RestClient::Resource.should_receive(:new).
-            with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "abc123", 'Content-Type' => 'application/xml' }).
+            with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "abc123", 'Content-Type' => 'application/xml' }).
             and_return(@resource)
 
         PivotalTracker::Client.connection.should == @resource
@@ -68,7 +68,7 @@ describe PivotalTracker::Client do
 
         it "called to RestClient::Resource using the new token" do
           RestClient::Resource.should_receive(:new).
-              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' })
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' })
 
           PivotalTracker::Client.connection
         end
@@ -77,7 +77,7 @@ describe PivotalTracker::Client do
           @resource = Object.new
 
           RestClient::Resource.should_receive(:new).
-              with('http://www.pivotaltracker.com/services/v3', :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }).
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }).
               and_return(@resource)
 
           PivotalTracker::Client.connection.should == @resource
@@ -96,7 +96,7 @@ describe PivotalTracker::Client do
 
   describe ".tracker_host=" do
     it "sets the tracker_host" do
-      tracker_host_url                    = 'http://some_other_tracker_tracker_host_url'
+      tracker_host_url = 'http://some_other_tracker_tracker_host_url'
       PivotalTracker::Client.tracker_host = tracker_host_url
       PivotalTracker::Client.tracker_host.should == tracker_host_url
       PivotalTracker::Client.tracker_host = nil

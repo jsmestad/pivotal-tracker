@@ -39,7 +39,7 @@ describe PivotalTracker::Story do
 
     context "on failure" do
       before do
-        FakeWeb.register_uri(:post, "http://www.pivotaltracker.com/services/v3/projects/#{@project.id}/stories",
+        FakeWeb.register_uri(:post, "#{PivotalTracker::Client.api_url}/projects/#{@project.id}/stories",
           :body => %{<?xml version="1.0" encoding="UTF-8"?>
              <errors>
                <error>error#1 message</error>
@@ -68,7 +68,7 @@ describe PivotalTracker::Story do
   end
 
   context ".move_to_project" do
-    let(:expected_uri) {"http://www.pivotaltracker.com/services/v3/projects/#{project_id}/stories/#{story_id}"}
+    let(:expected_uri) {"#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{story_id}"}
     let(:project_id) { @project.id }
     let(:movable_story) { @project.stories.find(4459994) }
     let(:story_id) { movable_story.id }
