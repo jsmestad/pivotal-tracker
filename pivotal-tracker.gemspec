@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "pivotal-tracker"
-  s.version = "0.5.1"
+  s.version = "0.5.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = "2012-02-17"
+  s.date = "2012-03-26"
   s.email = "justin.smestad@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE",
@@ -39,8 +39,10 @@ Gem::Specification.new do |s|
     "lib/pivotal_tracker.rb",
     "pivotal-tracker.gemspec",
     "spec/fixtures/activity.xml",
+    "spec/fixtures/bugs.xml",
     "spec/fixtures/created_note.xml",
     "spec/fixtures/created_story.xml",
+    "spec/fixtures/features.xml",
     "spec/fixtures/iterations_all.xml",
     "spec/fixtures/iterations_backlog.xml",
     "spec/fixtures/iterations_current.xml",
@@ -57,22 +59,22 @@ Gem::Specification.new do |s|
     "spec/fixtures/story-4460598.xml",
     "spec/fixtures/story-4473735.xml",
     "spec/fixtures/tasks.xml",
+    "spec/pivotal-tracker/activity_spec.rb",
+    "spec/pivotal-tracker/attachment_spec.rb",
+    "spec/pivotal-tracker/client_spec.rb",
+    "spec/pivotal-tracker/iteration_spec.rb",
+    "spec/pivotal-tracker/membership_spec.rb",
+    "spec/pivotal-tracker/note_spec.rb",
+    "spec/pivotal-tracker/project_spec.rb",
+    "spec/pivotal-tracker/story_spec.rb",
+    "spec/pivotal-tracker/task_spec.rb",
     "spec/spec.opts",
     "spec/spec_helper.rb",
-    "spec/support/stale_fish_fixtures.rb",
-    "spec/unit/pivotal-tracker/activity_spec.rb",
-    "spec/unit/pivotal-tracker/attachment_spec.rb",
-    "spec/unit/pivotal-tracker/client_spec.rb",
-    "spec/unit/pivotal-tracker/iteration_spec.rb",
-    "spec/unit/pivotal-tracker/membership_spec.rb",
-    "spec/unit/pivotal-tracker/note_spec.rb",
-    "spec/unit/pivotal-tracker/project_spec.rb",
-    "spec/unit/pivotal-tracker/story_spec.rb",
-    "spec/unit/pivotal-tracker/task_spec.rb"
+    "spec/support/stale_fish_fixtures.rb"
   ]
   s.homepage = "http://github.com/jsmestad/pivotal-tracker"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.11"
+  s.rubygems_version = "1.8.19"
   s.summary = "Ruby wrapper for the Pivotal Tracker API"
 
   if s.respond_to? :specification_version then
