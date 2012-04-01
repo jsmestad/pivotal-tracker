@@ -62,8 +62,9 @@ module PivotalTracker
       when :done then Iteration.done(self)
       when :current then Iteration.current(self)
       when :backlog then Iteration.backlog(self)
+      when :current_backlog then Iteration.current_backlog(self)
       else
-        raise ArgumentError, "Invalid group. Use :done, :current or :backlog instead."
+        raise ArgumentError, "Invalid group. Use :done, :current, :backlog or :current_backlog instead."
       end
     end
 

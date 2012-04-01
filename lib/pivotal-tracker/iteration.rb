@@ -23,6 +23,11 @@ module PivotalTracker
         parse(Client.connection["/projects/#{project.id}/iterations/backlog#{params}"].get)
       end
     end
+    
+    def current_backlog(project, options={})
+      params = PivotalTracker.encode_options(options)
+      parse(Client.connection["/projects/#{project.id}/iterations/current_backlog#{params}"].get)
+    end
 
     element :id, Integer
     element :number, Integer
