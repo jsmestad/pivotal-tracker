@@ -71,19 +71,27 @@ describe PivotalTracker::Story do
     let(:project_id) { @project.id }
     let(:moving_story_id) {4460598}
     let(:move_target_id) {4459994}
-    let(:position) {:after}
-    let(:expected_uri) {"#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{moving_story_id}/moves?move\[move\]=#{position}&move\[target\]=#{move_target_id}"} 
+    let(:moving_story) { @project.stories.find(moving_story_id) }
+    let(:move_target) { @project.stories.find(move_target_id) }
     
-    before do
-      @moving_story = @project.stories.find(moving_story_id)
+    it "should return the moved story when moved before" do      
+      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{moving_story_id}/moves?move\[move\]=before&move\[target\]=#{move_target_id}"
       FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{moving_story_id}</id></story>})
-    end
-    
-    it "should return the moved story" do      
-      @move_target = @project.stories.find(move_target_id)
-      @moved_story = @moving_story.move(:after, @move_target)
+      @moved_story = moving_story.move(:before, move_target)
       @moved_story.should be_a(PivotalTracker::Story)
       @moved_story.id.should be(moving_story_id)
+    end
+    
+    it "should return the moved story when moved after" do
+      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{moving_story_id}/moves?move\[move\]=after&move\[target\]=#{move_target_id}"
+      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{moving_story_id}</id></story>})
+      @moved_story = moving_story.move(:before, move_target)
+      @moved_story.should be_a(PivotalTracker::Story)
+      @moved_story.id.should be(moving_story_id)
+    end
+    
+    it "should raise an error when trying to move in an invalid position" do
+      expect { moving_story.move(:next_to, move_target) }.to raise_error(ArgumentError)
     end
   end
 
