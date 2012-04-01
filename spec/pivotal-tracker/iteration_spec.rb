@@ -48,6 +48,18 @@ describe PivotalTracker::Iteration do
       @iterations.first.should be_a(PivotalTracker::Iteration)
     end
   end
+  
+  describe ".current_backlog" do
+    before do
+      @iterations = PivotalTracker::Iteration.current_backlog(@project)
+    end
+
+    it "should return an array of Iterations for the given Project" do
+      @iterations.should be_a(Array)
+      @iterations.first.should be_a(PivotalTracker::Iteration)
+    end
+  end
+  
 
 end
 
