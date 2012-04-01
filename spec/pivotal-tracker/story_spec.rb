@@ -69,29 +69,29 @@ describe PivotalTracker::Story do
   
   context ".move" do
     let(:project_id) { @project.id }
-    let(:moving_story_id) {4460598}
-    let(:move_target_id) {4459994}
-    let(:moving_story) { @project.stories.find(moving_story_id) }
-    let(:move_target) { @project.stories.find(move_target_id) }
+    let(:top_story_id) {4460598}
+    let(:bottom_story_id) {4459994}
+    let(:top_story) { @project.stories.find(top_story_id) }
+    let(:bottom_story) { @project.stories.find(bottom_story_id) }
     
     it "should return the moved story when moved before" do      
-      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{moving_story_id}/moves?move\[move\]=before&move\[target\]=#{move_target_id}"
-      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{moving_story_id}</id></story>})
-      @moved_story = moving_story.move(:before, move_target)
+      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{top_story_id}/moves?move\[move\]=before&move\[target\]=#{bottom_story_id}"
+      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{top_story_id}</id></story>})
+      @moved_story = top_story.move(:before, bottom_story)
       @moved_story.should be_a(PivotalTracker::Story)
-      @moved_story.id.should be(moving_story_id)
+      @moved_story.id.should be(top_story_id)
     end
     
     it "should return the moved story when moved after" do
-      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{moving_story_id}/moves?move\[move\]=after&move\[target\]=#{move_target_id}"
-      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{moving_story_id}</id></story>})
-      @moved_story = moving_story.move(:after, move_target)
+      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{bottom_story_id}/moves?move\[move\]=after&move\[target\]=#{top_story_id}"
+      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{bottom_story_id}</id></story>})
+      @moved_story = bottom_story.move(:after, top_story)
       @moved_story.should be_a(PivotalTracker::Story)
-      @moved_story.id.should be(moving_story_id)
+      @moved_story.id.should be(bottom_story_id)
     end
     
     it "should raise an error when trying to move in an invalid position" do
-      expect { moving_story.move(:next_to, move_target) }.to raise_error(ArgumentError)
+      expect { top_story.move(:next_to, bottom_story) }.to raise_error(ArgumentError)
     end
   end
 
