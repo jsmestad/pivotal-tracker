@@ -85,7 +85,7 @@ describe PivotalTracker::Story do
     it "should return the moved story when moved after" do
       expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{moving_story_id}/moves?move\[move\]=after&move\[target\]=#{move_target_id}"
       FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{moving_story_id}</id></story>})
-      @moved_story = moving_story.move(:before, move_target)
+      @moved_story = moving_story.move(:after, move_target)
       @moved_story.should be_a(PivotalTracker::Story)
       @moved_story.id.should be(moving_story_id)
     end
