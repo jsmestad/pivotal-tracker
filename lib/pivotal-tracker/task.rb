@@ -17,6 +17,7 @@ module PivotalTracker
     element :position, Integer
     element :complete, Boolean
     element :created_at, DateTime
+    has_one :story, Story
 
     def initialize(attributes={})
       if attributes[:owner]
