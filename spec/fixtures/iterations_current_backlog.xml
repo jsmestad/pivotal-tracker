@@ -5,6 +5,7 @@
     <number type="integer">3</number>
     <start type="datetime">2010/07/26 05:00:00 UTC</start>
     <finish type="datetime">2010/08/02 05:00:00 UTC</finish>
+	<team_strength type="float">1</team_strength>
     <stories type="array">
       <story>
         <id type="integer">4459994</id>
@@ -49,6 +50,7 @@
     <number type="integer">4</number>
     <start type="datetime">2010/08/02 05:00:00 UTC</start>
     <finish type="datetime">2010/08/09 05:00:00 UTC</finish>
+	<team_strength type="float">1</team_strength>
     <stories type="array">
       <story>
         <id type="integer">4460038</id>
@@ -102,6 +104,7 @@
     <number type="integer">5</number>
     <start type="datetime">2010/08/09 05:00:00 UTC</start>
     <finish type="datetime">2010/08/16 05:00:00 UTC</finish>
+	<team_strength type="float">1</team_strength>
     <stories type="array">
       <story>
         <id type="integer">4460598</id>
@@ -141,6 +144,7 @@
     <number type="integer">6</number>
     <start type="datetime">2010/08/16 05:00:00 UTC</start>
     <finish type="datetime">2010/08/23 05:00:00 UTC</finish>
+	<team_strength type="float">1</team_strength>
     <stories type="array">
       <story>
         <id type="integer">4473735</id>

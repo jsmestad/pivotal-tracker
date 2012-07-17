@@ -5,6 +5,7 @@
     <number type="integer">1</number>
     <start type="datetime">2010/07/12 05:00:00 UTC</start>
     <finish type="datetime">2010/07/19 05:00:00 UTC</finish>
+	<team_strength type="float">1</team_strength>
     <stories type="array">
       <story>
         <id type="integer">4460116</id>
