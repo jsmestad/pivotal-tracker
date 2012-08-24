@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<task>
+  <id type="integer">468113</id>
+  <description>Test task</description>
+  <position>1</position>
+  <complete>false</complete>
+  <created_at type="datetime">2010/07/27 21:51:28 UTC</created_at>
+</task>
