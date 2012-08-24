@@ -33,6 +33,7 @@ module PivotalTracker
     element :number, Integer
     element :start, DateTime
     element :finish, DateTime
+    element :team_strength, Float
     has_many :stories, Story
 
   end
