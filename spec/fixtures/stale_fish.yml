@@ -28,6 +28,12 @@
       request_type: GET
       update_method: StaleFishFixtures.update_tasks_fixture
       last_updated_at: 2010-07-29T20:15:10+01:00
+  - update_tasks:
+      file: 'update_tasks.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/4459994/tasks/468113
+      request_type: PUT
+      update_method: StaleFishFixtures.update_tasks_fixture
   - create_tasks:
       file: 'tasks.xml'
       update_interval: 2.weeks
