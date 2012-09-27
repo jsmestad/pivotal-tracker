@@ -43,7 +43,7 @@ module PivotalTracker
     element :integration_id, Integer
     element :deadline, DateTime # Only available for Release stories
 
-    has_many :attachments, Attachment, :tag => 'attachments'
+    has_many :attachments, Attachment, :tag => 'attachments', :xpath => '//attachments'
 
     def initialize(attributes={})
       if attributes[:owner]
