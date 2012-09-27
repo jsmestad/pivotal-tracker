@@ -29,7 +29,7 @@ describe PivotalTracker::Note do
 
     def note_for(attrs)
       note = @story.notes.new(attrs)
-      @note = Hash.from_xml(note.send(:to_xml))['note']
+      @note = Crack::XML.parse(note.send(:to_xml))['note']
     end
 
     describe "attributes that are not sent to the tracker" do
