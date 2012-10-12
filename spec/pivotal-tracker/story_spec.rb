@@ -136,7 +136,7 @@ describe PivotalTracker::Story do
 
     def story_for(attrs)
       story = @project.stories.new(attrs)
-      @story = Hash.from_xml(story.send(:to_xml))['story']
+      @story = Crack::XML.parse(story.send(:to_xml))['story']
     end
 
     describe "attributes that are not sent to the tracker" do

@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "pivotal-tracker"
-  s.version = "0.5.5"
+  s.version = "0.5.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = "2012-08-24"
+  s.date = "2012-10-12"
   s.email = "justin.smestad@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE",
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".rspec",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
@@ -60,6 +61,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/story-4460598.xml",
     "spec/fixtures/story-4473735.xml",
     "spec/fixtures/tasks.xml",
+    "spec/fixtures/update_tasks.xml",
     "spec/pivotal-tracker/activity_spec.rb",
     "spec/pivotal-tracker/attachment_spec.rb",
     "spec/pivotal-tracker/client_spec.rb",
@@ -75,7 +77,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/jsmestad/pivotal-tracker"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.15"
+  s.rubygems_version = "1.8.24"
   s.summary = "Ruby wrapper for the Pivotal Tracker API"
 
   if s.respond_to? :specification_version then
@@ -83,44 +85,26 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
-      s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
+      s.add_runtime_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4"])
-      s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
-      s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
-      s.add_runtime_dependency(%q<builder>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.3"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.12"])
-      s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_development_dependency(%q<stale_fish>, ["~> 1.3.0"])
+      s.add_runtime_dependency(%q<nokogiri>, [">= 1.5.5"])
+      s.add_runtime_dependency(%q<crack>, [">= 0"])
+      s.add_runtime_dependency(%q<jruby-openssl>, [">= 0"])
     else
       s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
-      s.add_dependency(%q<happymapper>, [">= 0.3.2"])
+      s.add_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
       s.add_dependency(%q<builder>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, ["~> 1.4"])
-      s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
-      s.add_dependency(%q<happymapper>, [">= 0.3.2"])
-      s.add_dependency(%q<builder>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 1.4.3"])
-      s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.12"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
+      s.add_dependency(%q<nokogiri>, [">= 1.5.5"])
+      s.add_dependency(%q<crack>, [">= 0"])
+      s.add_dependency(%q<jruby-openssl>, [">= 0"])
     end
   else
     s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
-    s.add_dependency(%q<happymapper>, [">= 0.3.2"])
+    s.add_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
     s.add_dependency(%q<builder>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, ["~> 1.4"])
-    s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
-    s.add_dependency(%q<happymapper>, [">= 0.3.2"])
-    s.add_dependency(%q<builder>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 1.4.3"])
-    s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.12"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
+    s.add_dependency(%q<nokogiri>, [">= 1.5.5"])
+    s.add_dependency(%q<crack>, [">= 0"])
+    s.add_dependency(%q<jruby-openssl>, [">= 0"])
   end
 end
 
