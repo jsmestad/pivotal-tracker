@@ -193,6 +193,14 @@ describe PivotalTracker::Story do
         story_for(:integration_id => 1000)["integration_id"].should == '1000'
       end
 
+      it "should not include integration_id if it doesn't exist" do
+        story_for(:other_id => 1000).keys.should_not include("integration_id")
+      end
+
+      it "should not include other_id if it doesn't exist" do
+        story_for(:project_id => 1000).keys.should_not include("other_id")
+      end
+
       # the tracker returns 422 when this is included, even if it is not used
       # it "should include jira_id" do
       #   story_for(:jira_id => 10)["jira_id"].should == "10"
