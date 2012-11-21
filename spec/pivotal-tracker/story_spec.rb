@@ -39,7 +39,7 @@ describe PivotalTracker::Story do
 
     context "on failure" do
       before do
-        FakeWeb.register_uri(:post, "http://www.pivotaltracker.com/services/v3/projects/#{@project.id}/stories",
+        FakeWeb.register_uri(:post, "#{PivotalTracker::Client.api_url}/projects/#{@project.id}/stories",
           :body => %{<?xml version="1.0" encoding="UTF-8"?>
              <errors>
                <error>error#1 message</error>
@@ -66,43 +66,69 @@ describe PivotalTracker::Story do
       @story.attachments.first.should be_a(PivotalTracker::Attachment)
     end
   end
+  
+  context ".move" do
+    let(:project_id) { @project.id }
+    let(:top_story_id) {4460598}
+    let(:bottom_story_id) {4459994}
+    let(:top_story) { @project.stories.find(top_story_id) }
+    let(:bottom_story) { @project.stories.find(bottom_story_id) }
+    
+    it "should return the moved story when moved before" do      
+      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{top_story_id}/moves?move\[move\]=before&move\[target\]=#{bottom_story_id}"
+      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{top_story_id}</id></story>})
+      @moved_story = top_story.move(:before, bottom_story)
+      @moved_story.should be_a(PivotalTracker::Story)
+      @moved_story.id.should be(top_story_id)
+    end
+    
+    it "should return the moved story when moved after" do
+      expected_uri = "#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{bottom_story_id}/moves?move\[move\]=after&move\[target\]=#{top_story_id}"
+      FakeWeb.register_uri(:post, expected_uri, :body => %{<story><id type="integer">#{bottom_story_id}</id></story>})
+      @moved_story = bottom_story.move(:after, top_story)
+      @moved_story.should be_a(PivotalTracker::Story)
+      @moved_story.id.should be(bottom_story_id)
+    end
+    
+    it "should raise an error when trying to move in an invalid position" do
+      expect { top_story.move(:next_to, bottom_story) }.to raise_error(ArgumentError)
+    end
+  end
 
   context ".move_to_project" do
-    before(:each) do
-      pending
-      @orig_net_lock = FakeWeb.allow_net_connect?
-      FakeWeb.allow_net_connect = true
-      @target_project = PivotalTracker::Project.find(103014)
-      @movable_story = @project.stories.find(4490874)
+    let(:expected_uri) {"#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{story_id}"}
+    let(:project_id) { @project.id }
+    let(:movable_story) { @project.stories.find(4459994) }
+    let(:story_id) { movable_story.id }
+    let(:target_project) { PivotalTracker::Project.new(:id => 103014) }
+
+    before do
+      FakeWeb.register_uri(:put, expected_uri, :body => %{<?xml version="1.0" encoding="UTF-8"?>
+                                                       <story>
+                                                         <project_id type="integer">#{target_project.id}</project_id>
+                                                       </story>})
     end
 
     it "should return an updated story from the target project when passed a PivotalTracker::Story" do
-      target_story = @target_project.stories.find(4477972)
-      response = @movable_story.move_to_project(target_story)
+      target_story = PivotalTracker::Story.new(:project_id => target_project.id)
+      response = movable_story.move_to_project(target_story)
+      response.should_not be_nil
       response.project_id.should == target_story.project_id
     end
 
     it "should return an updated story from the target project when passed a PivotalTracker::Project" do
-      response = @movable_story.move_to_project(@target_project)
-      response.project_id.should == @target_project.id
+      response = movable_story.move_to_project(target_project)
+      response.project_id.should == target_project.id
     end
 
     it "should return an updated story from the target project when passed a String" do
-      response = @movable_story.move_to_project('103014')
-      response.project_id.should == 103014
+      response = movable_story.move_to_project(target_project.id.to_s)
+      response.project_id.should == target_project.id
     end
 
     it "should return an updated story from the target project when passed an Integer"do
-      response = @movable_story.move_to_project(103014)
-      response.project_id.should == 103014
-    end
-
-    after (:each) do
-      pending
-      @movable_story = @target_project.stories.find(4490874)
-      response = @movable_story.move_to_project(102622)
-      FakeWeb.allow_net_connect = @orig_net_lock
-      response.project_id.should == 102622
+      response = movable_story.move_to_project(target_project.id.to_i)
+      response.project_id.should == target_project.id
     end
   end
 
@@ -110,7 +136,7 @@ describe PivotalTracker::Story do
 
     def story_for(attrs)
       story = @project.stories.new(attrs)
-      @story = Hash.from_xml(story.send(:to_xml))['story']
+      @story = Crack::XML.parse(story.send(:to_xml))['story']
     end
 
     describe "attributes that are not sent to the tracker" do

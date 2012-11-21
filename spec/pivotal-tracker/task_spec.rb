@@ -18,4 +18,16 @@ describe PivotalTracker::Task do
       @story.tasks.find(468113).should be_a(PivotalTracker::Task)
     end
   end
+
+  context ".create" do
+    it "should return the created task" do
+      @story.tasks.create(:description => 'Test task')
+    end
+  end
+
+  context '.update' do
+    it "should return the updated task" do
+      @story.tasks.find(468113).update(:description => 'Test task').description.should == 'Test task'
+    end
+  end
 end

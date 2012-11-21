@@ -2,6 +2,8 @@
 
 Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
 
+{<img src="https://secure.travis-ci.org/jsmestad/pivotal-tracker.png" />}[http://travis-ci.org/jsmestad/pivotal-tracker]
+
 == Features
 
 * Compatible with Pivotal Tracker API version 3
@@ -46,6 +48,8 @@ Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
     @story.move_to_project(@another_story)                                        # move @story into the same project as @another_story
 
 
+    # Connect to custom API endpoint
+    PivotalTracker::Client.tracker_host = 'www.my-pivotal-tracker.com'
 
 The API is based on the following this gist: http://gist.github.com/283120
 
