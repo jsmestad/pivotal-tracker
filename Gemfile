@@ -8,10 +8,6 @@ group :runtime do
   gem 'crack'
 end
 
-platforms :jruby do
-  gem "jruby-openssl"
-end
-
 group :test do
   gem 'rspec'
   gem 'rake'
