@@ -39,7 +39,7 @@ module PivotalTracker
     element :labels, String
     element :jira_id, Integer
     element :jira_url, String
-    element :other_id, Integer
+    element :other_id, String
     element :integration_id, Integer
     element :deadline, DateTime # Only available for Release stories
 
