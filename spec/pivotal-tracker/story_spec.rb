@@ -185,9 +185,9 @@ describe PivotalTracker::Story do
         story_for(:labels => "abc")["labels"].should == "abc"
       end
 
-      it "should include other_id" do
+      describe "should include other_id" do
         it "when passed a string" do
-          story_for(:other_id => "10")["other_id"].should == "10"
+          story_for(:other_id => "aa10bb")["other_id"].should == "aa10bb"
         end
         it "when passed an integer" do
           story_for(:other_id => 10)["other_id"].should == "10"
