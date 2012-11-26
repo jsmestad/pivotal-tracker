@@ -186,7 +186,12 @@ describe PivotalTracker::Story do
       end
 
       it "should include other_id" do
-        story_for(:other_id => 10)["other_id"].should == "10"
+        it "when passed a string" do
+          story_for(:other_id => "10")["other_id"].should == "10"
+        end
+        it "when passed an integer" do
+          story_for(:other_id => 10)["other_id"].should == "10"
+        end
       end
 
       it "should include integration_id" do
