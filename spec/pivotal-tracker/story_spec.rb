@@ -197,6 +197,14 @@ describe PivotalTracker::Story do
         story_for(:other_id => 1000).keys.should_not include("integration_id")
       end
 
+      it "should include external_id" do
+        story_for(:external_id => 1000)["external_id"].should == '1000'
+      end
+
+      it "should not include external_id if it doesn't exist" do
+        story_for(:other_id => 1000).keys.should_not include("external_id")
+      end
+
       it "should not include other_id if it doesn't exist" do
         story_for(:project_id => 1000).keys.should_not include("other_id")
       end
