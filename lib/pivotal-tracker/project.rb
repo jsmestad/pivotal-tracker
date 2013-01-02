@@ -68,6 +68,11 @@ module PivotalTracker
       end
     end
 
+    def deliver_all_finished
+      response = Client.connection["/projects/#{self.id}/stories/deliver_all_finished"].put ""
+      Story.parse(response)
+    end
+
     protected
 
       def to_xml

@@ -95,4 +95,30 @@ describe PivotalTracker::Project do
     end
   end
 
+  context ".deliver_all_finished" do
+    before do
+      @project = PivotalTracker::Project.find(102622)
+    end
+
+    it "should deliver and return stories that were delivered" do
+      stories = @project.deliver_all_finished
+      stories.should be_a(Array)
+      stories.first.should be_a(PivotalTracker::Story)
+      stories.count.should == 1
+    end
+
+    context "with no stories set to finished" do
+      before do
+        FakeWeb.register_uri(:put, "#{PivotalTracker::Client.api_url}/projects/102622/stories/deliver_all_finished", 
+                             :body => %{<?xml version="1.0" encoding="UTF-8"?>
+<stories type="array"/>}, :status => "200")
+      end
+      
+      it "should return empty" do
+        @project.deliver_all_finished.count.should == 0
+      end
+    end
+  end
+
+
 end

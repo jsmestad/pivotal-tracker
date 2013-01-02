@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stories type="array" count="1" limit="20" total="1">
+  <story>
+    <id type="integer">4460116</id>
+    <project_id type="integer">102622</project_id>
+    <story_type>feature</story_type>
+    <url>http://www.pivotaltracker.com/story/show/4460116</url>
+    <estimate type="integer">0</estimate>
+    <current_state>delivered</current_state>
+    <description>This is a story that's finished.</description>
+    <name>Old, accepted story</name>
+    <requested_by>Jon Mischo</requested_by>
+    <created_at type="datetime">2010/07/27 21:58:28 UTC</created_at>
+    <updated_at type="datetime">2010/07/27 22:21:17 UTC</updated_at>
+    <accepted_at type="datetime">2010/07/18 17:00:00 UTC</accepted_at>
+  </story>
+</stories>
