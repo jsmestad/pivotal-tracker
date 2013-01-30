@@ -3,6 +3,7 @@
 Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
 
 {<img src="https://secure.travis-ci.org/jsmestad/pivotal-tracker.png" />}[http://travis-ci.org/jsmestad/pivotal-tracker]
+{<img src="https://badge.fury.io/rb/pivotal-tracker.png" alt="Gem Version" />}[http://rubygems.org/gems/pivotal-tracker]
 
 == Features
 
