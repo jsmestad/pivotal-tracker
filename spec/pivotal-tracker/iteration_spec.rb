@@ -48,7 +48,7 @@ describe PivotalTracker::Iteration do
       @iterations.first.should be_a(PivotalTracker::Iteration)
     end
   end
-  
+
   describe ".current_backlog" do
     before do
       @iterations = PivotalTracker::Iteration.current_backlog(@project)
@@ -59,18 +59,31 @@ describe PivotalTracker::Iteration do
       @iterations.first.should be_a(PivotalTracker::Iteration)
     end
   end
-  
+
   describe ".team_strength" do
     before do
       @iteration = PivotalTracker::Iteration.current(@project)
     end
-    
+
     it "should return a Float" do
       @iteration.should respond_to(:team_strength)
       @iteration.team_strength.should be_a(Float)
     end
   end
-    
+
+  describe ".stories" do
+    before do
+      @iteration = PivotalTracker::Iteration.current(@project)
+    end
+
+    it "There should be 1 story in the current iteration" do
+      @iteration.stories.should be_a(Array)
+      @iteration.stories.length.should eq(1)
+      @iteration.stories.first.description.should eq("Generic description")
+      @iteration.stories.first.estimate.should eq (2)
+    end
+  end
+
 
 end
 
