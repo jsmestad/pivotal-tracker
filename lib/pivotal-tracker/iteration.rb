@@ -7,7 +7,7 @@ module PivotalTracker
         params = PivotalTracker.encode_options(options)
         parse(Client.connection["/projects/#{project.id}/iterations#{params}"].get)
       end
-      
+
       def current(project)
         array = parse(Client.connection["projects/#{project.id}/iterations/current"].get)
         array.first if array
@@ -22,19 +22,19 @@ module PivotalTracker
         params = PivotalTracker.encode_options(options)
         parse(Client.connection["/projects/#{project.id}/iterations/backlog#{params}"].get)
       end
-      
+
       def current_backlog(project, options={})
         params = PivotalTracker.encode_options(options)
         parse(Client.connection["/projects/#{project.id}/iterations/current_backlog#{params}"].get)
-      end      
+      end
     end
-    
+
     element :id, Integer
     element :number, Integer
     element :start, DateTime
     element :finish, DateTime
     element :team_strength, Float
-    has_many :stories, Story
+    has_many :stories, Story, :xpath => '//stories'
 
   end
 end
