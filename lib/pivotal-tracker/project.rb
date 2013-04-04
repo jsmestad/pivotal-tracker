@@ -27,6 +27,7 @@ module PivotalTracker
     element :initial_velocity, Integer
     element :current_velocity, Integer
     element :last_activity_at, DateTime
+    element :public, Boolean
     element :use_https, Boolean
     element :first_iteration_start_time, DateTime
     element :current_iteration_number, Integer
