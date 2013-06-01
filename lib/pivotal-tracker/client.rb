@@ -76,7 +76,7 @@ module PivotalTracker
         end
 
         def api_path
-          '/services/v' + @api_version
+          '/services/v' + api_version.to_s
         end
     end
 
