@@ -145,4 +145,18 @@ describe PivotalTracker::Client do
     end
   end
 
+  describe "#api_version"
+    context "when not passed a username and password" do
+      before do
+        PivotalTracker::Client.tracker_host = nil
+        PivotalTracker::Client.use_ssl      = true
+        PivotalTracker::Client.api_version = 4
+      end
+      it "returns https://www.pivotaltracker.com/services/v3" do
+        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v4'
+        PivotalTracker::Client.api_version = 3
+      end
+    end
+  end
+
 end
