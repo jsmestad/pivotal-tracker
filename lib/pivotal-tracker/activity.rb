@@ -6,7 +6,8 @@ module PivotalTracker
       MAX_PIVOTAL_ACTIVITY = 100
 
       def all(project=nil, options={})
-        per_page = options[:limit] || MAX_PIVOTAL_ACTIVITY
+        options[:limit] ||= MAX_PIVOTAL_ACTIVITY
+        per_page = options[:limit]
         auto_page = options[:auto_page]
 
         params = self.encode_options(options)

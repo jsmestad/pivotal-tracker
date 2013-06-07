@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PivotalTracker::Iteration do
   before do
     PivotalTracker::Client.token = TOKEN
-    @project = PivotalTracker::Project.find(PROJECT_ID)
+    @project = PivotalTracker::Project.find(PAGE_PROJECT_ID)
   end
 
   describe ".all" do

@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe PivotalTracker::Activity do
 
+  before do
+    PivotalTracker::Client.token = TOKEN
+  end
+  
   context "without a specified project" do
     it "should return an array of activities" do
       PivotalTracker::Activity.all.should be_a(Array)

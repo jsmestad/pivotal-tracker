@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 describe PivotalTracker::Project do
+  
+  before do
+    PivotalTracker::Client.token = TOKEN
+  end
+  
   context ".all" do
     before do
-      PivotalTracker::Client.token = TOKEN
       @projects = PivotalTracker::Project.all
     end
 
@@ -18,7 +22,7 @@ describe PivotalTracker::Project do
 
   context ".find" do
     before do
-      @project = PivotalTracker::Project.find(102622)
+      @project = PivotalTracker::Project.find(PROJECT_ID)
     end
 
     it "should be an instance of Project" do
@@ -44,7 +48,8 @@ describe PivotalTracker::Project do
 
   context ".stories" do
     before do
-      @project = PivotalTracker::Project.find(102622)
+      PivotalTracker::Client.token = TOKEN
+      @project = PivotalTracker::Project.find(PROJECT_ID)
     end
 
     it "should have a stories association" do
@@ -54,7 +59,8 @@ describe PivotalTracker::Project do
 
   context ".memberships" do
     before do
-      @project = PivotalTracker::Project.find(102622)
+      PivotalTracker::Client.token = TOKEN
+      @project = PivotalTracker::Project.find(PROJECT_ID)
     end
 
     it "should have a memberships association" do
@@ -64,6 +70,7 @@ describe PivotalTracker::Project do
 
   context ".create" do
     before do
+      PivotalTracker::Client.token = TOKEN
       @project = PivotalTracker::Project.new(:name => 'Pivotal Tracker API Gem')
     end
 

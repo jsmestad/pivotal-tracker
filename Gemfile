@@ -13,5 +13,6 @@ group :test do
   gem 'rake'
   gem 'jeweler'
   gem 'vcr'
+  gem 'fakeweb'
   gem 'autotest'
 end
