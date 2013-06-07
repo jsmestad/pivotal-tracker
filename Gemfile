@@ -12,6 +12,6 @@ group :test do
   gem 'rspec'
   gem 'rake'
   gem 'jeweler'
-  gem 'stale_fish', '~> 1.3.2'
+  gem 'vcr'
   gem 'autotest'
 end
