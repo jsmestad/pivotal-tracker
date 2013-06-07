@@ -12,7 +12,7 @@ module PivotalTracker
         params = self.encode_options(options)
 
         if project
-          if auto_page
+          if auto_page && Client.api_version >= 4
             page_through_activities(project, params, per_page)
           else
             parse(Client.connection["/projects/#{project.id}/activities#{params}"].get)
