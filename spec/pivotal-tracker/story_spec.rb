@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe PivotalTracker::Story do
   before do
-    PivotalTracker::Client.token = TOKEN
-    @project = PivotalTracker::Project.find(PROJECT_ID)
+    @project = PivotalTracker::Project.find(102622)
   end
 
   context ".all" do
@@ -29,7 +28,7 @@ describe PivotalTracker::Story do
 
   context ".find" do
     it "should return the matching story" do
-      @project.stories.find(ATTACHMENT_STORY).should be_a(PivotalTracker::Story)
+      @project.stories.find(4459994).should be_a(PivotalTracker::Story)
     end
   end
 
@@ -62,7 +61,7 @@ describe PivotalTracker::Story do
 
   context ".attachments" do
     it "should return an array of attachments" do
-      @story = @project.stories.find(ATTACHMENT_STORY)
+      @story = @project.stories.find(4460598)
       @story.attachments.should be_a(Array)
       @story.attachments.first.should be_a(PivotalTracker::Attachment)
     end
@@ -70,8 +69,8 @@ describe PivotalTracker::Story do
   
   context ".move" do
     let(:project_id) { @project.id }
-    let(:top_story_id) {ATTACHMENT_STORY}
-    let(:bottom_story_id) {UPLOAD_STORY}
+    let(:top_story_id) {4460598}
+    let(:bottom_story_id) {4459994}
     let(:top_story) { @project.stories.find(top_story_id) }
     let(:bottom_story) { @project.stories.find(bottom_story_id) }
     
@@ -99,7 +98,7 @@ describe PivotalTracker::Story do
   context ".move_to_project" do
     let(:expected_uri) {"#{PivotalTracker::Client.api_url}/projects/#{project_id}/stories/#{story_id}"}
     let(:project_id) { @project.id }
-    let(:movable_story) { @project.stories.find(ATTACHMENT_STORY) }
+    let(:movable_story) { @project.stories.find(4459994) }
     let(:story_id) { movable_story.id }
     let(:target_project) { PivotalTracker::Project.new(:id => 103014) }
 

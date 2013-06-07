@@ -9,15 +9,20 @@ require 'pivotal-tracker'
 require 'rspec'
 require 'rspec/autorun'
 
-PROJECT_ID = ENV['PROJECT_ID'] || 833075
-PAGE_PROJECT_ID = ENV['PAGE_PROJECT_ID'] || 10606
-ATTACHMENT_STORY = 51345231
-UPLOAD_STORY = 51345285
-MEMBER = 3129903
-TASK_ID = 15030357
-TOKEN = 'c894469f31a343c1f94017752a2a496f'
+PROJECT_ID = ENV['PROJECT_ID'] || 102622
+TOKEN = '8358666c5a593a3c82cda728c8a62b63'
 
 PivotalTracker::Client.token = TOKEN
+
+# tm: hack StaleFish to prevent it from accessing real API which slows down the test.
+#   Fixtures should be upated manually.
+module StaleFish
+  class Fixture
+    def is_stale?
+      false
+    end
+  end
+end
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -25,10 +30,14 @@ Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].e
 
 
 RSpec.configure do |config|
-  # setup VCR to record all external requests with a single casette
-  # works for everything but features
-  config.around :each do |example|
-    VCR.use_cassette("default_vcr_cassette") { example.call }
+  # Give StaleFish temporary file which is ignored by git
+  org_stale_fish_config = File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish.yml')
+  tmp_stale_fish_config = File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish-tmp.yml')
+  FileUtils.copy_file org_stale_fish_config, tmp_stale_fish_config, :remove_destination => true
+  StaleFish.setup(tmp_stale_fish_config)
+
+  config.before :suite do
+    StaleFish.update_stale
   end
 
   config.before :each do

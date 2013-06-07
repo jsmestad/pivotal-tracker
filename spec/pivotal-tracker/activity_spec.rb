@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe PivotalTracker::Activity do
 
-  before do
-    PivotalTracker::Client.token = TOKEN
-  end
-  
   context "without a specified project" do
     it "should return an array of activities" do
       PivotalTracker::Activity.all.should be_a(Array)
@@ -22,23 +18,6 @@ describe PivotalTracker::Activity do
       @project.activities.all.should be_a(Array)
       @project.activities.all.first.should be_a(PivotalTracker::Activity)
     end
-
-  end
-
-  context "with a project and autopage" do
-    before do
-      PivotalTracker::Client.api_version = 4
-      @page_project = PivotalTracker::Project.find(PAGE_PROJECT_ID)
-    end
-
-    it "should be able to page through activities" do
-      @page_project.activities.all(:auto_page => true).size.should > 100
-    end
-
-    after do
-      PivotalTracker::Client.api_version = 3
-    end
-
   end
 
   context "with a specified occurred since date filter" do

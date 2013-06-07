@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe PivotalTracker::Project do
   before do
-    PivotalTracker::Client.token = TOKEN
-    @project = PivotalTracker::Project.find(PROJECT_ID)
+    @project = PivotalTracker::Project.find(102622)
   end
 
   context ".all" do
@@ -15,7 +14,7 @@ describe PivotalTracker::Project do
 
   context ".find" do
     it "should return the given membership" do
-      @project.memberships.find(MEMBER).should be_a(PivotalTracker::Membership)
+      @project.memberships.find(331832).should be_a(PivotalTracker::Membership)
     end
   end
 end

@@ -4,8 +4,8 @@ describe PivotalTracker::Attachment do
 
   before do
     PivotalTracker::Client.token = TOKEN
-    @project = PivotalTracker::Project.find(PROJECT_ID)
-    @story = @project.stories.find(ATTACHMENT_STORY)
+    @project = PivotalTracker::Project.find(102622)
+    @story = @project.stories.find(4460598)
   end
 
   context "always" do
@@ -33,21 +33,21 @@ describe PivotalTracker::Attachment do
   context "without description" do
     it "should have a blank string for the description" do
       @story.attachments.first.description.should be_a(String)
-      @story.attachments.first.description.should be_empty
+      @story.attachments.first.description.should be_blank
     end
   end
 
   context "with description" do
     it "should have a non-blank string for the description" do
       @story.attachments.first.description.should be_a(String)
-      @story.attachments.last.description.should_not be_empty
+      @story.attachments.last.description.should_not be_blank
     end
   end
 
   context "uploading" do
 
     before do
-      @target_story = @project.stories.find(UPLOAD_STORY)
+      @target_story = @project.stories.find(4473735)
       @orig_net_lock = FakeWeb.allow_net_connect?
     end
 

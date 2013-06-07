@@ -2,9 +2,8 @@ require 'spec_helper'
 
 describe PivotalTracker::Note do
   before do
-    PivotalTracker::Client.token = TOKEN
-    @project = PivotalTracker::Project.find(PROJECT_ID)
-    @story = @project.stories.find(ATTACHMENT_STORY)
+    @project = PivotalTracker::Project.find(102622)
+    @story = @project.stories.find(4460038)
   end
 
   context ".all" do

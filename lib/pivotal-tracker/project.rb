@@ -9,11 +9,7 @@ module PivotalTracker
 
       def find(id)
         if @found
-          project = @found.detect { |document| document.id == id }
-          if !project
-            project = parse(Client.connection["/projects/#{id}"].get)
-          end
-          project
+          @found.detect { |document| document.id == id }
         else
           parse(Client.connection["/projects/#{id}"].get)
         end
