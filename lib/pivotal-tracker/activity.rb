@@ -39,7 +39,7 @@ module PivotalTracker
     element :project_id, Integer
     element :description, String
 
-    has_many :stories, Story
+    has_many :stories, Story, :tag => "story"
 
   end
 end
