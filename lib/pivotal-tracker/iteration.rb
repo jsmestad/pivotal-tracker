@@ -34,7 +34,7 @@ module PivotalTracker
     element :start, DateTime
     element :finish, DateTime
     element :team_strength, Float
-    has_many :stories, Story, :xpath => '//stories'
+    has_many :stories, Story, :xpath => './/stories'
 
   end
 end

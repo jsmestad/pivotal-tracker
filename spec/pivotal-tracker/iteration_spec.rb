@@ -72,15 +72,31 @@ describe PivotalTracker::Iteration do
   end
 
   describe ".stories" do
-    before do
-      @iteration = PivotalTracker::Iteration.current(@project)
+    context "for the current iteration" do
+      before do
+        @iteration = PivotalTracker::Iteration.current(@project)
+      end
+
+      it "should include one story" do
+        @iteration.stories.should be_a(Array)
+        @iteration.stories.length.should eq(1)
+        @iteration.stories.first.description.should eq("Generic description")
+        @iteration.stories.first.estimate.should eq (2)
+      end
     end
 
-    it "There should be 1 story in the current iteration" do
-      @iteration.stories.should be_a(Array)
-      @iteration.stories.length.should eq(1)
-      @iteration.stories.first.description.should eq("Generic description")
-      @iteration.stories.first.estimate.should eq (2)
+    context "with multiple iterations" do
+      before do
+        @iteration1 = PivotalTracker::Iteration.current(@project)
+        @iteration2 = PivotalTracker::Iteration.backlog(@project).first
+      end
+
+      it "should include the correct stories in each iteration" do
+        @iteration1.stories.count.should eq(1)
+        @iteration1.stories.first.name.should eq('Tasks Test')
+        @iteration2.stories.count.should eq(1)
+        @iteration2.stories.first.name.should eq('This is for comments')
+      end
     end
   end
 
