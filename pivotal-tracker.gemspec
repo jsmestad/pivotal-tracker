@@ -76,7 +76,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/jsmestad/pivotal-tracker"
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.5"
+  s.rubygems_version = "2.0.7"
   s.summary = "Ruby wrapper for the Pivotal Tracker API"
 
   if s.respond_to? :specification_version then
