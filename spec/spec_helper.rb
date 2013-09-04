@@ -30,6 +30,10 @@ Dir[File.expand_path(File.join(File.dirname(__FILE__),'support','**','*.rb'))].e
 
 
 RSpec.configure do |config|
+  # Allow focus on a specific test if specified
+  config.filter_run :focus => true
+  config.run_all_when_everything_filtered = true
+
   # Give StaleFish temporary file which is ignored by git
   org_stale_fish_config = File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish.yml')
   tmp_stale_fish_config = File.join(File.dirname(__FILE__), 'fixtures', 'stale_fish-tmp.yml')
