@@ -71,7 +71,6 @@ Gem::Specification.new do |s|
     "spec/pivotal-tracker/project_spec.rb",
     "spec/pivotal-tracker/story_spec.rb",
     "spec/pivotal-tracker/task_spec.rb",
-    "spec/spec.opts",
     "spec/spec_helper.rb",
     "spec/support/stale_fish_fixtures.rb"
   ]
