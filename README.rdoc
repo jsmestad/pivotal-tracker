@@ -36,6 +36,9 @@ Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
     @story.notes.all                                                              # return all notes (comments) for a story
     @story.notes.create(:text => 'A new comment', :noted_at => '06/29/2010 05:00 EST')  # add a new note
 
+    @story.tasks.all                                                              # return all tasks for a story
+    @story.tasks.create(:description => 'Task Description')  # add a new task
+
 
     @story.attachments                                                            # return an array of all attachment items (data only, not the files)
     @story.upload_attachment(file_path)                                           # add a file attachment to @story that can be found at file_path
