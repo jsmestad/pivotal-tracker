@@ -26,6 +26,7 @@ module PivotalTracker
     element :id, Integer
     element :url, String
     element :created_at, DateTime
+    element :updated_at, DateTime
     element :accepted_at, DateTime
     element :project_id, Integer
 
@@ -135,6 +136,7 @@ module PivotalTracker
             xml.other_id "#{other_id}" if other_id
             xml.integration_id "#{integration_id}" if integration_id
             xml.created_at DateTime.parse(created_at.to_s).to_s if created_at
+            xml.updated_at DateTime.parse(updated_at.to_s).to_s if updated_at
             xml.accepted_at DateTime.parse(accepted_at.to_s).to_s if accepted_at
             xml.deadline DateTime.parse(deadline.to_s).to_s if deadline
           }
