@@ -26,6 +26,7 @@ module PivotalTracker
     element :id, Integer
     element :url, String
     element :created_at, DateTime
+    element :updated_at, DateTime
     element :accepted_at, DateTime
     element :project_id, Integer
 
