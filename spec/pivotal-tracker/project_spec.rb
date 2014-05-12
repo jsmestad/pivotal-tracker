@@ -40,6 +40,10 @@ describe PivotalTracker::Project do
     it "should have current_iteration_number attribute" do  
       @project.respond_to?(:current_iteration_number).should be_true
     end
+
+    it "should have a public attribute" do
+      @project.respond_to?(:public).should be_true
+    end    
   end
 
   context ".stories" do

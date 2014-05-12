@@ -1,7 +1,7 @@
 require 'bundler'
 require 'fileutils'
 
-Bundler.require(:default, :runtime, :test)
+Bundler.require(:default, :runtime, :development)
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
