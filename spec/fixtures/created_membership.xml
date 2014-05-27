@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<membership>
+  <id type="integer">4492113</id>
+  <project_id type="integer">102622</project_id>
+  <person>
+    <email>jmischo@sittercity.com</email>
+    <name>Jon</name>
+    <initials>JM</initials>
+  </person>
+  <role>Owner</role>
+  <project>
+    <id>102622</id>
+    <name>Pivotal Tracker API Gem</name>
+  </project>
+</membership>

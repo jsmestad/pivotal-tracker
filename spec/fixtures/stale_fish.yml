@@ -7,6 +7,20 @@
       request_type: GET
       update_method: StaleFishFixtures.update_memberships_fixture
       last_updated_at: 2010-07-29T20:15:09+01:00
+  - membership-331822:
+      file: 'membership-331822.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/memberships/331822
+      request_type: GET
+      update_method: StaleFishFixtures.update_membership_fixture
+      last_updated_at: 2010-07-30T03:15:11+08:00
+  - create_membership:
+      file: 'created_membership.xml'
+      update_interval: 2.weeks
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/memberships
+      request_type: POST
+      update_method: StaleFishFixtures.create_new_membership
+      last_updated_at: 2010-07-29T20:15:14+01:00
   - projects:
       file: 'projects.xml'
       update_interval: 2.weeks
