@@ -50,6 +50,14 @@
       </membership>
     </memberships>
     <integrations>
+      <integration>
+        <id type="integer">27814</id>
+        <type>Other</type>
+        <name>GitHub</name>
+        <field_name>other_id</field_name>
+        <field_label>GitHub ID</field_label>
+        <active>true</active>
+      </integration>
     </integrations>
   </project>
   <project>
@@ -102,6 +110,14 @@
       </membership>
     </memberships>
     <integrations>
+      <integration>
+        <id type="integer">27814</id>
+        <type>Other</type>
+        <name>GitHub</name>
+        <field_name>other_id</field_name>
+        <field_label>GitHub ID</field_label>
+        <active>true</active>
+      </integration>
     </integrations>
   </project>
 </projects>

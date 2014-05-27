@@ -62,6 +62,17 @@ describe PivotalTracker::Project do
     end
   end
 
+  context ".integrations" do
+    before do
+      @project = PivotalTracker::Project.find(102622)
+    end
+
+    it "should have integrations" do
+      @project.respond_to?(:integrations).should be_true
+      @project.integrations.first.id.should equal(27814)
+    end
+  end
+
   context ".create" do
     before do
       @project = PivotalTracker::Project.new(:name => 'Pivotal Tracker API Gem')
