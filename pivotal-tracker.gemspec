@@ -84,7 +84,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'rest-client', '~> 1.6', '>= 1.6.0'
   s.add_runtime_dependency 'nokogiri-happymapper', '~> 0.5', '>= 0.5.4'
-  s.add_runtime_dependency 'builder', '~> 0'
+  s.add_runtime_dependency(%q<builder>, [">= 0"])
   s.add_runtime_dependency 'crack', '~> 0'
   s.add_runtime_dependency 'happymapper', '~> 0.3', '>= 0.3.2'
   s.add_runtime_dependency 'nokogiri', '~> 1.4', '>= 1.4.3'
