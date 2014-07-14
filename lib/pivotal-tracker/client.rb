@@ -61,7 +61,7 @@ module PivotalTracker
         end
 
         def new_connection
-          @connections[@token] = RestClient::Resource.new("#{use_ssl ? api_ssl_url : api_url}", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'})
+          @connections[@token] = RestClient::Resource.new("#{use_ssl ? api_ssl_url : api_url}", headers: {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'}, timeout: 60, open_timeout: 60)
         end
 
         def protocol_changed?
