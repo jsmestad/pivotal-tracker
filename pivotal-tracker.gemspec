@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "pivotal-tracker"
-  s.version = "0.5.13"
+  s.version = "0.5.14"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee"]
-  s.date = "2013-09-04"
-  s.email = "justin.smestad@gmail.com"
+  s.authors = ["Justin Smestad", "Josh Nichols", "Terence Lee", "Nick Wargnier"]
+  s.date = "2014-07-14"
+  s.email = "nick@amitree.com"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -78,6 +78,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.7"
   s.summary = "Ruby wrapper for the Pivotal Tracker API"
+  s.licenses    = ['MIT']
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
@@ -86,11 +87,8 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_runtime_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 1.5.5"])
       s.add_runtime_dependency(%q<crack>, [">= 0"])
-      s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
-      s.add_runtime_dependency(%q<builder>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.3"])
       s.add_development_dependency(%q<rspec>, [">= 2.14"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.12"])
@@ -102,10 +100,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<builder>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 1.5.5"])
       s.add_dependency(%q<crack>, [">= 0"])
-      s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
       s.add_dependency(%q<happymapper>, [">= 0.3.2"])
-      s.add_dependency(%q<builder>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 1.4.3"])
       s.add_dependency(%q<rspec>, [">= 2.14"])
       s.add_dependency(%q<bundler>, ["~> 1.0.12"])
       s.add_dependency(%q<jeweler>, [">= 0"])
@@ -117,10 +112,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<builder>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 1.5.5"])
     s.add_dependency(%q<crack>, [">= 0"])
-    s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
     s.add_dependency(%q<happymapper>, [">= 0.3.2"])
-    s.add_dependency(%q<builder>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 1.4.3"])
     s.add_dependency(%q<rspec>, [">= 2.14"])
     s.add_dependency(%q<bundler>, ["~> 1.0.12"])
     s.add_dependency(%q<jeweler>, [">= 0"])
