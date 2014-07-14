@@ -9,8 +9,7 @@ group :runtime do
 end
 
 group :test do
-  gem 'rspec'
-  gem 'rake'
+  gem 'rspec', '~> 3.0.0'
   gem 'jeweler'
   gem 'stale_fish', '~> 1.3.2'
   gem 'autotest'

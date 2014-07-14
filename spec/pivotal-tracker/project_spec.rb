@@ -13,7 +13,7 @@ describe PivotalTracker::Project do
 
     it "should be a project instance" do
       @projects.first.should be_a(PivotalTracker::Project)
-    end        
+    end
   end
 
   context ".find" do
@@ -26,19 +26,19 @@ describe PivotalTracker::Project do
     end
 
     it "should have a use_https attribute" do
-      @project.respond_to?(:use_https).should be_true
+      @project.respond_to?(:use_https).should eq true
     end
 
     it "should have false for use_https" do
-      @project.use_https.should be_false
+      @project.use_https.should eq false
     end
-    
+
     it "should have first_iteration_start_time attribute" do
-      @project.respond_to?(:first_iteration_start_time).should be_true
+      @project.respond_to?(:first_iteration_start_time).should eq true
     end
-     
-    it "should have current_iteration_number attribute" do  
-      @project.respond_to?(:current_iteration_number).should be_true
+
+    it "should have current_iteration_number attribute" do
+      @project.respond_to?(:current_iteration_number).should eq true
     end
   end
 
@@ -48,7 +48,7 @@ describe PivotalTracker::Project do
     end
 
     it "should have a stories association" do
-      @project.respond_to?(:stories).should be_true
+      @project.respond_to?(:stories).should eq true
     end
   end
 
@@ -58,7 +58,7 @@ describe PivotalTracker::Project do
     end
 
     it "should have a memberships association" do
-      @project.respond_to?(:memberships).should be_true
+      @project.respond_to?(:memberships).should eq true
     end
   end
 

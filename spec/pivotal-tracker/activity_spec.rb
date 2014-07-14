@@ -22,7 +22,8 @@ describe PivotalTracker::Activity do
 
   context "with a specified occurred since date filter" do
     it "should correctly url encode the occurred since date filter in the API call" do
-      PivotalTracker::Client.stub!(:connection).and_return connection = double("Client Connection")
+      expect(PivotalTracker::Client).to receive(:connection).and_return(connection = double("Client Connection"))
+
       url = "/activities?limit=100&occurred_since_date=2010/07/29%2019:13:00%20+00:00"
       connection.should_receive(:[]).with(url).and_return double("Connection", :get => '<blah></blah>')
       PivotalTracker::Activity.all nil, :limit => 100, :occurred_since_date => DateTime.parse("2010/7/29 19:13:00 UTC")
