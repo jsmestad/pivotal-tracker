@@ -16,6 +16,8 @@ Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
     PivotalTracker::Client.token('myusername@email.com', 'secretpassword')        # Automatically fetch API Token
     PivotalTracker::Client.token = 'jkfduisj97823974j2kl24899234'                 # Manually set API Token
 
+    PivotalTracker::Client.timeout = 50                                           # Set timeout on the connection with pivotal. Default is 60 seconds
+
     @projects = PivotalTracker::Project.all                                       # return all projects
     @a_project = PivotalTracker::Project.find(84739)                              # find project with a given ID
 

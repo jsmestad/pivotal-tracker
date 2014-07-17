@@ -89,7 +89,7 @@ describe PivotalTracker::Client do
 
     context 'timeout' do
       it "should set the timeout appropriately" do
-        allow(PivotalTracker::Client).to receive(:timeout).and_return(50)
+        PivotalTracker::Client.timeout = 50
         expect(PivotalTracker::Client.connection.timeout).to eq 50
       end
 
