@@ -20,6 +20,14 @@ module PivotalTracker
         @token= Nokogiri::XML(response.body).search('guid').inner_html
       end
 
+      def timeout=(timeout)
+        @timeout = timeout
+      end
+
+      def timeout
+        @timeout ||= 60
+      end
+
       # this is your connection for the entire module
       def connection(options={})
         raise NoToken if @token.to_s.empty?
@@ -74,10 +82,6 @@ module PivotalTracker
 
         def api_path
           '/services/v3'
-        end
-
-        def timeout
-          30
         end
     end
 
