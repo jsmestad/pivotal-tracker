@@ -96,7 +96,8 @@ describe PivotalTracker::Client do
 
       it "should raise timeout error" do
         FakeWeb.allow_net_connect = true
-        FakeWeb.register_uri(:get, "www.pivotaltracker.com/services/v3", :exception => Timeout::Error)
+        puts Timeout.constants.inspect
+        FakeWeb.register_uri(:get, "www.pivotaltracker.com/services/v3", :exception => ::Timeout::Error)
         expect{PivotalTracker::Client.connection.get}.to raise_error(RestClient::RequestTimeout)
       end
     end
