@@ -13,9 +13,9 @@ module PivotalTracker
 
       def token(username, password, method='post')
         response = if method == 'post'
-          RestClient.post api_ssl_url + '/tokens/active', :username => username, :password => password, timeout: timeout
+          RestClient.post api_ssl_url + '/tokens/active', :username => username, :password => password, :timeout => timeout
         else
-          RestClient.get "#{api_ssl_url(username, password)}/tokens/active", timeout: timeout
+          RestClient.get "#{api_ssl_url(username, password)}/tokens/active", :timeout => timeout
         end
         @token= Nokogiri::XML(response.body).search('guid').inner_html
       end
@@ -69,7 +69,7 @@ module PivotalTracker
         end
 
         def new_connection
-          @connections[@token] = RestClient::Resource.new("#{use_ssl ? api_ssl_url : api_url}", headers: {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'}, timeout: timeout)
+          @connections[@token] = RestClient::Resource.new("#{use_ssl ? api_ssl_url : api_url}", :headers => {'X-TrackerToken' => @token, 'Content-Type' => 'application/xml'}, :timeout => timeout)
         end
 
         def protocol_changed?

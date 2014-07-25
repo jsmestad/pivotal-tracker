@@ -22,7 +22,7 @@ describe PivotalTracker::Client do
 
         it "called to RestClient::Resource using the new token" do
           RestClient::Resource.should_receive(:new).
-              with(PivotalTracker::Client.api_url, headers: { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, timeout: 60)
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, :timeout => 60)
 
           PivotalTracker::Client.connection
         end
@@ -31,7 +31,7 @@ describe PivotalTracker::Client do
           @resource = Object.new
 
           RestClient::Resource.should_receive(:new).
-              with(PivotalTracker::Client.api_url, headers: { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, timeout: 60).
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, :timeout => 60).
               and_return(@resource)
 
           PivotalTracker::Client.connection.should == @resource
@@ -54,7 +54,7 @@ describe PivotalTracker::Client do
         @resource = Object.new
 
         RestClient::Resource.should_receive(:new).
-            with(PivotalTracker::Client.api_url, headers: { 'X-TrackerToken' => "abc123", 'Content-Type' => 'application/xml' }, timeout: 60).
+            with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "abc123", 'Content-Type' => 'application/xml' }, :timeout => 60).
             and_return(@resource)
 
         PivotalTracker::Client.connection.should == @resource
@@ -68,7 +68,7 @@ describe PivotalTracker::Client do
 
         it "called to RestClient::Resource using the new token" do
           RestClient::Resource.should_receive(:new).
-              with(PivotalTracker::Client.api_url, headers: { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, timeout: 60)
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, :timeout => 60)
 
           PivotalTracker::Client.connection
         end
@@ -77,7 +77,7 @@ describe PivotalTracker::Client do
           @resource = Object.new
 
           RestClient::Resource.should_receive(:new).
-              with(PivotalTracker::Client.api_url, headers: { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, timeout: 60).
+              with(PivotalTracker::Client.api_url, :headers => { 'X-TrackerToken' => "anewtoken", 'Content-Type' => 'application/xml' }, :timeout => 60).
               and_return(@resource)
 
           expect(PivotalTracker::Client.connection).to eq @resource
