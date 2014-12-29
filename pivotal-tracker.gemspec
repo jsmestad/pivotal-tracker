@@ -83,12 +83,12 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
+      s.add_runtime_dependency(%q<rest-client>, [">= 1.7.2"])
       s.add_runtime_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.5.5"])
       s.add_runtime_dependency(%q<crack>, [">= 0"])
-      s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.0"])
+      s.add_runtime_dependency(%q<rest-client>, [">= 1.7.2"])
       s.add_runtime_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_runtime_dependency(%q<builder>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.3"])
@@ -97,12 +97,12 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<stale_fish>, ["~> 1.3.0"])
     else
-      s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
+      s.add_dependency(%q<rest-client>, [">= 1.7.2"])
       s.add_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
       s.add_dependency(%q<builder>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 1.5.5"])
       s.add_dependency(%q<crack>, [">= 0"])
-      s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
+      s.add_dependency(%q<rest-client>, [">= 1.7.2"])
       s.add_dependency(%q<happymapper>, [">= 0.3.2"])
       s.add_dependency(%q<builder>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 1.4.3"])
@@ -112,12 +112,12 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<stale_fish>, ["~> 1.3.0"])
     end
   else
-    s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
+    s.add_dependency(%q<rest-client>, [">= 1.7.2"])
     s.add_dependency(%q<nokogiri-happymapper>, [">= 0.5.4"])
     s.add_dependency(%q<builder>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 1.5.5"])
     s.add_dependency(%q<crack>, [">= 0"])
-    s.add_dependency(%q<rest-client>, ["~> 1.6.0"])
+    s.add_dependency(%q<rest-client>, [">= 1.7.2"])
     s.add_dependency(%q<happymapper>, [">= 0.3.2"])
     s.add_dependency(%q<builder>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 1.4.3"])
