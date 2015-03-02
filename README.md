@@ -1,17 +1,27 @@
-= pivotal-tracker.rb
-
-Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
+## pivotal-tracker.rb - the original ruby gem
 
 {<img src="https://secure.travis-ci.org/jsmestad/pivotal-tracker.png" />}[http://travis-ci.org/jsmestad/pivotal-tracker]
 {<img src="https://badge.fury.io/rb/pivotal-tracker.png" alt="Gem Version" />}[http://rubygems.org/gems/pivotal-tracker]
 
-== Features
+#### NOTICE
+
+I am currently re-writing this gem to address the biggest feature requests that are long overdue:
+
+* Gem is thread-safe
+* Support Pivotal Tracker APIv5 and dropping V3 support
+* Overhauled spec suite
+
+This will become the `v1.x` release.
+
+### Original README (for `v0.x` releases)
+
+## Features
 
 * Compatible with Pivotal Tracker API version 3
 * ActiveRecord-style Wrapper API
 * Support for SSL protected repositories
 
-== Overview
+## Overview
 
     PivotalTracker::Client.token('myusername@email.com', 'secretpassword')        # Automatically fetch API Token
     PivotalTracker::Client.token = 'jkfduisj97823974j2kl24899234'                 # Manually set API Token
@@ -59,30 +69,15 @@ Ruby wrapper for Pivotal Tracker API, no frameworks required. Simply Ruby.
 
 The API is based on the following this gist: http://gist.github.com/283120
 
-== Getting Started
+## Additional Information
 
-* Installing:
-
-    $ gem install pivotal-tracker
-
-* Contributing (requires Bundler >= 0.9.7):
-
-    $ git clone git://github.com/jsmestad/pivotal-tracker
-    $ cd pivotal-tracker
-    $ bundle install
-    $ bundle exec rake
-
-== Additional Information
-
-* Wiki: http://wiki.github.com/jsmestad/pivotal-tracker
+* Wiki: https://wiki.github.com/jsmestad/pivotal-tracker
 * Documentation: http://rdoc.info/projects/jsmestad/pivotal-tracker
 * Pivotal API v3 Docs: http://www.pivotaltracker.com/help/api?version=v3
 
-== Contributors along the way
+## Contributors along the way
 
-* Justin Smestad (http://github.com/jsmestad)
-* Josh Nichols (http://github.com/technicalpickles)
-* Terence Lee (http://github.com/hone)
-* Jon Mischo (http://github.com/supertaz)
-* Gabor Ratky (http://github.com/rgabo)
+* Justin Smestad (https://github.com/jsmestad)
+* Jon Mischo (https://github.com/supertaz)
+* Gabor Ratky (https://github.com/rgabo)
 
