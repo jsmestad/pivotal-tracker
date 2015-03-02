@@ -19,9 +19,9 @@ begin
     gem.add_dependency 'builder'
     gem.add_dependency 'nokogiri', '>= 1.4.3'
 
-    gem.add_development_dependency 'rspec'
+    gem.add_development_dependency 'rspec', '~> 2.14.1'
     gem.add_development_dependency 'bundler', '~> 1.0.12'
-    gem.add_development_dependency 'jeweler'
+    gem.add_development_dependency 'jeweler', '~> 2.0.1'
     gem.add_development_dependency 'stale_fish', '~> 1.3.0'
   end
   Jeweler::GemcutterTasks.new
