@@ -1,8 +1,8 @@
 require 'cgi'
 require 'rest_client'
-require 'happymapper'
+require 'happymapper' # nokogiri-happymapper
 require 'nokogiri'
-
+require 'crack'
 
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'validation')
 require File.join(File.dirname(__FILE__), 'pivotal-tracker', 'extensions')

@@ -1,3 +1,5 @@
+require 'stale_fish'
+
 module StaleFishFixtures
   class << self
 
