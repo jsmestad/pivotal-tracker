@@ -43,6 +43,7 @@ module PivotalTracker
     element :zendesk_id, Integer
     element :zendesk_url, String
     element :integration_id, Integer
+    element :external_id, Integer
     element :deadline, DateTime # Only available for Release stories
 
     has_many :attachments, Attachment, :tag => 'attachments', :xpath => '//attachments'
@@ -134,6 +135,7 @@ module PivotalTracker
             # xml.jira_url "#{jira_url}"
             xml.other_id "#{other_id}" if other_id
             xml.integration_id "#{integration_id}" if integration_id
+            xml.external_id "#{external_id}" if external_id
             xml.created_at DateTime.parse(created_at.to_s).to_s if created_at
             xml.accepted_at DateTime.parse(accepted_at.to_s).to_s if accepted_at
             xml.deadline DateTime.parse(deadline.to_s).to_s if deadline
