@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "builder", ">= 0"
   spec.add_runtime_dependency "nokogiri", ">= 1.5.5"
   spec.add_runtime_dependency "crack", ">= 0"
-  spec.add_runtime_dependency "rest-client", ">= 1.6.0"
+  spec.add_runtime_dependency "rest-client", ">= 1.8.0"
 
   spec.add_development_dependency "activesupport", "<= 4.1"
   spec.add_development_dependency "rspec", ">= 3.0.0"
