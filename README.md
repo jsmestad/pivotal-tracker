@@ -1,7 +1,7 @@
 ## pivotal-tracker.rb - the original ruby gem
 
-{<img src="https://secure.travis-ci.org/jsmestad/pivotal-tracker.png" />}[http://travis-ci.org/jsmestad/pivotal-tracker]
-{<img src="https://badge.fury.io/rb/pivotal-tracker.png" alt="Gem Version" />}[http://rubygems.org/gems/pivotal-tracker]
+[![Build Status](https://travis-ci.org/jsmestad/pivotal-tracker.svg)](https://travis-ci.org/jsmestad/pivotal-tracker)
+[![Gem Version](https://badge.fury.io/rb/pivotal-tracker.svg)](http://badge.fury.io/rb/pivotal-tracker)
 
 #### NOTICE
 
