@@ -14,7 +14,8 @@ module PivotalTracker
         begin
           story = parse(Client.connection["/projects/#{project_id}/stories/#{param}"].get)
           story.project_id = project_id
-        rescue RestClient::ExceptionWithResponse
+        rescue RestClient::ExceptionWithResponse => e
+          raise e unless e.http_code == 404
           story = nil
         end
         return story
