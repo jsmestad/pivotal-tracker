@@ -165,3 +165,9 @@
       check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories?filter=story_type%3Afeature
       request_type: GET
       last_updated_at: 
+  - deliver_all_finished:
+      file: 'deliver_all_finished.xml'
+      update_interval: nil
+      check_against: http://www.pivotaltracker.com/services/v3/projects/102622/stories/deliver_all_finished
+      request_type: PUT
+      last_updated_at: 
