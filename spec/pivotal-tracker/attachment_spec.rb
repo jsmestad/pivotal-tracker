@@ -59,5 +59,14 @@ describe PivotalTracker::Attachment do
       resource.should be_a(PivotalTracker::Attachment)
       resource.status.should == 'Pending'
     end
+
+    it "should accept a file like object" do
+      FakeWeb.allow_net_connect = true
+      file = File.new(File.dirname(__FILE__) + '/../../LICENSE')
+      resource = @target_story.upload_attachment(file)
+      FakeWeb.allow_net_connect = @orig_net_lock
+      resource.should be_a(PivotalTracker::Attachment)
+      resource.status.should == 'Pending'
+    end
   end
 end

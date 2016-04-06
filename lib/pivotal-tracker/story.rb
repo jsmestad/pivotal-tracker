@@ -86,8 +86,9 @@ module PivotalTracker
       @tasks ||= Proxy.new(self, Task)
     end
 
-    def upload_attachment(filename)
-      Attachment.parse(Client.connection["/projects/#{project_id}/stories/#{id}/attachments"].post(:Filedata => File.new(filename)))
+    def upload_attachment(file)
+      file = File.new(file) if file.is_a?(String)
+      Attachment.parse(Client.connection["/projects/#{project_id}/stories/#{id}/attachments"].post(:Filedata => file))
     end
 
     def move_to_project(new_project)
