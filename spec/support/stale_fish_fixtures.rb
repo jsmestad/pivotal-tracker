@@ -19,6 +19,10 @@ module StaleFishFixtures
       connection["/projects/102622/stories?limit=20"].get
     end
 
+    def update_membership_fixture
+      connection["/projects/102622/membership/331822"].get
+    end
+
     def update_memberships_fixture
       connection["/projects/102622/memberships"].get
     end
@@ -53,6 +57,10 @@ module StaleFishFixtures
 
     def create_new_story
       connection["/projects/102622/stories"].post("<story><name>Create stuff</name></story>", :content_type => 'application/xml')
+    end
+
+    def create_new_membership
+      connection["/projects/102622/memberships"].post("<membership><role>owner</role></membership>", :content_type => 'application/xml')
     end
 
     def update_notes_fixture
