@@ -5,8 +5,7 @@ module PivotalTracker
     class NoToken < StandardError; end
 
     class << self
-      attr_writer :use_ssl, :token, :tracker_host
-
+      attr_writer :use_ssl, :token, :tracker_host, :api_version
       def use_ssl
         @use_ssl || false
       end
@@ -54,6 +53,10 @@ module PivotalTracker
         "http://#{tracker_host}#{api_path}"
       end
 
+      def api_version
+        @api_version ||= 3
+      end
+
       protected
 
         def protocol
@@ -81,7 +84,7 @@ module PivotalTracker
         end
 
         def api_path
-          '/services/v3'
+          '/services/v' + api_version.to_s
         end
     end
 

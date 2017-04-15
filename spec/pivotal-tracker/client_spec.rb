@@ -158,4 +158,12 @@ describe PivotalTracker::Client do
     end
   end
 
+  describe "#api_version" do
+    it "sets the api_version" do
+      PivotalTracker::Client.api_version = 4
+      PivotalTracker::Client.api_version.should == 4
+      PivotalTracker::Client.api_version = 3
+    end
+  end
+
 end
