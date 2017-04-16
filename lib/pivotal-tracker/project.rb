@@ -31,6 +31,8 @@ module PivotalTracker
     element :first_iteration_start_time, DateTime
     element :current_iteration_number, Integer
 
+    has_many :integrations, Integration, :tag => :integration
+
     def initialize(attributes={})
       update_attributes(attributes)
     end
