@@ -63,6 +63,11 @@ module PivotalTracker
         end
       end
 
+      def update_attributes(attrs)
+        attrs.each do |key, value|
+          self.send("#{key}=", value.is_a?(Array) ? value.join(',') : value )
+        end
+      end
   end
 
   class Task
