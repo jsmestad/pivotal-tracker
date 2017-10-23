@@ -11,7 +11,7 @@
     <stories>
       <story>
         <id type="integer">4492080</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4492080</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4492080</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>
@@ -29,7 +29,7 @@
     <stories>
       <story>
         <id type="integer">4492078</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4492078</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4492078</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>
@@ -47,7 +47,7 @@
     <stories>
       <story>
         <id type="integer">4492060</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4492060</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4492060</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>
@@ -65,7 +65,7 @@
     <stories>
       <story>
         <id type="integer">4492059</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4492059</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4492059</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>
@@ -83,7 +83,7 @@
     <stories>
       <story>
         <id type="integer">4491973</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4491973</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4491973</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>
@@ -101,7 +101,7 @@
     <stories>
       <story>
         <id type="integer">4491971</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4491971</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4491971</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>
@@ -119,7 +119,7 @@
     <stories>
       <story>
         <id type="integer">4490874</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4490874</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4490874</url>
         <estimate type="integer">0</estimate>
       </story>
     </stories>
@@ -135,7 +135,7 @@
     <stories>
       <story>
         <id type="integer">4490874</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4490874</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4490874</url>
         <current_state>unstarted</current_state>
       </story>
     </stories>
@@ -151,7 +151,7 @@
     <stories>
       <story>
         <id type="integer">4490874</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4490874</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4490874</url>
         <name>Movable Story</name>
       </story>
     </stories>
@@ -167,7 +167,7 @@
     <stories>
       <story>
         <id type="integer">4491800</id>
-        <url>http://www.pivotaltracker.com/services/v3/projects/102622/stories/4491800</url>
+        <url>http://www.pivotaltracker.com/services/v5/projects/102622/stories/4491800</url>
         <name>Create stuff</name>
         <story_type>feature</story_type>
         <current_state>unscheduled</current_state>

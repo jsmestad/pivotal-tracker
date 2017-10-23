@@ -81,7 +81,7 @@ module PivotalTracker
         end
 
         def api_path
-          '/services/v3'
+          '/services/v5'
         end
     end
 
