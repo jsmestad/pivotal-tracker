@@ -90,12 +90,12 @@ describe PivotalTracker::Client do
     context 'timeout' do
       it "should set the timeout appropriately" do
         PivotalTracker::Client.timeout = 50
-        expect(PivotalTracker::Client.connection.timeout).to eq 50
+        expect(PivotalTracker::Client.connection.options[:timeout]).to eq(50)
       end
 
       it "should raise timeout error" do
         FakeWeb.allow_net_connect = true
-        FakeWeb.register_uri(:get, "www.pivotaltracker.com/services/v3", :exception => ::Timeout::Error)
+        FakeWeb.register_uri(:get, "www.pivotaltracker.com/services/v5", :exception => ::Timeout::Error)
         expect{PivotalTracker::Client.connection.get}.to raise_error(RestClient::RequestTimeout)
       end
     end
@@ -122,8 +122,8 @@ describe PivotalTracker::Client do
         PivotalTracker::Client.tracker_host = nil
         PivotalTracker::Client.use_ssl      = true
       end
-      it "returns https://www.pivotaltracker.com/services/v3" do
-        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v3'
+      it "returns https://www.pivotaltracker.com/services/v5" do
+        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v5'
       end
     end
     context "when passed a username and password" do
@@ -131,8 +131,8 @@ describe PivotalTracker::Client do
         PivotalTracker::Client.tracker_host = nil
         PivotalTracker::Client.use_ssl      = false
       end
-      it "returns https://USER:PASSWORD@www.pivotaltracker.com/services/v3" do
-        PivotalTracker::Client.api_ssl_url('USER', 'PASSWORD').should == 'https://USER:PASSWORD@www.pivotaltracker.com/services/v3'
+      it "returns https://USER:PASSWORD@www.pivotaltracker.com/services/v5" do
+        PivotalTracker::Client.api_ssl_url('USER', 'PASSWORD').should == 'https://USER:PASSWORD@www.pivotaltracker.com/services/v5'
       end
     end
   end
@@ -143,8 +143,8 @@ describe PivotalTracker::Client do
         PivotalTracker::Client.tracker_host = nil
         PivotalTracker::Client.use_ssl      = true
       end
-      it "returns https://www.pivotaltracker.com/services/v3" do
-        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v3'
+      it "returns https://www.pivotaltracker.com/services/v5" do
+        PivotalTracker::Client.api_ssl_url.should == 'https://www.pivotaltracker.com/services/v5'
       end
     end
     context "when passed a username and password" do
@@ -152,8 +152,8 @@ describe PivotalTracker::Client do
         PivotalTracker::Client.tracker_host = nil
         PivotalTracker::Client.use_ssl      = false
       end
-      it "returns https://www.pivotaltracker.com/services/v3" do
-        PivotalTracker::Client.api_ssl_url('user', 'password').should == 'https://user:password@www.pivotaltracker.com/services/v3'
+      it "returns https://www.pivotaltracker.com/services/v5" do
+        PivotalTracker::Client.api_ssl_url('user', 'password').should == 'https://user:password@www.pivotaltracker.com/services/v5'
       end
     end
   end

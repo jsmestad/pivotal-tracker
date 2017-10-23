@@ -66,7 +66,7 @@ module StaleFishFixtures
     protected
 
       def connection
-        @connection ||= RestClient::Resource.new('http://www.pivotaltracker.com/services/v3', :headers => {'X-TrackerToken' => TOKEN, 'Content-Type' => 'application/xml'})
+        @connection ||= RestClient::Resource.new('http://www.pivotaltracker.com/services/v5', :headers => {'X-TrackerToken' => TOKEN, 'Content-Type' => 'application/xml'})
       end
 
   end

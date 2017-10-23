@@ -32,12 +32,12 @@ describe PivotalTracker::Story do
     end
 
     it "should return nil if the API returns 404" do
-      FakeWeb.register_uri(:get, 'http://www.pivotaltracker.com/services/v3/projects/102622/stories/1234567', status: ['404', 'Not Found'], body: 'This should be ignored')
+      FakeWeb.register_uri(:get, 'http://www.pivotaltracker.com/services/v5/projects/102622/stories/1234567', status: ['404', 'Not Found'], body: 'This should be ignored')
       @project.stories.find(1234567).should be_nil
     end
 
     it "should raise an error if the API returns a non-404 error" do
-      FakeWeb.register_uri(:get, 'http://www.pivotaltracker.com/services/v3/projects/102622/stories/1234567', status: ['500', 'Internal Server Error'], body: 'This should be ignored')
+      FakeWeb.register_uri(:get, 'http://www.pivotaltracker.com/services/v5/projects/102622/stories/1234567', status: ['500', 'Internal Server Error'], body: 'This should be ignored')
       expect { @project.stories.find(1234567) }.to raise_error RestClient::ExceptionWithResponse
     end
   end
